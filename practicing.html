@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Hatchling</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Grandstander:wght@100&display=swap" rel="stylesheet">
+  <link href="fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/alt-menu-style.css">
+  <link rel="stylesheet" href="css/metronomestyle.css">
+  <link href="css/jig-style.css" rel="stylesheet" type="text/css">
+  <link href="css/added-style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/media-query-style.css">
+  <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/media-queries/600px.css">
+  <script src="js/type-jig.js"></script>
+  <script src="js/util.js"></script>
+  <script src="word-drill.js"></script>
+  <script src="steno-display.js"></script>
+  <script src="js/plover-translations.js"></script>
+</head>
+<body>
+
+  <nav id="nav-bar">
+    <a href="index.html">
+      <div id="logo">
+        <div id="egg-spots"></div>
+        <div id="bird">
+          <div id="eye"></div>
+          <div id="beak"></div>
+        </div>
+      </div>
+    </a>
+
+    <span id="nav-lessons" class="navItems"><a href="index.html">Lessons</a></span>
+    <span id="nav-practice" class="navItems"><a href="practicing.html">Practice</a></span>
+    <span id="nav-practice-small" class="navItems"><a href="practicing.html"><i class="fas fa-user-check"></i></a></span>
+    <span id="nav-downloads" class="navItems"><a href="downloads.html">Downloads</a></span>
+    <span id="nav-downloads-small" class="navItems"><a href="downloads.html"><i class="fas fa-file-download"></i></a></span>
+    <span id="nav-about" class="navItems"><a href="about.html">About</a></span>
+    <span id="nav-about-small" class="navItems"><a href="about.html"><i class="far fa-question-circle"></i></a></span>
+    <span id="nav-contact" class="navItems"><a href="contact.html">Contact</a></span>
+    <span id="nav-contact-small" class="navItems"><a href="contact.html"><i class="far fa-envelope"></i></a></span>
+  </nav>
+
+  <div id="form" class="wrapper">
+  	<div class="form-section">
+  		<h2>Practice (modified from Steno Jig)</h2>
+
+  		<form class="drill-options" id="custom" action="form.html">
+  			<input type="hidden" name="wpm" value="">
+  			<input type="hidden" name="cpm" value="">
+  			<input type="hidden" name="hints" value="">
+
+  			<textarea name="drill" id="user-text" placeholder="Type/paste the text you want to practice here."></textarea><br>
+
+  			<div name="speed">
+  				<label><input id="wpm" type="number" name="wpm" value="" step="5"> Speed (words per minute)
+  					(or <input type="checkbox" id="cpm" value="1"> x5 chars per minute) </label>
+  			</div>
+
+  			<input type="checkbox" name="type" value="shuffled">Shuffle words.<br>
+
+  			<div name="hints">
+  				<label><input id="hints" type="checkbox" name="hints" value="1" checked>Show hints</label>
+  			</div><br>
+
+  			<button>Start Drill &rarr;</button>
+  		</form>
+  	</div>
+  </div>
+
+  <div id="metronome-content" hidden>
+  	<!-- modified from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques -->
+  	<div id="sequencer-mini">
+  		<section class="controls-main" id="controls-mini">
+  			<label for="bpm" id="bpm-label-mini">WPM/Beats Per Minute</label>
+  			<input name="bpm" id="bpm" type="range" min="5" max="250" value="120" step="1" />
+  			<span id="bpmval">120</span>
+  			<button id="button-mini" data-playing="false"></button>
+  		</section>
+  	</div><!-- sequencer -->
+  </div>
+
+  <div id="lesson" class="wrapper" style="display: none">
+  	<h3 id="lesson-name" class="center" hidden></h3>
+  	<div id="drill-content">
+  		<div id="answer"></div>
+  		<div id="exercise"></div>
+  		<div id="results"></div>
+  	</div>
+
+  	<div id="nav">
+  		<p id="strokes"></p>
+  		<p id="clock" class="clock"></p>
+
+  		<p class="center"><a id="back" title="UpArrow">&uarr; Back to Menu <span class="shortcutkey">(UpArrow)</span></a></p>
+  		<p class="center"><a id="review" title="DownArrow">&darr; Review Errors <span class="shortcutkey">(DownArrow)</span></a></p>
+  		<p class="center"><a id="again" title="Enter">&#8634; Restart <span class="shortcutkey">(Enter)</span></a></p>
+  	</div>
+
+  	<textarea id="input"></textarea>
+  </div>
+
+  <script src="js/practice.js"></script>
+  <script src="js/metronome.js"></script>
+  <script src="js/generatePracticeElements.js"></script>
+
+</body>
+</html>

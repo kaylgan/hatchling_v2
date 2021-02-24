@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Hatchling</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Grandstander:wght@100&display=swap" rel="stylesheet">
+  <link href="fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media-query-style.css">
+  <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/media-queries/600px.css">
+  <link rel="stylesheet" href="css/metronomestyle.css">
+  <!-- <link rel="stylesheet" media="screen and (min-width: 320px)" href="css/media-queries/phone-sm-style.css"> -->
+</head>
+<body>
+
+  <nav id="nav-bar">
+    <a href="index.html">
+      <div id="logo">
+        <div id="egg-spots"></div>
+        <div id="bird">
+          <div id="eye"></div>
+          <div id="beak"></div>
+        </div>
+      </div>
+    </a>
+
+    <div id="dropdown">
+      <span id="nav-lessons" class="navItems">Lessons</span>
+      <div id="dropdown-content">
+      <span id="tutorial">Tutorial</span>
+      <span id="lesson1">Pinkies</span>
+      <span id="lesson2">Thumbs</span>
+      <span id="sentences1">Sentences</span>
+      <span id="lesson3">Rings</span>
+      <span id="lesson4">Middles</span>
+      <span id="lesson5">Pointers</span>
+      <span id="lesson6">More Sentences</span>
+      <span id="lesson7">Affixes</span>
+      <span id="lesson8">ABC & 123</span>
+      <span id="lesson9">Phrasing</span>
+      <span id="lesson10">What Next?</span>
+    </div>
+
+    </div>
+    <span id="nav-practice" class="navItems"><a href="practicing.html">Practice</a></span>
+    <span id="nav-practice-small" class="navItems"><a href="practicing.html"><i class="fas fa-user-check"></i></a></span>
+    <span id="nav-downloads" class="navItems"><a href="downloads.html">Downloads</a></span>
+    <span id="nav-downloads-small" class="navItems"><a href="downloads.html"><i class="fas fa-file-download"></i></a></span>
+    <span id="nav-about" class="navItems"><a href="about.html">About</a></span>
+    <span id="nav-about-small" class="navItems"><a href="about.html"><i class="far fa-question-circle"></i></a></span>
+    <span id="nav-contact" class="navItems"><a href="contact.html">Contact</a></span>
+    <span id="nav-contact-small" class="navItems"><a href="contact.html"><i class="far fa-envelope"></i></a></span>
+  </nav>
+
+  <div id="relative-container">
+    <div id="narration" hidden></div>
+    <div id="practice"></div>
+    <div id="notebook-paper">
+      <div class="lines"></div>
+      <div id="vocabBox" hidden></div>
+    </div>
+
+    <div class="container">
+      <div id="steno-and-keyboard">
+        <div id="steno-order"><button id="hide-button" type="button"><i class="fas fa-drum"></i></button></div>
+          <div id="hands">
+            <div id="left-hand">
+              <div id="left-pinky" class="finger pinky">
+                <div class="fingertip pi-ftip" id="lpi-ftip"></div>
+                <div class="finger-end pi-fend" id="lpi-fend"></div>
+              </div>
+              <div id="left-rotated-pinky" class="finger rotated-pinky" hidden>
+                <div class="fingertip pi-ftip" id="lpi-rotated-ftip"></div>
+                <div class="finger-end pi-fend" id="lpi-rotated-fend"></div>
+              </div>
+              <div id="left-ring" class="finger ring">
+                <div class="fingertip r-ftip" id="lr-ftip"></div>
+                <div class="finger-end r-fend" id="lr-fend"></div>
+              </div>
+              <div id="left-middle" class="finger middle">
+                <div class="fingertip m-ftip" id="lm-ftip"></div>
+                <div class="finger-end m-fend" id="lm-fend"></div>
+              </div>
+              <div id="left-pointer" class="finger pointer">
+                <div class="fingertip p-ftip" id="lp-ftip"></div>
+                <div class="finger-end p-fend" id="lp-fend"></div>
+              </div>
+              <div id="left-hand-edge" class="hand-edge"></div>
+              <div id="left-rotated-pointer" class="finger rotated-pointer" hidden>
+                <div class="fingertip p-ftip" id="lp-rotated-ftip"></div>
+                <div class="finger-end p-fend" id="lp-rotated-fend"></div>
+              </div>
+              <div id="left-thumb" class="finger thumb">
+                <div class="fingertip t-ftip" id="lt-ftip"></div>
+                <div class="nail"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="keyboard"></div>
+
+          <!-- modified from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques -->
+          <div id="sequencer" hidden>
+            <section class="controls-main">
+              <label for="bpm">WPM/Beats Per Minute</label>
+              <input name="bpm" id="bpm" type="range" min="5" max="250" value="120" step="1" />
+              <span id="bpmval">120</span>
+              <button data-playing="false"></button>
+              <!-- <button id="hide-button" type="button">Show/Hide</button> -->
+            </section>
+
+            <div id="tracks">
+              <section class="track-one">
+                <section class="pads" id="metronome-practice">
+                  <!-- <button role="switch" aria-checked="false"><span>Voice 1, Note 1</span></button> -->
+                </section>
+              </section>
+            </div>
+          </div><!-- sequencer -->
+      </div>
+
+      <div id="side-view" hidden>
+        <div id="finger-side-top"></div>
+        <div id="finger-side-middle"></div>
+        <div id="finger-side-tip"></div>
+        <div id="thumb-side"></div>
+        <div id="hand-side"></div>
+        <div id="front-key" class="side-key"></div>
+        <div id="middle-key" class="side-key"></div>
+        <div id="back-key" class="side-key"></div>
+      </div>
+    </div>
+  </div><!-- relative-container -->
+
+</body>
+
+<script type="text/javascript" src="js/metronome.js"></script>
+<script type="text/javascript" src="js/keyboard.js"></script>
+<script type="text/javascript" src="js/dictionary.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/lessonFormat.js"></script>
+<script type="text/javascript" src="js/generateElements.js"></script>
+</html>

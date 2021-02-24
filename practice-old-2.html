@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hatchling</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/added-style.css" rel="stylesheet" type="text/css">
+	<link href="css/jig-style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/metronomestyle.css">
+	<link rel="stylesheet" href="css/alt-menu-style.css">
+	<script src="js/type-jig.js"></script>
+	<script src="js/util.js"></script>
+	<script src="word-drill.js"></script>
+	<script src="steno-display.js"></script>
+	<script src="js/plover-translations.js"></script>
+</head>
+<body>
+
+	<nav id="nav-bar">
+		<a href="index.html">
+			<div id="logo">
+				<div id="egg-spots"></div>
+				<div id="bird">
+					<div id="eye"></div>
+					<div id="beak"></div>
+				</div>
+			</div>
+		</a>
+
+		<span id="nav-lessons" class="navItems"><a href="index.html">Lessons</a></span>
+		<span id="nav-practice" class="navItems"><a href="practice.html">Practice</a></span>
+		<span id="nav-practice-small" class="navItems"><a href="practice.html"><i class="fas fa-user-check"></i></a></span>
+		<span id="nav-practice" class="navItems"><a href="downloads.html">Downloads</a></span>
+		<span id="nav-practice-small" class="navItems"><a href="downloads.html"><i class="fas fa-file-download"></i></a></span>
+		<span id="nav-about" class="navItems"><a href="about.html">About</a></span>
+		<span id="nav-about-small" class="navItems"><a href="about.html"><i class="far fa-question-circle"></i></a></span>
+		<span id="nav-contact" class="navItems"><a href="contact.html">Contact</a></span>
+		<span id="nav-contact-small" class="navItems"><a href="contact.html"><i class="far fa-envelope"></i></a></span>
+	</nav>
+
+<div id="form" class="wrapper">
+	<div class="form-section">
+		<h2>Practice (modified from Steno Jig)</h2>
+
+		<form class="drill-options" id="custom" action="form.html">
+			<input type="hidden" name="wpm" value="">
+			<input type="hidden" name="cpm" value="">
+			<input type="hidden" name="hints" value="">
+
+			<textarea name="drill" id="user-text" placeholder="Type/paste the text you want to practice here."></textarea><br>
+
+			<div name="speed">
+				<label><input id="wpm" type="number" name="wpm" value="" step="5"> Speed (words per minute)
+					(or <input type="checkbox" id="cpm" value="1"> x5 chars per minute) </label>
+			</div>
+
+			<input type="checkbox" name="type" value="shuffled">Shuffle words.<br>
+
+			<div name="hints">
+				<label><input id="hints" type="checkbox" name="hints" value="1" checked>Show hints</label>
+			</div><br>
+
+			<button>Start Drill &rarr;</button>
+		</form>
+	</div>
+</div>
+
+<div id="metronome-content" hidden>
+	<!-- modified from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques -->
+	<div id="sequencer-mini">
+		<section class="controls-main" id="controls-mini">
+			<label for="bpm" id="bpm-label-mini">WPM/Beats Per Minute</label>
+			<input name="bpm" id="bpm" type="range" min="5" max="250" value="120" step="1" />
+			<span id="bpmval">120</span>
+			<button id="button-mini" data-playing="false"></button>
+		</section>
+	</div><!-- sequencer -->
+</div>
+
+<div id="lesson" class="wrapper" style="display: none">
+	<h3 id="lesson-name" class="center" hidden></h3>
+	<div id="drill-content">
+		<div id="answer"></div>
+		<div id="exercise"></div>
+		<div id="results"></div>
+	</div>
+
+	<div id="nav">
+		<p id="strokes"></p>
+		<p id="clock" class="clock"></p>
+
+		<p class="center"><a id="back" title="UpArrow">&uarr; Back to Menu <span class="shortcutkey">(UpArrow)</span></a></p>
+		<p class="center"><a id="review" title="DownArrow">&darr; Review Errors <span class="shortcutkey">(DownArrow)</span></a></p>
+		<p class="center"><a id="again" title="Enter">&#8634; Restart <span class="shortcutkey">(Enter)</span></a></p>
+	</div>
+
+	<textarea id="input"></textarea>
+</div>
+
+<script src="js/metronome.js"></script>
+<script src="js/generatePracticeElements.js"></script>
+
+<script>
+function runExercise(fields) {
+	if(fields.drill === 'NumberSentences') exercise = numberSentences(fields);
+	else exercise = wordDrill(fields);
+	if(exercise) {
+		if(fields.hints) {
+			var strokes = document.getElementById('strokes');
+			if(fields.floating_hints) {
+				strokes.style.position = 'fixed';
+			}
+			var translations = TypeJig.shortestTranslations(TypeJig.Translations.Plover);
+			var hints = new StenoDisplay(strokes, translations, true);
+		}
+		var speed = {wpm: fields.wpm, cpm: fields.cpm};
+
+		display_only('lesson');
+		return setExercise(exercise.name, exercise, hints, speed);
+	}
+}
+
+function getSettings() {
+	var wpm = document.getElementById('wpm');
+	var cpm = document.getElementById('cpm');
+	var hints = document.getElementById('hints');
+	if(cpm.checked) this.elements.cpm.value = 5 * wpm.value;
+	else this.elements.wpm.value = wpm.value;
+	this.elements.hints.value = hints.checked ? hints.value : '';
+}
+
+function setNewTempo() {
+  let results = document.getElementById('results').innerText;
+  let wpmStart = results.indexOf("\-") + 3;
+  let wpmEnd = results.indexOf("W");
+  let wpm = parseInt(results.substring(wpmStart, wpmEnd).trim());
+
+  let newWPM = wpm;
+  if (results.includes("no uncorrected")) {
+    newWPM = wpm + 10;
+  } else {
+    newWPM = wpm - 10;
+  }
+
+  if (newWPM) {
+    document.querySelector('#bpm').value = newWPM;
+    document.querySelector('#bpmval').innerText = newWPM;
+    getMetronome().tempo = newWPM;
+		console.log("new tempo set to " + newWPM + " per " + results);
+  } else {
+    console.log("newWPM error");
+  }
+}
+
+function getErrors() {
+    // get all user-typed words
+    let answers = document.querySelectorAll('#answer span');
+    let answersText = [];
+    for (let i = 0; i < answers.length; i++) {
+      answersText.push(answers[i].textContent);
+    }
+
+    // get all incorrect user-typed words
+    let incorrects = document.getElementsByClassName('incorrect');
+    let incorrectsText = [], incorrectsIndices = [];
+    for (let i = 0; i < incorrects.length; i++) {
+      incorrectsText.push(incorrects[i].textContent);
+      incorrectsIndices.push(answersText.indexOf(incorrects[i].textContent));
+    }
+
+    // get all words from exercise
+    let exercise = document.querySelectorAll('#exercise span');
+    let exerciseText = [], text = "";
+    for (let i = 0; i < exercise.length; i++) {
+      text = exercise[i].textContent;
+      text = text.replace(/[.,!?;:]/g,""); // remove punctuation
+      text = text.toLowerCase();
+      exerciseText.push(text);
+    }
+    exerciseText = exerciseText.filter(function(str) {
+  		return /\S/.test(str); // remove whitespace elements
+  	});
+
+    // get correct versions of all incorrect user-typed words
+    let correctVersions = [];
+    for (let i = 0; i < incorrectsIndices.length; i++) {
+      if (exerciseText[incorrectsIndices[i]]) { correctVersions.push(exerciseText[incorrectsIndices[i]]); }
+    }
+
+    // repeat each incorrect word 6 times
+    let repeats = 6;
+    const makeRepeated = (arr, repeats) => Array.from({ length: repeats }, () => arr).flat();
+    correctRepeats = makeRepeated(correctVersions, 6).sort();
+
+    // add the original array to the end 2 times
+    let repeatOriginal = 2;
+    correctRepeats = correctRepeats.concat(makeRepeated(correctVersions, repeatOriginal));
+
+    let words = correctRepeats;
+    if (words.length == 0) {
+      console.log("no errors");
+			return new TypeJig.Exercise(["no", "errors"], 0, false, 'ordered');
+    } else {
+      return new TypeJig.Exercise(words, 0, false, 'ordered');
+    }
+}
+
+function runCustom(evt) {
+	evt.preventDefault();
+	getSettings.call(this);
+	var fields = getFormFields(this);
+	if(storageAvailable('localStorage')) {
+		localStorage.custom = fields.drill
+	}
+	TypeJig.WordSets.custom = fields.drill.trim().split(/\s+/m);
+	fields.drill = 'custom';
+	var jig = runExercise(fields);
+
+	var again = document.getElementById('again');
+	again.addEventListener('click', function(evt){
+		evt.preventDefault();
+		jig.reset();
+	});
+
+	let review = document.getElementById('review');
+	review.addEventListener('click', function(evt){
+		console.log('review');
+		setNewTempo();
+		evt.preventDefault();
+		jig.exercise = getErrors();
+		jig.reset();
+	});
+}
+
+window.onload = function() {
+	if(document.location.search !== '') {
+		runExercise(parseQueryString(document.location.search));
+	} else {
+		// Add event listeners to get settings before submitting.
+		var forms = document.querySelectorAll('form');
+		for(var i=0; i<forms.length; ++i) {
+			var form = forms[i]
+			if(form.id === 'custom') {
+				form.addEventListener('submit', runCustom);
+			} else {
+				form.addEventListener('submit', getSettings);
+			}
+		}
+	}
+}
+
+function display_only(show) {
+	var i, tabs
+	tabs = ['form', 'lesson']
+	for (i in tabs) {
+		document.getElementById(tabs[i]).style.display = tabs[i] === show ? 'block' : 'none'
+	}
+	let metronome = document.getElementById('metronome-content');
+	metronome.hidden = show === 'form' ? true : false;
+}
+
+loadSettings()
+if(storageAvailable('localStorage') && localStorage.custom != null) {
+	let custom = document.getElementById('custom')
+	custom.elements.drill.value = localStorage.custom
+}
+</script>
+
+</body>
+</html>

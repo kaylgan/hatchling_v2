@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- MODIFIED FROM JoSHUA GRAMS STENO JIG
+https://joshuagrams.github.io/steno-jig/ -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hatchling Practice</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Grandstander:wght@100&display=swap" rel="stylesheet">
+  <link href="fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"> <!-- DONE -->
+  <link rel="stylesheet" href="css/metronomestyle.css"> <!-- DONE -->
+	<link href="css/steno-jig-style.css" rel="stylesheet" type="text/css">
+	<link href="css/added-style.css" rel="stylesheet" type="text/css">
+	<script src="js/type-jig.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/steno-display.js"></script>
+	<script src="js/plover-translations.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/font-roboto.css">
+</head>
+<body>
+
+	<nav id="nav-bar">
+		<a href="index.html">
+			<div id="logo">
+				<div id="egg-spots"></div>
+				<div id="bird">
+					<div id="eye"></div>
+					<div id="beak"></div>
+				</div>
+			</div>
+		</a>
+
+		<div id="dropdown">
+			<span id="nav-lessons" class="navItems">Lessons</span>
+			<div id="dropdown-content">
+			<span id="tutorial">Tutorial</span>
+			<span id="lesson1">Pinkies</span>
+			<span id="lesson2">Thumbs</span>
+			<span id="sentences1">Sentences</span>
+			<span id="lesson3">Rings</span>
+			<span id="lesson4">Middles</span>
+			<span id="lesson5">Pointers</span>
+			<span id="lesson6">More Sentences</span>
+			<span id="lesson7">Affixes</span>
+			<span id="lesson8">ABC & 123</span>
+			<span id="lesson9">What Next?</span>
+		</div>
+
+		</div>
+		<span id="nav-practice" class="navItems"><a href="practice.html">Practice</a></span>
+		<span id="nav-practice-small" class="navItems"><a href="practice.html"><i class="far fa-question-circle"></i></a></span>
+		<span id="nav-about" class="navItems"><a href="about.html">About</a></span>
+		<span id="nav-about-small" class="navItems"><a href="about.html"><i class="far fa-question-circle"></i></a></span>
+		<span id="nav-contact" class="navItems"><a href="contact.html">Contact</a></span>
+		<span id="nav-contact-small" class="navItems"><a href="contact.html"><i class="far fa-envelope"></i></a></span>
+	</nav><!-- DONE -->
+
+<div id="lesson" class="wrapper">
+	<h3 id="lesson-name" class="center"></h3>
+
+	<div id="metronome-content" hidden>
+		<!-- modified from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques -->
+		<div id="sequencer-mini">
+			<section class="controls-main" id="controls-mini">
+				<label for="bpm" id="bpm-label-mini">WPM/Beats Per Minute</label>
+				<input name="bpm" id="bpm" type="range" min="5" max="250" value="120" step="1" />
+				<span id="bpmval">120</span>
+				<button id="button-mini" data-playing="false"></button>
+			</section>
+		</div><!-- sequencer -->
+		<div id="test"><textarea id="user-text" name="name" rows="8" cols="80" placeholder="Paste text to practice here."></textarea></div>
+		<button id="text-area-button" type="button" name="button">Submit</button>
+	</div> <!-- done -->
+
+	<div id="drill-content">
+		<div id="answer"></div>
+		<div id="exercise"></div>
+		<div id="results"></div>
+	</div>
+
+	<div id="nav">
+		<p id="strokes"></p>
+		<p id="clock" class="clock"></p>
+		<p class="center"><a id="again" title="LeftArrow">&larr; Repeat Drill <span class="shortcutkey">(LeftArrow)</span></a></p>
+		<p class="center"><a id="new" title="RightArrow">&rarr; Practice Mistakes <span class="shortcutkey">(RightArrow)</span></a></p>
+		<p class="center"><a id="steno-jig" title="Steno Jig" href="https://joshuagrams.github.io/steno-jig/">Go to Steno Jig</a></p>
+	</div>
+
+	<textarea id="input"></textarea>
+</div>
+
+<script src="js/makeExercise.js"></script>
+<script type="text/javascript" src="js/metronome.js"></script>
+<script type="text/javascript" src="js/generatePracticeElements.js"></script>
+
+</body>
+</html>

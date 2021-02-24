@@ -1,0 +1,433 @@
+##// -s: -S
+##// -es: -S
+##// -s: -Z
+##// -es: -Z
+##// -ed: -D
+is: S
+the: -T
+star: STAR
+stars: STARS or STAR\-S
+starred: STARD or STAR\-D
+
+sat: SAT
+set: SET
+sit: SEUT
+sod: SOD
+suds: SUDZ
+say: SAEU
+seed: SAOED
+sight: SAOEUT
+sow: SOE
+suit: SAOUT
+
+//out-: AOUT
+soy: SOEU
+soot: SAOT
+rode: ROED
+road: RAOD
+sea: SAE
+see: SAOE
+saw: SAU
+sail: SAEUL
+sale: SAEL
+out: OUT
+outset: AOUT/SET
+
+period: TP-PL
+comma: KW-BG
+hyphen: H-PB
+I: EU
+so: SO
+you: U
+a: AEU
+eye: AOEU
+## rods: RODZ
+root: RAOT
+## rots: ROTS
+
+it: T
+can: K
+did: TK
+
+// -ing: -G
+##!// -lge: -LG
+call: KAUL
+kale: KAEUL
+tug: TUG
+dig: TKEUG
+tile: TAOEUL
+dial: TKAOEUL
+starring: STARG (or STAR/-G)
+
+decide: STKAOEUD (or TKE/SAOEUD)
+setting: SEGT
+calling: KAULG
+kidding: KEUGD
+
+sorry: SOER (or SOR/REU)
+carry: KAER (or KAR/REU)
+
+dog: TKOG
+said: SAEUD
+to: TO
+us: US
+could: KO
+use: AOUS (or AOUZ)
+day: TKAEU
+
+it's: T-S
+as: AS
+cold: KOELD
+ice: AOEUS
+outside: OUDZ
+
+sagged: SAGD
+its: EUTS
+tail: TAEUL
+at: AT
+sad: SAD
+tale: TAEL
+
+it'd: EUTD
+ill: EUL
+I'll: AOEUL
+stay: STAEU
+sighed: SAOEUD
+opening quotation mark: KW-GS
+closing quotation mark: KR-GS
+
+all: AUL
+do: DO
+skating: SKAEUGT
+called: KAULD
+question mark: KW-PL
+exclamation point: TP-BG
+
+// be-: PWE
+about: PW
+with: W
+bee: PWAOE
+
+## bilge: PWEULG
+## bulge: PWULG
+
+// -lch: -LG
+squelch: SKWELG
+belch: PWELG
+
+an: -N
+be: -B
+being: -BG
+can be: K-B
+
+and: SKP
+and the: SKP-T
+and you: SKPU
+and I: SKPEU
+and a: SKPA
+and I can: SKPEUBG
+
+it was: TWAS
+it wasn't: TWAEPBT
+it would: T-LD
+it can: T-BG
+it could: T-BGD
+it'll: T-L
+it has: T-Z
+-ing it: T-G
+
+if: TP
+go: TKPB
+examine: KP
+request: KW
+
+some: SOPL
+good: TKPWAOD
+people: PAOEPL
+only: OEPBL
+want: WAPBT
+time: TAOEUPL
+
+but: PWUT
+by: PWEU
+way: WAEU
+we: WE
+would: WO
+take: TAEUBG
+two: TWO
+because: BAUS or BAUZ
+
+come: KOPL
+on: OPB
+back: PWABG
+get: TKPWET or TKPW-T
+one: WUPB
+
+which: WEU
+buy: PWAOEU
+
+well: WEL
+even: AOEPB
+something: S-G
+else: ELS
+up: UP
+top: TOP
+too: TAO
+
+// -shun: -GS
+// -kshun: -BGS
+// -ment: -PLT
+// -nge: -PBG
+// im-: EUPL
+// ent-/int-: SPW
+station: STAEUGS
+section: SEBGS
+cement: SEPLT or SAOEPLT
+sponge: SPOPBG
+possible: POB
+impossible: EUPL/POB
+I'm: AOEUPL
+entice: SPWAOEUS
+intact: SPWABGT
+
+had: H
+are: R
+will: L
+
+of: -F
+off: OF
+are: -R
+ever: -FR
+every: EFR
+everything: EFRG
+everywhere: WEFR
+everybody: EFRB
+everyday: EFRD
+everyone: EFRPB
+
+something: S-G
+somewhere: SWR
+somebody: S-B
+someday: STKAEU
+someone: SPHPB
+sometime: STAOEUPL
+somehow: SPHOU
+someplace: SPHRAEUS
+
+##// ch-: KH
+##// -ch: -FP
+##// -tch: -FP
+in: N
+why: Y
+have: V
+consider: C
+
+// after-: AFR
+now: TPHOU
+look: HRAOBG
+after: AF
+him: HEUPL
+he: HE
+his: HEUS or HEUZ
+room: RAOPL
+this: TH
+afternoon: AFPB or AFR/TPHAOPB
+
+know: TPHOE
+how: HOW
+you're: UR
+going: TKPW-G
+into: TPHAO
+your: KWROUR
+house: HOUS
+
+they: THE
+think: THEU
+they're: THER
+maybe: PHAEB
+there: THR
+their: THAEUR
+socks: SOBGS
+
+// -st: -FT
+// -st: *S
+she: SHE
+also: HR-S or AL/SO
+give: TKPWEUF
+me: PHE
+much: PHUFP
+her: HER
+work: WORBG
+or: OR
+just: SKWRUFT
+my: PHEU
+most: MOFT
+mask: MAFK or PHAS/-BG
+lift: LIFT
+list: L*IS
+
+these: THEZ
+our: OUR
+first: TPEURS or TPEUFRT
+drafts: TKRAFTS
+
+any: TPHEU
+them: THEPL
+early: ERL or ER/HREU
+
+over: OEFR
+then: THEPB
+other: OER
+than: THAPB
+that: THA
+am: APL
+overjoyed: AUFR/SKWROEUD
+
+what: WHA
+when: WH
+another: TPHOER
+year: KWRAOER
+starts: STARTS
+area: KWRA*ER
+not: TPHOT
+like: HRAOEUBG
+new: TPHU
+
+who: WHO
+make: PHAEUBG
+no: TPHO
+cakes: KAEUBGS
+
+// for-: TPAUR
+for: TP-R
+man: PHAPB
+from: TPR-
+store: STOR
+forgot: TPAURGT
+forget: TPORGT
+things: THEUPBGS
+
+that is: THAS
+that are: THAR
+
+// in-: EUPB
+in the: TPH-T
+night: TPHAOEUT
+went: WEPBT
+inward: EUPB/WARD
+further: TPURT
+into the: TPHAOT
+cave: KAEUF
+
+I have: SREU
+to have: TOF
+half: HAF
+tag: TAG
+says: SEZ or SAEUZ or SAEUS
+1/2: HA*F
+
+---
+//-sh: -RB
+//-shus: -RBS
+hush: HURB
+precious: PRERBS
+baby: PWAEB or PWAEU/PWEU
+
+//mp: -*PL or -FRP
+// -le: *L
+amp: AFRP or APL/-P or APL/*P
+level: HREFL
+ample: AFRPL or APL/*PL (am+pl)
+APL/*L APL/-PL
+eight: AET
+a.m.: A*PL (a*m)
+(APL was am)
+suble: SUBLT
+
+//-th: *T
+thought: THAUT
+math: PHA*T
+a lot of: HROEFLT
+(a lot: HROELT)
+depth: TK*EPT
+
+// bi-: PW*EU
+said: SED
+(or SAEUD)
+bye: PWAO*EU
+weak: WAEBG
+left: HREFT
+bicep: PW*EU/SEP
+last: HRAFT
+weak: WAEBG
+week: WAOEBG
+
+//-rve: -FRB
+//"-ly: -L", "(or HREU)"
+swerved: SWEFRBD
+drove: TKROEF
+slowly: SHROEL
+around: ARPBD
+(or A/ROUPBD)
+curve: KUFRB
+
+//-nk: *PBG
+//-lk: *LG
+mink: PH*EUPBG
+ate: AEUT
+(vs AET, eight) ** breaks rule
+yolk: KWROEBG
+drank: TKRA*PBG
+milk: PH*EULG
+
+//con-: K- or KOPB or KAUPB
+//com-: K- or KOPL
+where: W-R
+were: WR-
+computers: KPAOURTS
+common: KPHOPB of KOPL/PHOPB
+connected: KEBGTD or KOPB/TPHEBGT
+
+//-rch: -FRPB
+//-nch: -FRPB or -FRPBLG
+march: PHAFRPB
+down: TKOUPB
+hall: HAUL
+lunch: HRUFRPBLG or HRUPBS
+lurch: HRUFRPB
+bench: PWEFRPB
+
+// -y: KWREU
+puppy: PUP/KWREU
+kitty: KEUT/KWREU
+
+//-ction: -BGS
+axe: ABGS
+action: A*BGS
+
+divide: TKWAOEUD or TKEU/SRAOEUD
+severe: SWAOER or SE/SRAOER
+
+//-ng: -PBG
+//-nge: -PBG or *PBG
+bing: PWEUPBG
+binge: PW*EUPBG or PWEUPB/-PBLG
+lung: HRUPBG
+lunge: HRUPB/*PBLG HRUPB/-PBLG or HRUPBLG
+HRU*PBG:  HR*UPBG
+
+concept: SKEPT or KOPB/SEPT or KAUPB/SEPT
+discuss: STKUS or TKEUS/KUS
+mistake: SPHAEUBG or PHEUZ/
+summer: SURPL
+
+again: TKPWEPB
+control: KROL or KAUPB/TROEL or KOPB/TROEL
+or TKROEL
+document: TKOUPLT or TKOBG/AOUPLT
+discuss: STKUS or TKEUS/KUS
+
+mother: MOER
+water: WAUR
+rather: RAER
+bother: PWOER

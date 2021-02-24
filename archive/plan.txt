@@ -1,0 +1,62 @@
+completed 20200920: basic key function
+completed 202009: qwerty css keyboard
+completed 202009: steno finger positions
+completed 202009: steno css keyboard
+completed 202010: + tutorial
+  done: video of real hand movement? + movements of hands
+  done: Welcome to Hatchling, a web app to help you get started with typing stenog
+  done: This site was designed to be used without Plover or other steno software.
+
++ typing lessons
+  X: fj sl a; gh ru
+  O: dk+t
+  reviews left: abcdefghijklmnopqrstuvwxyz
+  reviews right: (a)b(c)d(e)fg(h)(i)jklmn(o)p(q)rst(u)v(w)x(y)z
+    words that end in c/q => k
+    words that end in h/w/y => vowels
+
+  + single keys, steno order
+    s t p h * * f p l t d
+    s k w r * * r b g s z
+    a o e u
+  + two keys
+    i
+    d b l
+    f m q x z v c
+    -n -m -k -j -v
+    X+ review: by finger
+      X+ pinkies
+        s, -s, -z, -t, -d
+      X+ rings
+        t/k/d, -l/-g
+      + middles
+        p/w/b, -p/-b/-n
+      + pointers
+        h/r/l, -f/-r/-v
+      X+ thumbs
+        aeiou
+  X+ three keys
+    y n
+    -x
+    !!review: y/n/m/x
+  + four plus keys
+    g j
+    -j
+    !!review: g/f/q, -j/-k/-m/-n/-x
+    !!review: j/y/c/v/z
+  X+ vowels
+  !!+ alphabet
+    + left
+    + right
+    + left/right
+  X+ steno order
+  + basic numbers
+  X+ punctuation, space
+  X+ single key briefs
+  X+ two key briefs
+  X+ three key briefs
+  !!+ fingerspelling
+  !!+ prefixes
+  !!+ suffixes
+    + tricky pinky endings? sz, td, sd, dz
+  !!+ homophones, etc.

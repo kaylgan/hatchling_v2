@@ -1,0 +1,965 @@
+:root {
+  --hands: teal;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#narration a, #downloads-narration a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#narration a:hover, #downloads-narration a:hover {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 2px;
+}
+
+/* ----------------------------------------------LOGO---------------------------------------------- */
+
+#nav-bar a {
+  margin-right: 50%;
+}
+
+/* egg */
+#logo {
+  width: 25px;
+  height: 25px;
+  background-color: #fffdd0;
+  background: linear-gradient(to top left, #B3AF5C 0%, #fffdd0 100%);
+  border-radius: 71% 27% 70% 27% / 67% 28% 65% 31%;
+  position: relative;
+  font-family: 'Grandstander', serif;
+  margin-left: 30%;
+}
+
+#logo::before {
+  content: "H";
+  font-size: 36px;
+  position: absolute;
+  left: -18px;
+  bottom: -40%;
+  z-index: 10;
+}
+
+#logo::after {
+  content: "tchling";
+  font-size: 36px;
+  position: absolute;
+  left: 25px;
+  bottom: -40%;
+}
+
+#egg-spots {
+  width: 100%;
+  height: 100%;
+  border-radius: 71% 27% 70% 27% / 67% 28% 65% 31%;
+  position: absolute;
+  background-image:
+  radial-gradient(#8D6B33 35%, transparent 26%),
+  radial-gradient(#8D6B33 35%, transparent 26%);
+  background-size: 5px 5px;
+  background-position: 0 0, 30px 30px;
+}
+
+#bird {
+  width: 15px;
+  height: 15px;
+  left: 30%;
+  top: 40%;
+  background-color: white;
+  border-radius: 50%;
+  border-right: 3px solid #A8937D;
+  border-bottom: 2px solid black;
+  position: absolute;
+}
+
+#bird:hover {
+  transform: rotate(6deg) translateX(2px);
+}
+
+/* egg cracks */
+#bird::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 13px solid #A8937D;
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  transform: rotate(-90deg);
+}
+
+#bird:hover::before {
+  transform: scale(1.3, 1.3) rotate(-85deg) translate(-1px, -1px);
+}
+
+/* brown patch */
+#bird::after {
+  content: '';
+  width: 14px;
+  height: 6px;
+  position: absolute;
+  background-color: #A8937D;
+  transform: rotate(60deg);
+  right: 0;
+  top: 4px;
+  border-radius: 100% 25% 48% 60% / 93% 47% 80% 15%;
+}
+
+#eye {
+  width: 6px;
+  height: 6px;
+  left: 30%;
+  top: 30%;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+
+/* small white dot */
+#eye::before {
+  content: '';
+  width: 1px;
+  height: 1px;
+  left: 58%;
+  top: 65%;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+}
+
+/* big white dot */
+#eye::after {
+  content: '';
+  width: 2px;
+  height: 2px;
+  left: 20%;
+  top: 20%;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#beak {
+  width: 0;
+  height: 0;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid orange;
+  transform: rotate(60deg);
+  position: absolute;
+  right: -3px;
+  bottom: -2px;
+}
+
+/* egg cracks */
+#beak::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-right: 8px solid #A8937D;
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  transform: rotate(10deg);
+}
+
+/* egg cracks */
+#beak::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-right: 8px solid #A8937D;
+  position: absolute;
+  left: -27px;
+  top: 1px;
+  transform: rotate(26deg);
+}
+
+/* ----------------------------------------------NAVBAR---------------------------------------------- */
+
+#nav-bar {
+  width: 100%;
+  height: 8vh;
+  background-color: teal;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navItems {
+  font-size: 24px;
+  margin-right: 50px;
+  position: relative;
+}
+
+.navItems:not(#nav-lessons)::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  left: 0;
+  bottom: -3px;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.navItems:not(#nav-lessons):hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+#nav-practice, #nav-about, #nav-contact, #nav-downloads {
+  display: inline-block
+}
+
+#nav-practice-small, #nav-about-small, #nav-contact-small, #nav-downloads-small {
+  display: none;
+}
+
+#dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 100px;
+  background-color: teal;
+  color: white;
+  opacity: 0.9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+  z-index: 100;
+}
+
+#dropdown-content span {
+  display: block;
+  font-family: monospace;
+  font-size: 16px;
+  padding: 4px 10px;
+}
+
+#dropdown-content span:hover {
+  background-color: teal;
+  background-image: linear-gradient(315deg, teal 0%, white 74%);
+  color: black;
+}
+
+#dropdown:hover #dropdown-content {
+  display: block;
+}
+
+/* ----------------------------------------------VOCAB BOX---------------------------------------------- */
+
+#notebook-paper {
+  background-color: #f5f5f5;
+  margin-right: 10%;
+  position: absolute;
+  left: 75%;
+  top: 35%;
+  width: 275px;
+  font-size: 20px;
+  z-index: 50;
+}
+
+#notebook-paper:hover {
+  z-index: 100;
+}
+
+#vocabBox {
+  width: 100%;
+}
+
+.lines {
+  border-left: 1px solid #ffaa9f;
+  border-right: 1px solid #ffaa9f;
+  width: 2px;
+  margin-top: 1px;
+  height: 99%;
+  margin-left: 30px;
+  z-index: 10;
+  position: absolute;
+}
+
+.vocabSpan {
+  display: inline-block;
+  /* width: 238px; */
+  width: 100%;
+  color: gray;
+  margin: 0;
+  padding: 0;
+  border: 1px solid teal;
+  border-bottom: 1px dotted teal;
+  text-indent: 55px;
+  z-index: 1;
+}
+
+.vocabSpan:not(.headingSpan):hover {
+  background-color: teal;
+  opacity: 0.8;
+  color: white;
+}
+
+.headingSpan {
+  text-indent: 35px;
+  font-weight: bold;
+  color: black;
+}
+
+/* ----------------------------------------------PRACTICE---------------------------------------------- */
+
+#relative-container {
+  position: relative;
+}
+
+#narration {
+  position: absolute;
+  color: black;
+  text-align: center;
+  background-color: lightgray;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  z-index: 99;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+}
+
+#practice {
+  margin: 1% 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  padding-bottom: 5px;
+  font-family: 'Open Sans', sans-serif;
+  color: teal;
+  font-size: 30px;
+}
+
+.practice-letter {
+  height: 40px;
+  line-height: 40px;
+  min-width: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 26px;
+  font-weight: 400;
+  background-color: teal;
+  background-image: linear-gradient(315deg, teal 0%, white 74%);
+  box-shadow: 4px 4px 0px 0px teal, 8px 8px 0px 0px gray;
+  overflow: hidden;
+}
+
+/* ----------------------------------------------STENO ORDER---------------------------------------------- */
+
+#steno-order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.steno-order-letter {
+  font-family: sans-serif;
+  margin-left: 6px;
+  font-size: 22px;
+  color: white;
+}
+
+.highlighted-steno {
+  background-color: black;
+  font-size: 30px;
+}
+
+/* ----------------------------------------------KEYBOARD---------------------------------------------- */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+#steno-and-keyboard {
+  margin: 0;
+  padding: 0;
+}
+
+#top-row {
+  color: black;
+}
+
+.key {
+  width: 40px;
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  text-align: center;
+  margin: 1px;
+  font-family: sans-serif;
+  color: white;
+}
+
+.grayed {
+  font-size: 12px;
+  color: gray;
+}
+
+.steno {
+  font-size: 20px;
+}
+
+/* ----------------------------------------------HANDS TOP VIEW---------------------------------------------- */
+
+#hands {
+  z-index: 10;
+  position: relative;
+}
+
+.finger {
+  width: 32px;
+  height: 80px;
+  position: absolute;
+  left: 70px;
+  top: 78px;
+  border: 2px var(--hands) solid;
+  border-bottom-style: dashed;
+  opacity: 0.9;
+  border-radius: 30%;
+  transform: rotate(8deg);
+}
+
+/* --------------- blue fingertips ---------------*/
+.finger-end {
+  width: 28px;
+  height: 30px;
+  position: absolute;
+  left: 1px;
+  top: -15px;
+  border: 2px var(--hands) solid;
+  border-bottom-style: none;
+  background-color: var(--hands);
+  opacity: 0.5;
+  border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%;
+  transform: rotate(4deg);
+}
+
+.pi-fend {
+  width: 28px;
+  height: 24px;
+  top: -8px;
+  left: 1px;
+}
+
+.r-fend {
+  width: 32px;
+  top: -12px;
+}
+
+.m-fend {
+  width: 34px;
+  top: -8px;
+}
+
+.p-fend {
+  width: 34px;
+  top: -10px;
+  left: -1px;
+}
+
+/* --------------- red dots ---------------*/
+.fingertip {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -16px;
+  background-color: white;
+  opacity: 0.4;
+  border-radius: 50%;
+}
+
+.pi-ftip {
+  top: -12px;
+}
+
+.r-ftip {
+  top: -12px;
+  left: 1px;
+}
+
+.m-ftip {
+  top: -6px;
+  left: 3px;
+}
+
+.p-ftip {
+  top: -10px;
+  left: 1px;
+}
+
+.t-ftip {
+  top: 6px;
+  left: -5px;
+}
+
+/* --------------- individual fingers ---------------*/
+.pinky {
+  top: 92px;
+}
+
+/* hand edge */
+.pinky::before {
+  content: "";
+  width: 30px;
+  height: 150px;
+  position: absolute;
+  border-left: 2px var(--hands) solid;
+  border-radius: 30%;
+  top: 55px;
+  left: 2px;
+  transform: rotate(-5deg);
+}
+
+.ring {
+  left: 112px;
+  height: 90px;
+  width: 34px;
+  top: 84px;
+}
+
+.middle {
+  left: 154px;
+  height: 96px;
+  width: 36px;
+  top: 78px;
+}
+
+.pointer {
+  left: 200px;
+  height: 92px;
+  width: 34px;
+  top: 84px;
+}
+
+.hand-edge {
+  width: 40px;
+  height: 110px;
+  position: absolute;
+  border-right: 2px var(--hands) solid;
+  border-radius: 10%;
+  top: 165px;
+  left: 182px;
+  transform: rotate(8deg);
+}
+
+.thumb {
+  left: 222px;
+  height: 40px;
+  width: 30px;
+  top: 134px;
+  border-radius: 90% 20% 10% 50%;
+  opacity: 0.6;
+  border-bottom-style: none;
+  transform: rotate(35deg);
+  position: absolute;
+}
+
+/* hand edge */
+.thumb::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 41px;
+  height: 100px;
+  width: 36px;
+  border-right: 2px var(--hands) solid;
+  border-radius: 0% 0% 30% 10%;
+  transform: rotate(-25deg);
+}
+
+.nail {
+  position: absolute;
+  left: 25px;
+  height: 34px;
+  width: 5px;
+  top: -2px;
+  border: 2px solid var(--hands);
+  border-radius: 90% 20% 10% 50%;
+  transform: rotate(5deg);
+}
+
+/* --------------- move blue fingertips/red dots --------------- */
+.top-key {
+  transform: translate(-1px, -16px) scale(0.9, 1.2);
+}
+
+.top-dot {
+  transform: translateY(-25px);
+}
+
+.bottom-key {
+  transform: rotate(180deg) translate(0, -10px) scale(0.8, 0.8);
+}
+
+.bottom-dot {
+  transform: translateY(18px);
+}
+
+/* ----------------------------------------------HANDS SIDE VIEW---------------------------------------------- */
+
+#side-view {
+  margin-left: 25px;
+  position: relative;
+  background-color: #ba9a8e;
+  background-image: linear-gradient(120deg, #756213 5%, #96705b 50%, #ba9a8e 75%);
+  border: 10px teal solid;
+  width: 150px;
+  min-width: 150px;
+  height: 150px;
+}
+
+/* palm edge */
+#hand-side {
+  position: absolute;
+  width: 65px;
+  height: 40px;
+  top: 56px;
+  left: 2px;
+  border: 2px #756213 solid;
+  border-bottom-style: none;
+  border-right-style: none;
+  border-radius: 67% 34% 100% 0% / 100% 0% 100% 0%;
+}
+
+#finger-side-top {
+  width: 32px;
+  height: 80px;
+  position: absolute;
+  left: 54px;
+  background-color: #96705b;
+  background-image: linear-gradient(90deg, #756213 20%, #96705b 90%, #756213 100%);
+  border: 2px #756213 solid;
+  border-bottom-style: dashed;
+  border-radius: 30%;
+  transform: rotate(98deg);
+}
+
+/* top of hand */
+#finger-side-top::before {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 36px;
+  border-top: 3px #756213 solid;
+  border-radius: 50% 100% 0% 0% / 0% 59% 0% 0%;
+  transform: rotate(260deg);
+  left: -18px;
+  top: 59px;
+}
+
+#finger-side-middle {
+  width: 32px;
+  height: 59px;
+  position: absolute;
+  left: 83px;
+  top: 46px;
+  background-color: #96705b;
+  background-image: linear-gradient(90deg, #756213 0%, #96705b 100%);
+  border: 2px #756213 solid;
+  border-bottom-style: none;
+  border-top-style: none;
+  border-radius: 10% 30% 30% 0%;
+  transform: rotate(172deg);
+}
+
+#finger-side-tip {
+  width: 30px;
+  height: 45px;
+  position: absolute;
+  left: 86px;
+  top: 88px;
+  background-color: #ba9a8e;
+  background-image: linear-gradient(90deg, #756213 0%, #96705b 94%);
+  border: 2px #756213 solid;
+  border-bottom-style: none;
+  border-top-style: none;
+  border-radius: 30% 90% 30% 0%;
+  transform: rotate(182deg);
+  z-index: 10;
+}
+
+#finger-side-tip::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 32px;
+  top: 14px;
+  left: -16px;
+  border: 2px #756213 solid;
+  background-color: #ba9a8e;
+  background-image: linear-gradient(315deg, #eebb99 0%, #ba9a8e 34%, #96705b 100%);
+  z-index: 12;
+  border-radius: 43% 64% 65% 65% / 34% 57% 60% 45%;
+  transform: rotate(90deg) scaleX(-1);
+}
+
+#thumb-side {
+  position: absolute;
+  height: 32px;
+  width: 25px;
+  top: 98px;
+  left: 25px;
+}
+
+/* nail */
+#thumb-side::before {
+  content: "";
+  position: absolute;
+  height: 23px;
+  width: 32px;
+  top: 10px;
+  left: 6px;
+  border: 2px #756213 solid;
+  background-color: #ba9a8e;
+  background-image: linear-gradient(35deg, #ffad60 0%, #ba9a8e 44%, #96705b 100%);
+  z-index: 10;
+  border-radius: 43% 64% 65% 65% / 34% 57% 60% 45%;
+  z-index: 12;
+}
+
+#thumb-side::after {
+  content: "";
+  width: 34px;
+  height: 64px;
+  position: absolute;
+  left: -9px;
+  top: -15px;
+  background-color: #96705b;
+  background-image: linear-gradient(315deg, #756213 20%, #96705b 90%, #756213 100%);
+  border: 2px #756213 solid;
+  border-bottom-style: none;
+  border-top-style: none;
+  border-radius: 70% 30% 0% 5%;
+  transform: rotate(90deg);
+  z-index: 10;
+}
+
+/* --------------- keys --------------- */
+
+.side-key {
+  width: 35px;
+  height: 4px;
+  position: absolute;
+  top: 130px;
+  border: 2px gray solid;
+  border-radius: 4px 4px 0 0;
+  background-color: lightgray;
+  z-index: 1;
+}
+
+#front-key {
+  left: 112px;
+}
+
+#middle-key {
+  left: 68px;
+}
+
+#back-key {
+  left: 24px;
+}
+
+/* --------------- modifications for pinky and pointer movement --------------- */
+
+.rotated-pinky {
+  transform: translate(-15px, 15px) rotate(-23deg);
+}
+
+.rotated-pinky::before {
+  content: "";
+  width: 30px;
+  height: 150px;
+  position: absolute;
+  border-left: 2px var(--hands) solid;
+  border-radius: 30%;
+  top: 55px;
+  left: -30px;
+  transform: rotate(21deg);
+}
+
+.left-pinky-Z {
+  transform: rotate(3deg);
+}
+
+.rotated-pointer {
+  transform-origin: bottom right;
+  transform: translate(120px, 25px) rotate(30deg) scale(1.05, 1.08);
+}
+
+.pointer-asterisk {
+  transform-origin: bottom right;
+  transform: translate(120px, 25px) rotate(20deg) scale(1.05, 1.08);
+}
+
+.bottom-pinky-dot {
+  transform: translate(-10px, 12px);
+}
+
+.bottom-pointer-dot {
+  transform: translate(8px, 12px);
+}
+
+.asterisk {
+  transform: translateX(18px) rotate(10deg);
+}
+
+.asterisk-reverse {
+  transform: translateX(-12px) rotate(2deg);
+}
+
+.just-asterisk {
+  transform: translateX(30px) rotate(15deg);
+}
+
+/* --------------- modifications for side-view movement --------------- */
+#finger-side-middle.pointer-forward {
+  transform: rotate(159deg) translate(-6px, -2px) scaleY(1.1);
+}
+
+#finger-side-tip.pointer-tip-forward {
+  transform: rotate(170deg) translate(-15px, -2px);
+}
+
+#finger-side-middle.pointer-backward {
+  transform: rotate(178deg) translate(2px, 5px) scaleY(0.9);
+}
+
+#finger-side-tip.pointer-tip-backward {
+  transform: rotate(200deg) translate(10px, -1px) scaleY(1);
+}
+
+/* --------------- modifications for thumb movement --------------- */
+#right-thumb.adjustment {
+  transform: rotate(31deg) translate(-10px, 1px);
+}
+
+#left-thumb.thumb-c {
+  transform: rotate(20deg) translate(-22px, 4px);
+}
+
+#left-thumb.thumb-v {
+  transform: rotate(35deg) translate(15px, -5px);
+}
+
+#right-thumb.thumb-n {
+  transform: rotate(35deg) translate(5px, -5px);
+}
+
+#right-thumb.thumb-m {
+  transform: rotate(14deg) translate(-30px, 4px);
+}
+
+/* ----------------------------------------------OTHER CLASSES---------------------------------------------- */
+
+.highlight-element, #nav-lessons.highlight-element, #side-view.highlight-element,
+#thumb-side.highlight-element, #finger-side-tip.highlight-element, #left-pinky.highlight-element,
+#hide-button.highlight-element {
+  border: 6px solid lightgreen;
+}
+
+.green-key {
+  background-color: lightgreen;
+}
+
+.pressed-key {
+  background-color: gray;
+}
+
+#narration.wiggle {
+  animation-name: wiggle;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 4s;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+
+  30%, 60%, 90% {
+    transform: rotate(-0.75deg);
+  }
+  15%, 45%, 75% {
+    transform: rotate(0.75deg);
+  }
+}
+
+table, td, th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td, th {
+  padding: 5px;
+}
+
+#comparisons {
+  display: block;
+  margin: 30px auto;
+  width: 65%;
+}
+
+#downloads-narration {
+  width: 40%;
+  margin: 0 auto;
+  color: black;
+  text-align: center;
+  background-color: lightgray;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  z-index: 99;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
