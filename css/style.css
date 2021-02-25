@@ -31,15 +31,12 @@ a {
 
 /* ----------------------------------------------LOGO---------------------------------------------- */
 
-#nav-bar a {
-  /* margin-right: 50%; */
-}
-
 #nav-items {
 }
 
 #logo-box {
   margin-left: 50px;
+  padding-right: 150px;
 }
 
 /* egg */
