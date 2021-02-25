@@ -32,7 +32,14 @@ a {
 /* ----------------------------------------------LOGO---------------------------------------------- */
 
 #nav-bar a {
-  margin-right: 50%;
+  /* margin-right: 50%; */
+}
+
+#nav-items {
+}
+
+#logo-box {
+  margin-left: 50px;
 }
 
 /* egg */
@@ -44,7 +51,7 @@ a {
   border-radius: 71% 27% 70% 27% / 67% 28% 65% 31%;
   position: relative;
   font-family: 'Grandstander', serif;
-  margin-left: 30%;
+  /* margin-left: 30%; */
 }
 
 #logo::before {
@@ -205,7 +212,8 @@ a {
   background-color: teal;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: space-between;
+  /* justify-content: right; */
   font-family: 'Open Sans', sans-serif;
 }
 
