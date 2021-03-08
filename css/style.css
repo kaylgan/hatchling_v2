@@ -272,7 +272,7 @@ a {
   color: black;
 }
 
-#dropdown:hover #dropdown-content {
+#dropdown:hover #dropdown-content, #dropdown:active #dropdown-content {
   display: block;
 }
 
