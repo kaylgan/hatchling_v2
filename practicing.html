@@ -11,8 +11,7 @@
   <link rel="stylesheet" href="css/metronomestyle.css">
   <link href="css/jig-style.css" rel="stylesheet" type="text/css">
   <link href="css/added-style.css" rel="stylesheet" type="text/css">
-  <!-- <link rel="stylesheet" href="css/media-query-style.css"> -->
-  <!-- <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/media-queries/600px.css"> -->
+  <link rel="stylesheet" href="css/media-query-style.css">
   <script src="js/type-jig.js"></script>
   <script src="js/util.js"></script>
   <script src="word-drill.js"></script>
@@ -23,6 +22,7 @@
 
   <nav id="nav-bar">
     <a href="index.html">
+      <div id="logo-box">
       <div id="logo">
         <div id="egg-spots"></div>
         <div id="bird">
@@ -30,9 +30,28 @@
           <div id="beak"></div>
         </div>
       </div>
+    </div>
     </a>
 
-    <span id="nav-lessons" class="navItems"><a href="index.html">Lessons</a></span>
+    <div id="nav-items">
+    <div id="dropdown">
+      <span id="nav-lessons" class="navItems">Lessons</span>
+      <div id="dropdown-content">
+      <span id="tutorial">Tutorial</span>
+      <span id="lesson1">Pinkies</span>
+      <span id="lesson2">Thumbs</span>
+      <span id="sentences1">Sentences</span>
+      <span id="lesson3">Rings</span>
+      <span id="lesson4">Middles</span>
+      <span id="lesson5">Pointers</span>
+      <span id="lesson6">More Sentences</span>
+      <span id="lesson7">Affixes</span>
+      <span id="lesson8">ABC & 123</span>
+      <span id="lesson9">Phrasing</span>
+      <span id="lesson10">What Next?</span>
+    </div>
+
+    </div>
     <span id="nav-practice" class="navItems"><a href="practicing.html">Practice</a></span>
     <span id="nav-practice-small" class="navItems"><a href="practicing.html"><i class="fas fa-user-check"></i></a></span>
     <span id="nav-downloads" class="navItems"><a href="downloads.html">Downloads</a></span>
@@ -41,6 +60,7 @@
     <span id="nav-about-small" class="navItems"><a href="about.html"><i class="far fa-question-circle"></i></a></span>
     <span id="nav-contact" class="navItems"><a href="contact.html">Contact</a></span>
     <span id="nav-contact-small" class="navItems"><a href="contact.html"><i class="far fa-envelope"></i></a></span>
+  </div><!-- nav-items -->
   </nav>
 
   <div id="form" class="wrapper">
