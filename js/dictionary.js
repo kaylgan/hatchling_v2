@@ -111,7 +111,7 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "\[klnr": "he could", "\[dkln": "we could", "\[klnrw": "they could", "\[dklrv": "who could", "\[cdklr": "what could",
     "\[klrs": "which could", "\[cklrw": "that could", "\'\[cdfiks": "I can't understand", "\'\[dfiksv": "I don't understand",
     "\'\[dfikmns": "I didn't understand", "\;aknor": "she believes", "\;knoqr": "she believes",
-    "\[dkno": "we believed"
+    "\[dkno": "we believed", "\'\;cmv": "uses", "\;cmv": "use"
   }
 
   // reverse lookup

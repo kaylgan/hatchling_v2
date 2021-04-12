@@ -153,9 +153,8 @@ function extraCode(whichCode) {
       lesson = [
         ["ab2", ["road", "rode"]],
         ["ab3", ["sea", "see"]],
-        ["ab", ["sale", "sail"]],
         ["ab2", ["soy", "soot"]],
-        ["five2", ["see", "sea", "saw", "sail", "sale"]],
+        ["abc", ["see", "sea", "saw"]],
         ["five3", ["soy", "soot", "rode", "road", "out"]],
         ["asIs", ["out", "out-", "set", "out", "out-", "set"], true],
       ];
@@ -461,14 +460,14 @@ function extraCode(whichCode) {
         "-sh", "-tion, -sion (-shun)", "-tious, -cious (-shus)", "-ction (-kshun)", "-sh", "-tious, -cious (-shus)"], true]
       ];
       break;
-    case ("couldLesson"):
-      lesson = [
-        ["asIs", ["I could", "I could", "you could", "you could", "it could", "it could"], true],
-        ["asIs", ["she could", "she could", "he could", "he could", "we could", "we could"], true],
-        ["asIs", ["they could", "they could", "who could", "who could", "what could", "what could"], true],
-        ["asIs", ["which could", "which could", "that could", "that could"], true],
-      ];
-      break;
+    // case ("couldLesson"):
+    //   lesson = [
+    //     ["asIs", ["I could", "I could", "you could", "you could", "it could", "it could"], true],
+    //     ["asIs", ["she could", "she could", "he could", "he could", "we could", "we could"], true],
+    //     ["asIs", ["they could", "they could", "who could", "who could", "what could", "what could"], true],
+    //     ["asIs", ["which could", "which could", "that could", "that could"], true],
+    //   ];
+    //   break;
     case ("images"):
       document.getElementById("steno-and-keyboard").hidden = true;
       document.getElementById("just-plover").hidden = false;

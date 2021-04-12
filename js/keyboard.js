@@ -492,6 +492,15 @@ function generatePracticeLetters(letters = [], start = 0, end = 10) {
     currentLetter.classList.add("practice-letter");
     practiceDiv.appendChild(currentLetter);
 
+    if (i === start) {
+      // make first letter fully visible, on top
+      currentLetter.style.zIndex = 5;
+      currentLetter.style.overflow = "visible";
+      if (currentLetter.getBoundingClientRect().width > 100) {
+        currentLetter.style.minWidth = "auto";
+      }
+    }
+
     let metronomeLetter = document.createElement("button");
     metronomeLetter.setAttribute("role", "switch");
     metronomeLetter.setAttribute("aria-checked", true);
@@ -525,11 +534,14 @@ function compareToPractice(userKeystroke, dictionaryWord) {
     let metronomeLetters = metronomeDiv.childNodes;
 
     let practiceLetter = null, metronomeLetter = null;
+    let nextPracticeLetter = null;
     if (practiceLetters.length < getNextLesson().length) {
       practiceLetter = practiceLetters[getPracticeIndex() % 10];
+      nextPracticeLetter = practiceLetters[(getPracticeIndex() % 10) + 1];
       metronomeLetter = metronomeLetters[getPracticeIndex() % 10];
     } else {
       practiceLetter = practiceLetters[getPracticeIndex()];
+      nextPracticeLetter = practiceLetters[getPracticeIndex() + 1];
       metronomeLetter = metronomeLetters[getPracticeIndex()];
     }
 
@@ -569,6 +581,13 @@ function compareToPractice(userKeystroke, dictionaryWord) {
       if (practiceLetter != practiceDiv.lastChild) {
         // ANSWER CORRECT, NOT ON LAST LETTER DISPLAYED
         practiceLetter.textContent = "";
+        practiceLetter.style.zIndex = -10;
+        practiceLetter.style.minWidth = "30px";
+        nextPracticeLetter.style.zIndex = 5;
+        nextPracticeLetter.style.overflow = "visible";
+        if (nextPracticeLetter.getBoundingClientRect().width > 100) {
+          nextPracticeLetter.style.minWidth = "auto";
+        }
         metronomeLetter.textContent = "";
       } else if (getPracticeIndex() < getNextLesson().length) {
         // ON LAST LETTER DISPLAYED, DISPLAY REST OF EXERCISE
