@@ -10,49 +10,59 @@ function menuListener() {
   let narrationText = [
     {text: document.getElementById("tutorial").textContent, top: lessonTitleTop, width: lessonTitleWidth, extraCode: "enterToContinue"},
     {text: "Welcome to Hatchling, a web app to help you get used to stenography on a QWERTY keyboard."},
+    {text: "To navigate through each lesson, type your ENTER key to go forward and BACKSPACE to go backward."},
     {text: "You may have noticed that this qwerty keyboard has some unusual letters added to it.",
     highlight: true, highlightElement: document.getElementById("keyboard")},
     {text: "These are steno machine letters overlaid on a typical keyboard."},
-    {text: "Stenography differs quite a bit from traditional typing. At its core, however, it is still a process of quickly finding key positions. \
-    These lessons have been designed to mimic typical qwerty keyboarding lessons in order to take advantage of this similarity."},
+    {text: "Stenography differs quite a bit from traditional typing. At its core, however, it is still a process of quickly finding key positions."},
+    {text: "These lessons have been designed to mimic typical qwerty keyboarding lessons in order to take advantage of this similarity."},
     {text: "This will hopefully help qwerty typists build muscle memory for steno key positions in a way that is familiar."},
     {text: "The lessons here teach Plover Theory.",
     left: 65, width: lessonTitleWidth, top: 5, highlight: true, highlightElement: document.getElementById("nav-lessons")},
     {text: "However, they are meant to be completed without " + '\
     <a href="https://github.com/openstenoproject/plover/wiki/Installation-Guide#installation"\ target="_blank">' + "\
-    Plover" + '</a>' + " or other steno software turned on.",
-    highlight: true, highlightElement: document.getElementById("nav-lessons")},
-    {text: "They should work with most normal keyboards, meaning ones that do not have n-key rollover (NKRO).",
-    highlight: true, highlightElement: document.getElementById("nav-lessons")},
-    {text: "Keyboards with n-key rollover are able to press a large number of keys at once without conflict.",
-    highlight: true, highlightElement: document.getElementById("nav-lessons")},
+    Plover" + '</a>' + " or other steno software turned on."},
+    {text: "They should work with most normal keyboards, meaning ones that do not have n-key rollover (NKRO)."},
+    {text: "Keyboards with n-key rollover are able to press a large number of keys at once without conflict."},
     {text: "Now that you have some background info, let's take a look at hand positions.", extraCode: "showSideView"},
     {text: "As you go through the lessons, you will notice the hands above moving."},
-    {text: "These hands are a very simplified representation of steno movements, and are much more rigid than real movements. \
-    Just concentrate on placing your fingertips or thumb sides on the proper key or crack (which you will learn soon)."},
+    {text: "These hands are a very simplified representation of steno movements, and they are much more rigid than real movements."},
+    {text: "Just concentrate on placing your fingertips or thumb sides on the proper key or crack (which you will learn soon)."},
     {text: "You can see a video of how keyboard stenography actually \
     looks " + '<a href="https://www.youtube.com/watch?v=Il8DT_alCLk" target="_blank">' + "here" + '</a>' + "."},
     {text: "While qwerty keyboarding is based solely in the fingers, stenography incorporates the forearms into keypresses. This way, \
     the fingers don't have to press as hard, and there is less wrist strain as well."},
     {text: "For home row placement, the ends of the fingertips are placed in the cracks between keys (see above).",
     highlight: true, highlightElement: document.getElementById("side-view")},
-    {text: "The thumbs are turned on their sides, also above cracks (look at the thumbs on the keyboard above for a better view of this).",
+    {text: "The thumbs are turned on their sides, also above cracks (see the thumbs on left image for another view of this).",
     highlight: true, highlightElement: document.getElementById("thumb-side"), extraCode: "adjustThumb"},
-    {text: "Each finger can reach forward to press the top key...",
+    {text: "Each finger can reach forward to press the top key (watch the hands above move when you press ENTER)...",
     highlight: true, highlightElement: document.getElementById("finger-side-tip"), extraCode: "readjustThumb"},
-    {text: "Notice the movement on the keyboard, as well -- the teal represents a very simplified fingertip. \
+    {text: "Notice the movement on the left image, as well -- the teal represents a very simplified fingertip. \
     The grayish circles are just visual aids to help you see which keys are being pressed.",
     extraCode: "pointerForward"},
     {text: "Now, backwards movement." + '<br><br>' + '\
     <a href="https://www.artofchording.com/layout/chorded-keyboard.html#home-row" target="_blank">' + "\
     Here" + '</a>' + " are some useful images showing these positions.", width: 350,
     extraCode: "pointerBackward"},
-    {text: "Let's try typing a word. Type either left-hand S key with your left pinky (qwerty Q or A). \
-    Release each key after you type it, just like normal qwerty typing." + '<br><br>' + "\
-    Next, type T (qwerty W) with your left ring finger." + '<br>' +"\
+    {text: "You will notice that some keys are duplicated on the keyboard. For instance, qwerty Q, A, and colon/semicolon \
+    are all steno S's."},
+    {text: "On a steno machine, the left-hand S's are combined into one long key. On a qwerty keyboard, you can use whichever one is easiest for the word \
+    you are typing."},
+    {text: "We will practice typing these different S's soon."},
+    {text: "After you complete each exercise, you will see a message that says to type S-S to repeat the exercise. \
+    This means press both S's at the same time -- that is, qwerty A + semicolon OR qwerty Q + semicolon."},
+    {text: "Let's type our first key now. Take your left-hand pinky, and press either S key (qwerty Q or A).", lesson: ["S", "S", "S", "S", "S"]},
+    {text: "Now try using your right-hand to type the third S key. In steno, right-hand keys are designated with a dash preceding them. \
+    So -S means right-hand S. Left-hand keys are written with no dash or with a dash following them: S or S-.",
+    lesson: ["-S", "-S", "-S", "-S", "-S"]},
+    {text: "Remember, S or S- means use the left hand. -S means use the right hand.",
+    lesson: ["S", "-S", "S", "-S", "-S"]},
+    {text: "Let's try typing a word. \
+    Type T (qwerty W) with your left ring finger." + '<br>' +"\
     Type A (qwerty C) by moving your left thumb a little to the left." + '<br>' + "\
-    Last, move your RIGHT pointer down to R (qwerty J). The -R above the keyboard means a right-hand R.",
-    width: 1050, lesson: ["S", "T", "A", "-R"]},
+    Last, move your RIGHT pointer down to R (qwerty J).",
+    width: 800, lesson: ["S", "T", "A", "-R"]},
     {text: "When you start doing full stenography on your keyboard, you will press all of those keys at the same time. \
     Give it a try, pressing the same keys you just used. You should STAR (not STRA) spelled out in the black highlights \
     above the keyboard. If not, press SPACE and try again. If you are sure you are pressing the right keys, but you are not \
@@ -70,35 +80,37 @@ function menuListener() {
     {text: "So just what was this bar here, anyway? This shows steno order. This is the order that keys are processed by steno software \
     in order to form a word.", top: lessonTitleTop-15,
     highlight: true, highlightElement: document.getElementById("steno-order")},
-    {text: "The keys are processed from left to right and top to bottom. Left-finger keys precede vowel \
-    keys in a chord (the set of keys you press at once), and vowels precede right-finger keys. This is why you may have gotten 'STRA' \
-    instead of 'STAR' if you accidentally typed a left-hand R in the exercise earlier.", width: 950},
-    {text: "Here is a mnemonic for remembering steno order consonants: STicK PaW HeRe FoR Peanut Butter. LarGe ToeS DoZe (modified \
+    {text: "For each stroke of keys you type, the keys will be processed from left to right and top to bottom."},
+    {text: "Left-hand keys precede vowel keys in a stroke, and vowels precede right-hand keys."},
+    {text: "This is the reason you may have gotten 'STRA' instead of 'STAR' if you accidentally typed a left-hand R in \
+    the exercise earlier. The left-hand R is processed before vowels, while the right-hand R is processed after vowels."},
+    {text: "Here is a mnemonic for remembering steno order consonants: STicK PaW HeRe FoR Peanut Butter. LarGe ToeS DoZe 🐕 (modified \
     from " + '<a href="https://github.com/openstenoproject/plover/wiki/Stenotype-Mnemonics-for-Beginners-(English)" \
     target="_blank">' + "here" + '</a>' + ")."},
     {text: "Last, we have this little drum button. Press this to toggle back and forth between the keyboard and a metronome view. \
     With the metronome, you can practice the current exercise at a target strokes/minute. This will be close to the words per minute - punctuation \
-    and multiple strokes per word will mean a slower WPM if you type everything on the beat.", width: 1000, highlight: true, highlightElement: document.getElementById("hide-button")},
+    and multiple strokes per word will mean a slower WPM if you type everything on the beat.", width: 1000, highlight: true,
+    highlightElement: document.getElementById("hide-button"), lesson: ["S", "-S", "S", "-S", "S"]},
     {text: "If you click the BPM slider, you can use the left and right arrow keys to fine-tune the BPM setting."},
-    {text: "You can also remove words you don't want to practice by double-clicking the square box containing the word."},
     {text: "Don't worry if you don't remember everything yet or if it looks like you cannot possibly write words like \"water\". \
     These things will be reinforced and explained in the upcoming lessons."},
     {text: "Press ENTER to go to the next lesson!"},
     {text: document.getElementById("lesson1").textContent, top: lessonTitleTop, width: lessonTitleWidth, extraCode: "enterToContinue"},
-    {text: "The left pinky is in charge of the S keys. On a steno machine, the S's are combined into one big key. \
-    You can use whichever S key you want. You might find that the top S is easier for some words, and the bottom S is easier for others.",
-    left: 10, top: 50, width: 300, extraCode: "greenPinkies"},
-    {text: "Give it a try. Type some S's with the top key, and some with the bottom. At the end of the typing exercise, you can type S-S \
-    to repeat the exercise. This means press a left-pinky S and the right-pinky S at the same time. You can also use this key combination to restart \
-    an exercise at any point. You can skip any lesson at any time by hitting Enter.", width: 650,
-    lesson: ["S", "S", "S", "S", "S", "S", "S", "S", "S", "S"]},
-    {text: "The right pinky is in charge of four keys: -T, -S, -D, and -Z. Note that the right-hand letters are designated \
-    with a dash.", left: 70, top: 45, width: 350, extraCode: "greenPinkiesRight"},
+    {text: "The left pinky is in charge of the S keys.", left: 10, top: 50, extraCode: "greenPinkies"},
+    {text: "On a steno machine, the S's are combined into one big key.", left: 5, top: 50},
+    {text: "You can use whichever S key you want. You might find that the top S is easier for some words, and the bottom S is easier for others."},
+    {text: "We will practice this next. At the end of the typing exercise, you can type S-S to repeat the exercise."},
+    {text: "This means press a left-pinky S (qwerty Q or qwerty A) and a right-pinky S (qwerty colon/semi-colon) at the same time."},
+    {text: "You can also press S-S to restart the exercise at any point."},
+    {text: "You can also skip any exercise at any time by hitting ENTER."},
+    {text: "Give it a try.", lesson: ["S", "S", "S", "S", "S", "S", "S", "S", "S", "S"]},
+    {text: "The right pinky is in charge of four keys: -T, -S, -D, and -Z.", left: 70, top: 45, width: 350, extraCode: "greenPinkiesRight"},
+    {text: "Note that the right-hand letters are designated with a dash (e.g. -S).", left: 70, top: 45},
     {text: "This is the case unless they are in a word like STAR -- in that case, only one R (the right one) can come after \
-    A in steno order, so the dash is not necessary.", left: 70, top: 45, width: 350},
+    A in steno order, so the dash is not necessary."},
     {text: "Left-hand letters are occasionally designated with a dash afterwards (S-), especially \
     if they are followed by a right-hand letter but no vowel.", left: 70, top: 45, width: 350},
-    {text: "Try reaching your right pinky to each key while keeping other fingers in home position.",
+    {text: "Try reaching your right pinky to each key while keeping other fingers close to home position.",
     extraCode: "rightPinkies"},
     {text: "Now we will review all of the pinky keys. Remember that S is the left S, and -S is the right S.",
     extraCode: "pinkyLessons"},
@@ -121,13 +133,17 @@ function menuListener() {
     lesson: ["S", "T", "A", "-R", "star", "stars", "starred"]},
     {text: document.getElementById("lesson2").textContent,  top: lessonTitleTop, width: lessonTitleWidth, extraCode: "clearGreenPinkies"},
     {text: "This lesson will focus on vowels. To begin, let's practice the keys.", extraCode: "vowelKeys"},
+    {text: "Where is the I key, you ask? There isn't one. Instead, you press the E and U keys together.",
+    extraCode: "greenThumbs", lesson: ["E", "U", "I", "E", "U", "I", "I", "I", "I", "I"]},
     {text: "When you press a vowel key by itself, you get the short vowel sounds, such as in \
-    sat, set, sit, sod, and suds. Where is the I key, you ask? There isn't one. Instead, you press the E and U keys together.",
-    extraCode: "greenThumbs"},
-    {text: "Let's practice these short vowels. Do you remember that -Z is sometimes used for plurals? \
-    -Z comes after -D in steno order, so words ending in \"d\" are often made plural this way, as are words ending in -S. \
-    This is why suds is SUDZ.",
+    sat, set, sit, sod, and suds. Let's practice these short vowels.",
     vocab: ["sat: SAT", "set: SET", "sit: SEUT", "sod: SOD", "suds: SUDZ"], extraCode: "shortVowels"},
+    {text: "You probably noticed that \"suds\" was written with a -Z at the end instead of an -S. \
+    If we used an -S, we would have written SUSD (\"sussed\") instead since -S is before -D in steno order. \
+    This is why we use -Z to add -s or -es to words ending in -D.",
+    lesson: ["suds", "stars", "suds", "stars", "suds"]},
+    {text: "** LONG VOWEL Similarly, to add -s or -es to words that already end in -S, we use -Z.", vocab: ["use", "uses"],
+    vocab: ["use: AOUS", "uses: AOUSZ"], lesson: ["use", "use", "uses", "use", "uses", "uses"]},
     {text: "Now we will look at long vowel sounds, such as in say, seed, sight, sow (like sow seeds), and suit."},
     {text: "To form these, press the letter key for the vowel, then add in all the thumb keys of the opposite thumb. \
     So long A is AEU, long E is AOE, long I is AOEU, and long U is AOU."},
@@ -138,16 +154,22 @@ function menuListener() {
     So I will repeat the arpeggiating technique once more for the word \"seed\": \
     Press S, press A without releasing S. Release S. Without releasing A, press O. Release A. And so on for O to E, E to D.",
     vocab: ["say: SAEU", "seed: SAOED", "sight: SAOEUT", "sow: SOE", "suit: SAOUT"], extraCode: "longVowels"},
+    {text: "Once you get used to arpeggiating with one key at a time, try two or three keys at a time. Depending on your keyboard and \
+    the word you are typing, you may even be able to press all the left-hand keys at once followed by all the right-hand keys. \
+    For instance, try arpeggiating \"sight\" by pressing SAO (all keys at once), continue pressing SAO down and press EUT all at once, \
+    then release SAO, then release EUT.",
+    lesson: ["sat", "say", "set", "seed", "sit", "sight", "sod", "sow", "suds", "suit"]},
     {text: "We will revisit that pesky O now. The chord that should be a long O, OEU, is instead reserved for \"oy\" sounds, like \
     in soy.", vocab: ["soy: SOEU"], lesson: "soy soy soy soy soy".split(" "), extraCode: "greenO"},
     {text: "We have another set of keys, AO, for \"oo\", like in soot. However, AO is also used to distinguish between homophones. \
-    Rode is ROED, while road is RAOD (we will practice these R- words even though we haven't learned the R- key. Use the left-hand R.)",
+    Rode is ROED, while road is RAOD. We will practice these R- words even though we haven't learned the R- key. Use the left-hand R. \
+    (Note that you may need to arpeggiate single keys for \"road\" since the keys are close together.)",
     vocab: ["soot: SAOT", "road: RAOD", "rode: ROED"],
     lesson: ["soot", "road", "soot", "road", "rode", "road", "rode", "rode", "road", "soot"], extraCode: "greenOO"},
     {text: "Similarly, AE is used for words like see (SAOE) and sea (SAE). The word containing \"ea\" gets the EA. If neither word contains \
-    \"ea\", e.g. sail and sale, the one that contains \"a\" and \"e\" gets the AE (sale, in this case).",
-    vocab: ["see: SAOE", "sea: SAE", "sail: SAEUL", "sale: SAEL"],
-    lesson: ["see", "see", "sea", "sea", "sail", "sail", "sale", "sale"],
+    \"ea\", e.g. sail and sale, the one that contains \"a\" and \"e\" would get the AE (sale, in this case).",
+    vocab: ["see: SAOE", "sea: SAE"],
+    lesson: ["see", "see", "sea", "sea"],
     extraCode: "greenAE"},
     {text: "Another combo is AU, used for aw-sounds like in saw (SAU). Notice that \"sod\" was writted SOD, not SAUD, even though you \
     might say the vowel sounds the same. AU is used with aw sounds in words spelled with \"au\"/\"aw\", like \"laud\" and \"law\"",
@@ -159,17 +181,17 @@ function menuListener() {
     they will often be broken up into strokes. That is, you will see \"out-\" and \"set\" for \"outset\" instead of just \"outset\". If you see \
     one box, you will need to use one stroke. If you see multiple boxes, you will need that number of strokes.",
     affix: ["AOUT: out-"], lesson: "out- out- out- out- out-".split(" "), extraCode: "greenThumbs"},
-    {text: "Let's review.",
-    vocab: ["soy: SOEU", "soot: SAOT", "rode: ROED", "road: RAOD", "sea: SAE", "see: SAOE", "sail: SAEUL", "sale: SAEL", "saw: SAU",
+    {text: "** Let's review.",
+    vocab: ["soy: SOEU", "soot: SAOT", "rode: ROED", "road: RAOD", "sea: SAE", "see: SAOE", "saw: SAU",
     "out: OUT", "outset: AOUT/SET"],
     extraCode: "oVowels"},
     {text: "That's enough vowel practice for now. Let's move on to a new lesson."},
     {text: document.getElementById("sentences1").textContent,  top: lessonTitleTop, width: lessonTitleWidth, extraCode: "clearGreenThumbs"},
     {text: "We will learn a little bit of punctuation now. We haven't met all of these keys yet, but we will get better \
-    acquainted with them later. These are all single chords. The hyphen between letters is for clarity, for left-hand keys not followed by a vowel.",
+    acquainted with them later. ** These are all single chords. The hyphen between letters is for clarity, for left-hand keys not followed by a vowel.",
     vocab: ["\.: TP-PL", "\,: KW-BG", "\-: H-PB"]},
     {text: "You won't have to worry about typing spaces. Steno software adds them automatically."},
-    {text: "EU SAEU KW-BG -T SAOE H-PB SAU EU ROED S- SO STARD TP-PL", vocab: ["I: EU", "so: SO"],
+    {text: "EU SAEU KW-BG -T SAOE H-PB SAU EU ROED S- SO STARD TP-PL", vocab: ["\.: TP-PL", "\,: KW-BG", "\-: H-PB", "I: EU", "so: SO"],
     lesson: ("I say , the see - saw I rode is so starred .").split(" "), full: true},
     {text: "U SET -T SOD TP-PL U SEUT TP-PL U SOE SAOEDZ TP-PL", vocab: ["you: U"],
     lesson: ("You set the sod . You sit . You sow seeds .").split(" "), width: 350, full: true},
@@ -180,7 +202,7 @@ function menuListener() {
     full: true},
     {text: "-T SOEU SAOUT S- AEU SAOEUT TP-PL", lesson: ("The soy suit is a sight .").split(" "), full: true},
     {text: document.getElementById("lesson3").textContent, top: lessonTitleTop, width: lessonTitleWidth},
-    {text: "The left ring finger is in charge of T and K. Stenography is phonetic, so any words starting with a \"k\" \
+    {text: "The left ring finger is in charge of T and K. We mentioned in the last lesson that stenography is phonetic -- so any words starting with a \"k\" \
     sound will use the K key -- e.g. call and cat. By pressing T and K together, we get the letter D. Each of these letters, in\
     turn, also functions as a brief.",
     vocab: ["it: T", "can: K", "did: TK"], extraCode: "leftRing"},
@@ -192,6 +214,10 @@ function menuListener() {
     {text: "Let's practice these letters in a few new words.", vocab: ["call: KAUL", "kale: KAEUL", "tug: TUG", "dig: TKEUG", "tile: TAOEUL",
     "dial: TKAOEUL"],
     extraCode: "rightRingReview"},
+    {text: "Do you remember that we mentioned \"sale\" vs \"sail\" in the pinkies lesson? Let's practice them now that we have -L."},
+    {text: "Do you remember which word gets the EA?" + '<br><br>' + "The one that has an \"ea\" (like when we wrote \"sea\")" + '<br>' + "OR" + '<br>' + "the one that has \
+    an \"e\" and an \"a\" (like in sale).",
+    vocab: ["sale: SAEL", "sail: SAEUL"], lesson: ["sale", "sale", "sail", "sail", "sale", "sail", "sale", "sail"]},
     {text: "Now we will learn a technique for writing words called inversion. Every once in a while, you can bend the application of steno order \
     just a teensy bit so you can fit a word into one chord. If two letters are adjacent in a chord, but are out of steno order, you can swap \
     their order. Consider the word \"decide\". We could write this in two strokes as TKE/SAOEUD. S and TK are adjacent, so we can invert them to \
@@ -199,7 +225,8 @@ function menuListener() {
     {text: "Notice that to write STKAOEUD, we dropped an unstressed vowel. This is a common practice in stenography for words that have more than one \
     syllable. Generally, vowels that are pronounced like \
     \"uh\" (" + '<a href="https://blog.allaboutlearningpress.com/schwas/" target="_blank">' + "schwa sound" + '</a>' + ") are \
-    unstressed. For instance, banana is often spoken as buh-na-nuh, with the first and third a's are unstressed."},
+    unstressed. For instance, banana is often spoken as buh-na-nuh, \
+    " + '<a href="https://pronuncian.com/intro-to-schwa" target="_blank">' + "with the first and third a's unstressed" + '</a>' + "."},
     {text: "Consider the word \"setting\". We could write SET/-G. But there are just four keys here. Can we fit this into \
     a single stroke somehow? Perhaps we can use inversion?"},
     {text: "Suppose we try SETG. This does not follow steno order. What we can do is move the -G to get SEGT. \
@@ -209,9 +236,9 @@ function menuListener() {
     lesson: ["setting", "starring", "calling", "kidding", "setting", "kidding", "calling", "kidding", "setting", "setting"]},
     {text: "We can also use a folded in -E for some words ending in -y. For instance, sorry = SOR + a folded in -E = SOER.",
     vocab: ["sorry: SOER", "~(or SOR/REU)", "carry: KAER", "~(or KAR/REU)"], lesson: ["sorry", "carry", "sorry", "carry", "sorry"]},
-    {text: "Time for more practice. Note that \"use\" can be written either phonetically (AOUZ) or based on spelling (AOUS)." + '<br><br>' + "\
+    {text: "Time for more practice. Recall that \"use\" can be written either phonetically (AOUZ) or based on spelling (AOUS)." + '<br><br>' + "\
     -T TKOG SAEUD TO US T- KO AOUZ AEU TKAEU OUT TP-PL",
-    vocab: ["dog: TKOG", "said: SAEUD", "(say was SAEU)", "to: TO", "us: US", "could: KO", "use: AOUZ", "(or AOUS)", "day: TKAEU"],
+    vocab: ["dog: TKOG", "said: SAEUD", "(say was SAEU)", "to: TO", "us: US", "could: KO", "day: TKAEU"],
     lesson: ("The dog said to us it could use a day out .").split(" "), full: true},
     {text: "T-S AS KOELD AS AOEUS OUDZ TP-PL",
     vocab: ["it's: T-S", "as: AS", "cold: KOELD", "ice: AOEUS", "outside: OUDZ"],
@@ -491,7 +518,7 @@ function menuListener() {
     {text: "TPH-T TPHAOEUT KW-BG SHE WEPBT EUPB/WARD KW-BG TPURT TPHAOT -T KAEUF TP-PL", affix: ["in-: EUPB", "-th: *T"],
     vocab: ["in the: TPH-T", "night: TPHAOEUT", "went: WEPBT", "inward: EUPB/WARD", "further: TPURT", "(or TP*URT)", "into the: TPHAOT", "cave: KAEUF"],
     lesson: ["In the", "night", ",", "she", "went", "in-", "ward", ",", "further", "into the", "cave", "."], full: true},
-    {text: "You may have spotted \"in the: TPH-T\" and \"into the: TPHAOT\". Each of these have a phrase expressed as a single stroke."},
+    {text: "You may have spotted \"in the: TPH-T\" and \"into the: TPHAOT\". Each of these has a phrase expressed as a single stroke."},
     {text: "Plover includes some subject-verb phrases as well. There are eleven commonly-appearing subjects in Plover's dictionary. \
     " + "Notice that most of these use the same strokes that you have already learned for these words (exception: \"which: KH-\"). \
     " + '<br><br>' + '<table><tr><th>I</th><th>you</th><th>it</th><th>she</th><th>he</th><th>we</th>\
@@ -505,7 +532,13 @@ function menuListener() {
     ' + '<th>they could</th><th>who could</th><th>what could</th><th>which could</th><th>that could</th>\
     ' + '<tr><td>EUBGD</td><td>UBGD</td><td>T-BGD</td><td>SHEBGD</td><td>HEBGD</td><td>WEBGD</td>\
     ' + '<td>THEBGD</td><td>WHOBGD</td><td>WHABGD</td><td>KH-BGD</td><td>THABGD</td>\
-    ' + '</tr></table>', extraCode: "couldLesson"},
+    ' + '</tr></table>'},
+    {text: "Let's practice these.",
+    vocab: ["[phrasing] -BGD: could", "I could: EUBGD", "you could: UBGD", "it could: T-BGD", "she could: SHEBGD", "he could: HEBGD", "we could: WEBGD",
+    "they could: THEBGD", "who could: WHOBGD", "what could: WHABGD", "which could: KH-BGD", "that could: THABGD"],
+    lesson: ["I could", "I could", "I could", "you could", "you could", "you could", "it could", "it could", "she could", "she could",
+    "he could", "he could", "we could", "we could", "they could", "they could", "who could", "who could", "what could", "what could",
+    "which could", "which could", "that could", "that could"]},
     {text: "You can form different tenses of verbs in these phrases, as well. Let's try it out using the phrase-form of believe, -BL.",
     vocab: ["[phrasing] -BL: believe", "[phrasing] -BLS: believes", "[phrasing] -BLD: believed", "you believe: UBL",
     "she believes: SHEBLS", "we believed: WEBLD"],
@@ -537,9 +570,15 @@ function menuListener() {
     {text: "I strongly recommend you read both \
     " + '<em><a href="https://www.artofchording.com" target="_blank">' + "The Art of Chording" + '</a></em>' + " and \
     " + '<em><a href="https://sites.google.com/site/learnplover" target="_blank">' + "Learn Plover!" + '</a></em>' + " \
-    These books are free and online, and will help you solidify and build on what you've learned here. I recommend \
-    " + '<em>' + "The Art of Chording" + '</em>' + " first, as " + '<em>' + "Learn Plover!" + '</em>' + " is a little bit \
-    more difficult and technical."},
+    These books are free and online, and will help you solidify and build on what you've learned here. Consider reading \
+    " + '<em>' + "The Art of Chording" + '</em>' + " first, as " + '<em>' + "Learn Plover!" + '</em>' + " has a ton of \
+    information, and " + '<em>' + "The Art of Chording" + '</em>'  + " will help build foundation for remembering it all."},
+    {text: "Also try out the Practice section in the menu above. It is based on \
+    " + '<a href="#" target="_blank">' + "Steno Jig" + '</a>' + " but adds features to practice errors and to use a metronome.",
+    highlight: true, highlightElement: document.getElementById("nav-practice")},
+    {text: "For more practice, check out the resources on the \
+    " + '<a href="https://github.com/openstenoproject/plover/wiki/Learning-Stenography" target="_blank">' + "Open Steno Project GitHub page\
+    " + '</a>' + "."}
   ]
 
   // go to selected index, show text for that index
@@ -599,23 +638,27 @@ function menuListener() {
 
     // add appropriate heading styles in vocab box
     if (narrationText[index].affix) {
-      vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Prefixes & Suffixes" + '<br>' + '</span>';
+      // vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Prefixes & Suffixes" + '<br>' + '</span>';
+      vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Prefixes & Suffixes" + '</span>';
       if (window.innerWidth <= 750) {
         vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].affix.join("</span><span class='vocabSpan'>") + '</span>';
       } else {
-        vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].affix.join("</span><br><span class='vocabSpan'>") + '</span>';
+        // vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].affix.join("</span><br><span class='vocabSpan'>") + '</span>';
+        vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].affix.join("</span><span class='vocabSpan'>") + '</span>';
       }
       vocabBox.hidden = false;
     }
 
-    if (narrationText[index].vocab && narrationText[index].affix) { vocabBox.innerHTML += '<br>'; }
+    // if (narrationText[index].vocab && narrationText[index].affix) { vocabBox.innerHTML += '<br>'; }
 
     if (narrationText[index].vocab) {
-      vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Vocab" + '<br>' + '</span>';
+      // vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Vocab" + '<br>' + '</span>';
+      vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Vocab" + '</span>';
       if (window.innerWidth <= 750) {
         vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].vocab.join("</span><span class='vocabSpan'>") + '</span>';
       } else {
-      vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].vocab.join("</span><br><span class='vocabSpan'>") + '</span>';
+      // vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].vocab.join("</span><br><span class='vocabSpan'>") + '</span>';
+      vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].vocab.join("</span><span class='vocabSpan'>") + '</span>';
       }
       vocabBox.hidden = false;
     }
@@ -666,13 +709,25 @@ function menuListener() {
   // get the next narration text, position, etc. to display when user hits enter
   document.body.addEventListener("keydown", nextText, false);
   function nextText() {
-    if (event.key === "Enter" && (index < narrationText.length) && (index >= 0)) {
+    // if (event.key === "Enter" && (index < narrationText.length) && (index >= 0)) {
+    if ((index < narrationText.length) && (index >= 0) && ((event.key === "Enter") || (event.key === "Backspace"))) {
+      // clear the practice area, hand position on keyboard, etc.
       clearPracticeLetters();
       clearStenoOrder();
       positionHand("");
-      showNarration(index);
-      let vocabSpans = document.querySelectorAll(".vocabSpan:not(.headingSpan):hover");
-      for (let i = 0; i < vocabSpans.length; i++) { vocabSpans[i].removeEventListener("click", vocabListener, false); }
+      // let vocabSpans = document.querySelectorAll(".vocabSpan:not(.headingSpan):hover");
+      // for (let i = 0; i < vocabSpans.length; i++) { vocabSpans[i].removeEventListener("click", vocabListener, false); }
+
+      console.log("current index: " + index);
+      if (event.key === "Enter") {
+        // showNarration(index);
+        showNarration();
+      } else if (event.key ==="Backspace" && (index >= 2)) {
+        // showNarration(index-2);
+        index = index - 2;
+        showNarration();
+      }
+      console.log("after keypress: " + index);
     }
   }
 }

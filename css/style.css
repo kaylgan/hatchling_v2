@@ -280,11 +280,14 @@ a {
 
 #notebook-paper {
   background-color: #f5f5f5;
-  margin-right: 10%;
+  /* margin-right: 10%; */
   position: absolute;
-  left: 75%;
-  top: 35%;
-  width: 275px;
+  /* left: 75%; */
+  left: 74%;
+  /* top: 35%; */
+  top: 32%;
+  /* min-width: 275px; */
+  /* width: 100%; */
   font-size: 20px;
   z-index: 50;
 }
@@ -295,6 +298,7 @@ a {
 
 #vocabBox {
   width: 100%;
+  padding-right: 20px;
 }
 
 .lines {
@@ -309,15 +313,17 @@ a {
 }
 
 .vocabSpan {
-  display: inline-block;
+  /* display: inline-block; */
+  display: block;
   /* width: 238px; */
-  width: 100%;
+  /* width: 100%; */
   color: gray;
   margin: 0;
   padding: 0;
   border: 1px solid teal;
   border-bottom: 1px dotted teal;
   text-indent: 55px;
+  /* padding-left: 55px; */
   z-index: 1;
 }
 
@@ -364,21 +370,28 @@ a {
 }
 
 .practice-letter {
-  height: 40px;
-  line-height: 40px;
-  min-width: 20px;
+  /* height: 40px; */
+  /* line-height: 40px; */
+  height: 50px;
+  line-height: 50px;
+  width: auto;
+  min-width: 30px;
+  width: auto;
   padding-left: 10px;
   padding-right: 10px;
+  margin-right: 5px; /**/
   border: 2px solid black;
   text-align: center;
   border-radius: 4px;
   font-family: 'Open Sans', sans-serif;
   color: black;
-  font-size: 26px;
+  /* font-size: 26px; */
+  font-size: 36px;
   font-weight: 400;
   background-color: teal;
   background-image: linear-gradient(315deg, teal 0%, white 74%);
   box-shadow: 4px 4px 0px 0px teal, 8px 8px 0px 0px gray;
+  white-space: nowrap;
   overflow: hidden;
 }
 
