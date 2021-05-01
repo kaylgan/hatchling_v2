@@ -10,8 +10,8 @@ function menuListener() {
   let narrationText = [
     {text: document.getElementById("tutorial").textContent, top: lessonTitleTop, width: lessonTitleWidth, extraCode: "enterToContinue"},
     {text: "Welcome to Hatchling, a web app to help you get used to stenography on a QWERTY keyboard."},
-    {text: "To navigate through each lesson, type your ENTER key to go forward and BACKSPACE to go backward."},
-    {text: "You may have noticed that this qwerty keyboard has some unusual letters added to it.",
+    {text: "Use the ENTER key to move forward through each lesson, and the BACKSPACE key to go backward."},
+    {text: "Now that you know how to navigate, let's take a closer look at the qwerty keyboard above. You may have noticed that it some unusual letters added to it.",
     highlight: true, highlightElement: document.getElementById("keyboard")},
     {text: "These are steno machine letters overlaid on a typical keyboard."},
     {text: "Stenography differs quite a bit from traditional typing. At its core, however, it is still a process of quickly finding key positions."},
@@ -32,7 +32,7 @@ function menuListener() {
     looks " + '<a href="https://www.youtube.com/watch?v=Il8DT_alCLk" target="_blank">' + "here" + '</a>' + "."},
     {text: "While qwerty keyboarding is based solely in the fingers, stenography incorporates the forearms into keypresses. This way, \
     the fingers don't have to press as hard, and there is less wrist strain as well."},
-    {text: "For home row placement, the ends of the fingertips are placed in the cracks between keys (see above).",
+    {text: "For home row placement, the ends of the fingertips are placed on the cracks between keys (see above).",
     highlight: true, highlightElement: document.getElementById("side-view")},
     {text: "The thumbs are turned on their sides, also above cracks (see the thumbs on left image for another view of this).",
     highlight: true, highlightElement: document.getElementById("thumb-side"), extraCode: "adjustThumb"},
@@ -46,12 +46,13 @@ function menuListener() {
     Here" + '</a>' + " are some useful images showing these positions.", width: 350,
     extraCode: "pointerBackward"},
     {text: "You will notice that some keys are duplicated on the keyboard. For instance, qwerty Q, A, and colon/semicolon \
-    are all steno S's."},
+    are all steno S's.", extraCode: "showSKeys"},
     {text: "On a steno machine, the left-hand S's are combined into one long key. On a qwerty keyboard, you can use whichever one is easiest for the word \
-    you are typing."},
-    {text: "We will practice typing these different S's soon."},
+    you are typing.", extraCode: "leftSKeys"},
+    {text: "We will practice typing these different S's soon.", extraCode: "hideSKeys"},
     {text: "After you complete each exercise, you will see a message that says to type S-S to repeat the exercise. \
-    This means press both S's at the same time -- that is, qwerty A + semicolon OR qwerty Q + semicolon."},
+    This means press both S's at the same time -- that is," + '<br><br>' + "qwerty A + colon" + '<br>' + "OR" + '<br>' + "qwerty Q + colon.",
+    extraCode: "showSS"},
     {text: "Let's type our first key now. Take your left-hand pinky, and press either S key (qwerty Q or A).", lesson: ["S", "S", "S", "S", "S"]},
     {text: "Now try using your right-hand to type the third S key. In steno, right-hand keys are designated with a dash preceding them. \
     So -S means right-hand S. Left-hand keys are written with no dash or with a dash following them: S or S-.",

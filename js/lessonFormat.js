@@ -69,6 +69,21 @@ function extraCode(whichCode) {
       document.getElementById("lp-fend").classList.add("bottom-key");
       document.getElementById("lp-ftip").classList.add("bottom-dot");
       break;
+    case ("showSKeys"):
+      updateGreenKeys(["key-A", "key-Q", "key-colon"]);
+      break;
+    case ("leftSKeys"):
+      updateGreenKeys([], ["key-colon"]);
+      break;
+    case ("hideSKeys"):
+      updateGreenKeys([], ["key-A", "key-Q"]);
+      break;
+    case ("showSS"):
+      updateGreenKeys(["key-colon", "key-A"]);
+      break;
+    case ("hideSS"):
+      updateGreenKeys([], ["key-A", "key-colon"]);
+      break;
     case ("clearPractice"):
       clearPracticeLetters();
       break;
