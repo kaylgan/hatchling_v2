@@ -10,10 +10,10 @@ function menuListener() {
   let narrationText = [
     {text: document.getElementById("tutorial").textContent, top: lessonTitleTop, width: lessonTitleWidth, extraCode: "enterToContinue"},
     {text: "Welcome to Hatchling, a web app to help you get used to stenography on a QWERTY keyboard."},
-    {text: "Use the ENTER key to move forward through each lesson, and the BACKSPACE key to go backward."},
-    {text: "Now that you know how to navigate, let's take a closer look at the qwerty keyboard above. You may have noticed that it some unusual letters added to it.",
+    {text: "Use the ENTER key to move forward through each lesson. Use the BACKSPACE key to go backward."},
+    {text: "Now that you know how to navigate, let's take a closer look at the qwerty keyboard above. You may have noticed that it has some unusual letters added to it.",
     highlight: true, highlightElement: document.getElementById("keyboard")},
-    {text: "These are steno machine letters overlaid on a typical keyboard."},
+    {text: "These are stenography machine letters overlaid on a typical keyboard."},
     {text: "Stenography differs quite a bit from traditional typing. At its core, however, it is still a process of quickly finding key positions."},
     {text: "These lessons have been designed to mimic typical qwerty keyboarding lessons in order to take advantage of this similarity."},
     {text: "This will hopefully help qwerty typists build muscle memory for steno key positions in a way that is familiar."},
@@ -22,9 +22,9 @@ function menuListener() {
     {text: "However, they are meant to be completed without " + '\
     <a href="https://github.com/openstenoproject/plover/wiki/Installation-Guide#installation"\ target="_blank">' + "\
     Plover" + '</a>' + " or other steno software turned on."},
-    {text: "They should work with most normal keyboards, meaning ones that do not have n-key rollover (NKRO)."},
+    {text: "The lessons should work with most normal keyboards, meaning ones that do not have n-key rollover (NKRO)."},
     {text: "Keyboards with n-key rollover are able to press a large number of keys at once without conflict."},
-    {text: "Now that you have some background info, let's take a look at hand positions.", extraCode: "showSideView"},
+    {text: "That is enough background information for now. Let's take a look at hand positions.", extraCode: "showSideView"},
     {text: "As you go through the lessons, you will notice the hands above moving."},
     {text: "These hands are a very simplified representation of steno movements, and they are much more rigid than real movements."},
     {text: "Just concentrate on placing your fingertips or thumb sides on the proper key or crack (which you will learn soon)."},
@@ -53,10 +53,11 @@ function menuListener() {
     {text: "After you complete each exercise, you will see a message that says to type S-S to repeat the exercise. \
     This means press both S's at the same time -- that is," + '<br><br>' + "qwerty A + colon" + '<br>' + "OR" + '<br>' + "qwerty Q + colon.",
     extraCode: "showSS"},
-    {text: "Let's type our first key now. Take your left-hand pinky, and press either S key (qwerty Q or A).", lesson: ["S", "S", "S", "S", "S"]},
+    {text: "Let's type our first key now. Take your left-hand pinky, and press either S key (qwerty Q or A).", lesson: ["S", "S", "S", "S", "S"],
+    extraCode: "leftSKeys2"},
     {text: "Now try using your right-hand to type the third S key. In steno, right-hand keys are designated with a dash preceding them. \
     So -S means right-hand S. Left-hand keys are written with no dash or with a dash following them: S or S-.",
-    lesson: ["-S", "-S", "-S", "-S", "-S"]},
+    extraCode: "rightSKey", lesson: ["-S", "-S", "-S", "-S", "-S"]},
     {text: "Remember, S or S- means use the left hand. -S means use the right hand.",
     lesson: ["S", "-S", "S", "-S", "-S"]},
     {text: "Let's try typing a word. \
