@@ -32,10 +32,10 @@ function extraCode(whichCode) {
       setTimeout(function() {
         // if user hasn't already hit enter, prompt (early lessons only)
         if (narration.textContent === "Tutorial" || narration.textContent === "Pinkies") {
-          narration.textContent = "type the ENTER key to continue";
+          narration.textContent = "press ENTER to continue";
         }
         // wiggle only if user still hasn't hit enter
-        if (narration.textContent === "type the ENTER key to continue") { narration.classList.add("wiggle"); }
+        if (narration.textContent === "press ENTER to continue") { narration.classList.add("wiggle"); }
         setTimeout(function() { narration.classList.remove("wiggle"); }, 7000)
       }, 1500);
     break;
@@ -81,8 +81,11 @@ function extraCode(whichCode) {
     case ("showSS"):
       updateGreenKeys(["key-colon", "key-A"]);
       break;
-    case ("hideSS"):
-      updateGreenKeys([], ["key-A", "key-colon"]);
+    case ("leftSKeys2"):
+      updateGreenKeys(["key-Q"], ["key-colon"]);
+      break;
+    case ("rightSKey"):
+      updateGreenKeys(["key-colon"], ["key-A", "key-Q"]);
       break;
     case ("clearPractice"):
       clearPracticeLetters();
