@@ -98,10 +98,10 @@ function extraCode(whichCode) {
       break;
     case ("rightPinkies"):
       lesson = [
-        ["ab2", ["-T", "-S"]],
-        ["ab3", ["-D", "-Z"]],
-        ["ab", ["-T", "-D"]],
-        ["ab2", ["-S", "-Z"]],
+        ["ab2", ["-T", "-S"]], ["ab3", ["-T", "-S"]], ["ab", ["-T", "-S"]],
+        ["ab3", ["-D", "-Z"]], ["ab4", ["-D", "-Z"]], ["ab2", ["-D", "-Z"]],
+        ["ab", ["-T", "-D"]], ["ab2", ["-T", "-D"]], ["ab4", ["-T", "-D"]],
+        ["ab2", ["-S", "-Z"]], ["ab", ["-S", "-Z"]], ["ab3", ["-S", "-Z"]],
         ["asIs", ["-T", "-S", "-D", "-Z", "-T", "-S", "-D", "-Z", "-T", "-Z"], true]
       ];
       break;
@@ -119,30 +119,85 @@ function extraCode(whichCode) {
     case ("pinkyLessonsBriefs"):
       lesson = [
         ["ab3", ["S", "-T"]],
-        ["ab3", ["is", "the"]],
-        ["ab", ["is", "-S"]],
-        ["ab2", ["the", "-D"]]
+        ["ab3", ["is", "the"]], ["ab4", ["is", "the"]],
+        ["ab", ["is", "-S"]], ["ab2", ["is", "-S"]],
+        ["ab2", ["the", "-D"]],
+        ["abcd", ["is", "the", "-T", "S"]]
       ];
       break;
     case ("vowelKeys"):
       updateGreenKeys(["key-C", "key-V", "key-N", "key-M"]);
       lesson = [
-        ["ab3", ["A", "O"]],
-        ["ab3", ["E", "U"]],
+        ["ab3", ["A", "O"]], ["ab4", ["A", "O"]], ["ab2", ["A", "O"]],
+        ["ab3", ["E", "U"]], ["ab2", ["E", "U"]],  ["ab", ["E", "U"]],
+        ["five", ["A", "O", "E", "U", "E"]],
+        ["five2", ["A", "O", "E", "U", "O"]],
+        ["abcd", ["U", "O", "A", "E"]]
+      ];
+      break;
+    case ("vowelKeys2"):
+      lesson = [
         ["ab2", ["A", "O"]],
         ["ab2", ["E", "U"]],
-        ["five", ["A", "O", "E", "U", "E"]],
-        ["five2", ["A", "O", "E", "U", "O"]]
+        ["ab3", ["E", "I"]],
+        ["ab", ["U", "I"]],
+        ["ab4", ["A", "E"]], ["ab3", ["A", "I"]],
+        ["ab4", ["I", "A"]],
+        ["ab3", ["I", "E"]],
+        ["ab4", ["O", "U"]], ["ab3", ["O", "I"]],
+        ["ab4", ["I", "O"]],
+        ["ab3", ["I", "U"]],
+        ["ab4", ["A", "U"]], ["ab3", ["I", "U"]],
+        ["ab4", ["I", "U"]],
+        ["ab3", ["I", "A"]],
+        ["ab4", ["O", "E"]], ["ab3", ["I", "E"]],
+        ["ab4", ["I", "E"]],
+        ["ab3", ["I", "O"]]
       ];
       break;
     case ("greenThumbs"):
       updateGreenKeys(["key-C", "key-V", "key-N", "key-M"]);
       break;
+    case ("preShortVowels"):
+      lesson = [
+        ["asIs", ["S", "A", "-T", "S", "A", "-T", "S", "E", "-T", "-S"], true],
+        ["asIs", ["S", "I", "-T", "S", "O", "-D", "S", "I", "-T", "-S"], true],
+        ["asIs", ["S", "O", "-D", "S", "U", "-D", "S", "U", "-D", "-Z"], true],
+        ["asIs", ["S", "U", "-D", "-Z", "S", "U", "-D", "-Z", "S", "-Z"], true]
+      ];
+      break;
     case ("shortVowels"):
       lesson = [
         ["five", ["sat", "set", "sit", "sod", "suds"]],
         ["five2", ["sat", "set", "sit", "sod", "suds"]],
-        ["five3", ["sat", "set", "sit", "sod", "suds"]]
+        ["five3", ["sat", "set", "sit", "sod", "suds"]],
+        ["abc", ["sat", "set", "sit"]],
+        ["ab", ["set", "sat"]], ["ab2", ["set", "sit"]], ["ab4", ["sat", "sit"]],
+        ["ab2", ["sod", "suds"]], ["ab3", ["suds", "sod"]]
+      ];
+      break;
+    case ("longVowelKeys"):
+      lesson = [
+        ["ab", ["ā", "ē"]],
+        ["ab2", ["ū", "ī"]],
+        ["ab", ["ā", "ū"]],
+        ["ab2", ["ē", "ī"]],
+        ["ab3", ["ā", "ī"]]
+      ];
+      break;
+    case ("longVowelKeys2"):
+      lesson = [
+        ["ab", ["ō", "ā"]],
+        ["ab", ["ō", "ē"]],
+        ["ab2", ["ū", "ō"]],
+        ["ab2", ["ī", "ō"]]
+      ];
+      break;
+    case ("preLongVowels"):
+      lesson = [
+        ["asIs", ["S", "ā", "S", "ā", "S", "ē", "-D", "S", "ē", "-D"], true],
+        ["asIs", ["S", "ī", "-T", "S", "ō", "S", "ī", "-T", "S", "ō"], true],
+        ["asIs", ["S", "ō", "S", "ū", "-T", "S", "ō", "S", "ū", "-T"], true]
       ];
       break;
     case ("longVowels"):
@@ -192,25 +247,40 @@ function extraCode(whichCode) {
     case ("greenAsterisks"):
       updateGreenKeys(["key-T", "key-G", "key-Y", "key-H"]);
       break;
-    case("leftRing"):
+    case ("leftRing"):
       updateGreenKeys(["key-W", "key-S"]);
       lesson = [
-        ["ab2", ["T", "K"]],
-        ["abc", ["T", "K", "D"]],
-        ["abc2", ["it", "can", "did"]],
-        ["six", ["T", "K", "D", "it", "can", "did"]],
-        ["six2", ["T", "K", "D", "it", "can", "did"]],
-        ["ab", ["it", "the"]],
-        ["ab3", ["it", "the"]]
+        ["ab2", ["T", "K"]], ["ab3", ["T", "K"]], ["ab", ["T", "K"]],
+        ["abc", ["T", "K", "D"]], ["abc2", ["T", "K", "D"]],
+        ["ab2", ["S", "T"]], ["ab3", ["S", "T"]], ["ab", ["S", "T"]],
+        ["ab2", ["S", "K"]], ["ab3", ["S", "K"]], ["ab", ["S", "K"]],
+        ["abc", ["S", "T", "K"]], ["abc2", ["S", "T", "K"]],
+        ["ab", ["S", "D"]], ["ab", ["S", "D"]]
       ];
       break;
-    case("rightRing"):
+    case ("leftRing2"):
+      lesson = [
+        ["abc2", ["it", "can", "did"]], ["abc", ["it", "can", "did"]],
+        ["six", ["T", "K", "D", "it", "can", "did"]],
+        ["six2", ["T", "K", "D", "it", "can", "did"]],
+        ["ab", ["it", "the"]], ["ab3", ["it", "the"]]
+      ];
+      break;
+    case ("rightRing"):
       updateGreenKeys(["key-O", "key-L"], ["key-W", "key-S"]);
       lesson = [
-        ["ab3", ["-L", "-G"]],
-        ["ab", ["-L", "-G"]],
-        ["abc", ["-L", "-G", "-ing"]],
-        ["ab2", ["starring", "starred"]],
+        ["ab3", ["-L", "-G"]], ["ab", ["-L", "-G"]], ["ab2", ["-L", "-G"]],
+        ["ab2", ["-L", "-T"]], ["ab3", ["-L", "-T"]], ["ab", ["-L", "-T"]],
+        ["ab", ["-L", "-D"]], ["ab4", ["-L", "-D"]], ["ab", ["-L", "-D"]],
+        ["abc", ["-L", "-T", "-D"]], ["abc2", ["-L", "-T", "-D"]],
+        ["ab2", ["-G", "-S"]], ["ab3", ["-G", "-S"]], ["ab3", ["-G", "-S"]],
+        ["ab", ["-G", "-Z"]], ["ab", ["-G", "-Z"]], ["ab2", ["-G", "-Z"]],
+        ["abc", ["-G", "-S", "-Z"]], ["abc2", ["-G", "-S", "-Z"]]
+      ];
+      break;
+    case ("rightRing2"):
+      lesson = [
+        ["abcd", ["-L", "-G", "-ing", "starring"]],
         ["asIs", ["-lch, -lge", "-lch, -lge", "-ing", "-ing", "-lch, -lge", "-ing", "-lch, -lge", "-lch, -lge", "-ing", "-ing"], true]
       ];
       break;
@@ -220,7 +290,7 @@ function extraCode(whichCode) {
         ["ab", ["call", "kale"]],
         ["ab2", ["dig", "dial"]],
         ["ab3", ["tug", "tile"]],
-        ["six", ["call", "kale", "tug", "dig", "tile", "dial"]],
+        ["six", ["call", "kale", "tug", "dig", "tile", "dial"]]
       ];
       break;
     case ("greenLeftMiddles"):
@@ -229,22 +299,36 @@ function extraCode(whichCode) {
     case ("leftMiddle"):
       updateGreenKeys(["key-E", "key-D"]);
       lesson = [
-        ["ab", ["P", "W"]],
-        ["abc", ["P", "W", "B"]],
+        ["ab", ["P", "W"]], ["ab4", ["P", "W"]], ["ab3", ["P", "W"]],
+        ["abc", ["P", "W", "B"]], ["abc2", ["P", "W", "B"]],
         ["ab2", ["about", "with"]],
         ["five", ["P", "W", "B", "about", "with"]],
         ["five2", ["P", "W", "B", "bee", "about"]],
-        ["abc", ["be-", "bee", "B"]]
+        ["abc", ["be-", "bee", "B"]],
+        ["ab2", ["S", "P"]], ["ab3", ["S", "P"]], ["ab", ["S", "P"]],
+        ["ab", ["T", "P"]], ["ab", ["T", "P"]], ["ab2", ["T", "P"]],
+        ["abc", ["S", "T", "P"]], ["abc2", ["S", "T", "P"]],
+        ["ab2", ["S", "W"]], ["ab3", ["S", "W"]], ["ab4", ["S", "W"]],
+        ["ab2", ["K", "W"]], ["ab", ["K", "W"]], ["ab4", ["K", "W"]],
+        ["abc", ["S", "K", "W"]], ["abc2", ["S", "K", "W"]]
       ];
       break;
     case ("rightMiddle"):
       updateGreenKeys(["key-I", "key-K"], ["key-E", "key-D"]);
       lesson = [
-        ["ab2", ["-P", "-B"]],
+        ["ab2", ["-P", "-B"]], ["ab3", ["-P", "-B"]], ["ab", ["-P", "-B"]],
         ["abc2", ["-P", "-B", "-N"]],
         ["abc", ["-P", "-B", "-N"]],
         ["ab", ["an", "be"]],
         ["five3", ["-P", "-B", "-N", "an", "be"]],
+        ["ab", ["-P", "-L"]], ["ab3", ["-P", "-L"]], ["ab4", ["-P", "-L"]],
+        ["ab2", ["-P", "-T"]], ["ab3", ["-P", "-T"]], ["ab", ["-P", "-T"]],
+        ["ab", ["-P", "-D"]], ["ab", ["-P", "-D"]], ["ab2", ["-P", "-D"]],
+        ["abc", ["-P", "-L", "-T"]], ["abc2", ["-P", "-L", "-D"]],
+        ["ab2", ["-B", "-G"]], ["ab3", ["-B", "-G"]], ["ab4", ["-B", "-G"]],
+        ["ab4", ["-B", "-S"]], ["ab", ["-B", "-S"]], ["ab2", ["-B", "-S"]],
+        ["ab2", ["-B", "-Z"]], ["ab", ["-B", "-Z"]], ["ab4", ["-B", "-Z"]],
+        ["abc", ["-B", "-G", "-S"]], ["abc2", ["-B", "-G", "-Z"]],
         ["asIs", ["be", "being", "can be", "can be", "being", "can", "be", "can be", "being", "be"], true],
         ["asIs", ["be", "be-", "tween", "between", "being", "be-", "tween", "can be", "be-", "between"], true]
       ];
@@ -332,16 +416,38 @@ function extraCode(whichCode) {
     case ("leftPointer"):
       updateGreenKeys(["key-R", "key-F"], ["key-T", "key-G", "key-Y", "key-H"]);
       lesson = [
-        ["ab3", ["H", "R"]],
-        ["abc", ["H", "R", "L"]],
+        ["ab3", ["H", "R"]], ["ab2", ["H", "R"]], ["ab4", ["H", "R"]],
+        ["abc", ["H", "R", "L"]], ["abc3", ["H", "R", "L"]],
         ["abc2", ["had", "are", "will"]],
-        ["six", ["H", "had", "R", "are", "L", "will"]]
+        ["six", ["H", "had", "R", "are", "L", "will"]],
+        ["ab", ["S", "H"]], ["ab3", ["S", "H"]], ["ab4", ["S", "H"]],
+        ["ab2", ["T", "H"]], ["ab3", ["T", "H"]], ["ab", ["T", "H"]],
+        ["ab", ["P", "H"]], ["ab", ["P", "H"]], ["ab2", ["P", "H"]],
+        ["abc", ["S", "T", "H"]], ["abc2", ["S", "P", "H"]], ["abc3", ["T", "P", "H"]],
+        ["ab2", ["S", "R"]], ["ab3", ["S", "R"]], ["ab4", ["S", "R"]],
+        ["ab4", ["K", "R"]], ["ab", ["K", "R"]], ["ab2", ["K", "R"]],
+        ["ab2", ["W", "R"]], ["ab", ["W", "R"]], ["ab4", ["W", "R"]],
+        ["abc", ["S", "K", "R"]], ["abc2", ["S", "W", "R"]], ["abc3", ["K", "W", "R"]]
       ];
       break;
     case ("rightPointer"):
       updateGreenKeys(["key-U", "key-J"], ["key-R", "key-F"]);
       lesson = [
-        ["ab", ["-F", "-R"]],
+        ["ab", ["-F", "-R"]], ["ab2", ["-F", "-R"]], ["ab3", ["-F", "-R"]],
+        ["ab", ["-F", "-P"]], ["ab3", ["-F", "-P"]], ["ab4", ["-F", "-P"]],
+        ["ab2", ["-F", "-L"]], ["ab3", ["-F", "-L"]], ["ab", ["-F", "-L"]],
+        ["ab", ["-F", "-T"]], ["ab", ["-F", "-T"]], ["ab2", ["-F", "-T"]],
+        ["ab", ["-F", "-D"]], ["ab", ["-F", "-D"]], ["ab2", ["-F", "-D"]],
+        ["abc", ["-F", "-P", "-L"]], ["abc2", ["-F", "-L", "-T"]], ["abc3", ["-F", "-P", "-D"]],
+        ["ab2", ["-R", "-B"]], ["ab3", ["-R", "-B"]], ["ab4", ["-R", "-B"]],
+        ["ab4", ["-R", "-G"]], ["ab", ["-R", "-G"]], ["ab2", ["-R", "-G"]],
+        ["ab2", ["-R", "-S"]], ["ab", ["-R", "-S"]], ["ab4", ["-R", "-S"]],
+        ["ab2", ["-R", "-Z"]], ["ab3", ["-R", "-Z"]], ["ab4", ["-R", "-Z"]],
+        ["abc", ["-R", "-B", "-G"]], ["abc2", ["-R", "-G", "-S"]], ["abc3", ["-R", "-B", "-Z"]]
+      ];
+      break;
+    case ("everWords"):
+      lesson = [
         ["five", ["-F", "of", "-R", "are", "ever"]],
         ["abc2", ["of", "are", "ever"]],
         ["ab2", ["of", "off"]],
@@ -359,6 +465,14 @@ function extraCode(whichCode) {
     case ("pointerLetters1"):
       updateGreenKeys(["key-R", "key-F"]);
       lesson = [
+        ["ab2", ["M", "N"]],
+        ["ab", ["N", "M"]],
+        ["ab3", ["M", "-M"]],
+        ["ab", ["N", "-N"]]
+      ];
+      break;
+    case ("pointerLetters2"):
+      lesson = [
         ["ab", ["Z", "V"]],
         ["ab3", ["V", "-V"]],
         ["abc2", ["V", "-V", "Z"]],
@@ -367,14 +481,6 @@ function extraCode(whichCode) {
         ["ab", ["save", "savvy"]],
         ["ab", ["savvy", "satisfy"]],
         ["ab", ["save", "safe"]]
-      ];
-      break;
-    case ("pointerLetters2"):
-      lesson = [
-        ["ab2", ["M", "N"]],
-        ["ab", ["N", "M"]],
-        ["ab3", ["M", "-M"]],
-        ["ab", ["N", "-N"]]
       ];
       break;
     case ("pointerLetters3"):
@@ -504,7 +610,9 @@ function getLessonPattern(pattern, letters, keepOriginal = false) {
       "ab3": "a a a b b b a b b a", "abc": "a b c a b c a a b c",
       "abc2": "a a b b c c a a c c", "five": "a b c d e a b c d e",
       "five2": "a a b b c c d d e e", "five3": "a c e b d c b a e d",
-      "six": "a d b e c f d e f f", "six2": "b b e e a a d d c f"
+      "six": "a d b e c f d e f f", "six2": "b b e e a a d d c f",
+      "ab4": "a b a b b a b a a b", "abc3": "a b c c b a a b c c",
+      "abcd": "a b c d a b c d a b"
     };
 
     let replacements = {

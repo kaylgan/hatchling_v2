@@ -15,16 +15,63 @@
 }
 
 #user-text {
-  margin-top: 20px;
-	margin-bottom: 40px;
+  margin-top: 10px;
+	margin-bottom: 5px;
   padding: 0;
   width: 100%;
-	height: 200px;
+	height: 100px;
   resize: none;
 	overflow-y: scroll;
   border-radius: 5px;
   border: none;
   background-color: silver;
+}
+
+#steno-jig-link {
+	color: blue;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#word-lists button {
+  background-color: white;
+	border-radius: 5px;
+}
+
+#word-lists button:hover {
+	background-color: lightgray;
+}
+
+#word-lists {
+  background-color: teal;
+  margin-bottom: 20px;
+	border-radius: 5px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#word-lists div {
+	color: gray;
+	border-radius: 5px;
+	background-color: silver;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+#form h2 {
+	margin: 0;
+	padding: 0;
+}
+
+#word-lists h4 {
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+
+#word-lists h5 {
+	padding-top: 5px;
+	margin: 0;
 }
 
 #sequencer-mini {

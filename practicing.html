@@ -34,11 +34,9 @@
     </a>
 
   <div id="nav-items">
-    <span id="nav-lessons" class="navItems"><a href="index.html">Lessons</a></span>  
+    <span id="nav-lessons" class="navItems"><a href="index.html">Lessons</a></span>
     <span id="nav-practice" class="navItems"><a href="practicing.html">Practice</a></span>
     <span id="nav-practice-small" class="navItems"><a href="practicing.html"><i class="fas fa-user-check"></i></a></span>
-    <span id="nav-downloads" class="navItems"><a href="downloads.html">Downloads</a></span>
-    <span id="nav-downloads-small" class="navItems"><a href="downloads.html"><i class="fas fa-file-download"></i></a></span>
     <span id="nav-about" class="navItems"><a href="about.html">About</a></span>
     <span id="nav-about-small" class="navItems"><a href="about.html"><i class="far fa-question-circle"></i></a></span>
     <span id="nav-contact" class="navItems"><a href="contact.html">Contact</a></span>
@@ -48,21 +46,47 @@
 
   <div id="form" class="wrapper">
   	<div class="form-section">
-  		<h2>Practice (modified from Steno Jig)</h2>
+  		<h2>Practice (modified from <a href="https://joshuagrams.github.io/steno-jig/" target="_blank" id="steno-jig-link">Steno Jig</a>)</h2>
 
   		<form class="drill-options" id="custom" action="form.html">
   			<input type="hidden" name="wpm" value="">
   			<input type="hidden" name="cpm" value="">
   			<input type="hidden" name="hints" value="">
 
-  			<textarea name="drill" id="user-text" placeholder="Type/paste the text you want to practice here."></textarea><br>
+  			<textarea name="drill" id="user-text" placeholder="Type/paste the text you want to practice here, or select a word list below."></textarea><br>
+
+        <div id="word-lists">
+          <h4>Word Lists: 1000 Most Common English Words</h4>
+          <div id="plover-theory-lists">
+            <h5>Basic Plover Theory</h5>
+            <button type="button" id="phonetic">Phonetic</button>
+            <button type="button" id="unstressed">Drop Unstressed Vowels</button>
+            <button type="button" id="inversion">Inversion</button>
+          </div>
+          <div id="shortening-techniques">
+            <h5>Shortening Techniques</h5>
+            <button type="button" id="phonetic-mod">Modified Phonetic</button>
+            <button type="button" id="stressed">Drop Stressed Vowels</button>
+            <button type="button" id="consonants">Drop Consonants</button>
+            <button type="button" id="other-words">Other Words</button>
+          </div>
+          <div id="memory-lists">
+            <h5>Memory</h5>
+            <button type="button" id="spelled">Spelled</button>
+            <button type="button" id="disambiguate">Disambiguate</button>
+            <button type="button" id="brief-only">Briefs Only</button>
+            <button type="button" id="multi-only">Multiple Strokes Only</button>
+            <button type="button" id="brief-multi-only">Brief/Multi-stroke Only</button>
+          </div>
+
+        </div>
 
   			<div name="speed">
   				<label><input id="wpm" type="number" name="wpm" value="" step="5"> Speed (words per minute)
   					(or <input type="checkbox" id="cpm" value="1"> x5 chars per minute) </label>
   			</div>
 
-  			<input type="checkbox" name="type" value="shuffled">Shuffle words.<br>
+  			<input type="checkbox" name="type" value="shuffled">Shuffle words<br>
 
   			<div name="hints">
   				<label><input id="hints" type="checkbox" name="hints" value="1" checked>Show hints</label>
@@ -105,6 +129,7 @@
   	<textarea id="input"></textarea>
   </div>
 
+  <script src="js/wordLists.js"></script>
   <script src="js/practice.js"></script>
   <script src="js/metronome.js"></script>
   <script src="js/generatePracticeElements.js"></script>

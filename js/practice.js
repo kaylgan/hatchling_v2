@@ -143,6 +143,16 @@ window.onload = function() {
 				form.addEventListener('submit', getSettings);
 			}
 		}
+
+		// Add event listeners for word list buttons
+		let wordListButtons = document.querySelectorAll('#word-lists button');
+		for (let i = 0; i < wordListButtons.length; i++) { wordListButtons[i].addEventListener('click', listListener, false); }
+		let textArea = document.getElementById("user-text");
+		// let setText = "nothing selected";
+		function listListener() {
+			console.log("in listListener");
+			textArea.value = getWordList(event.target.id);
+		}
 	}
 }
 

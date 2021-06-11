@@ -116,56 +116,75 @@ function menuListener() {
     extraCode: "rightPinkies"},
     {text: "Now we will review all of the pinky keys. Remember that S is the left S, and -S is the right S.",
     extraCode: "pinkyLessons"},
-    {text: "Time for your first briefs! Briefs are abbreviations for longer words. So, instead of typing out IS for \"is\", \
-    you can just type S.", vocab: ["is: S"]},
-    {text: "You can click on a word in the vocab box to move the hands above to the corresponding keys.", vocab: ["is: S"]},
-    {text: "Note that S, but not -S, is a brief. If you just type -S in word processor with your steno software on, it will likely output \"es\". This is \
-    because you use -S to make words plural. It will add \"s\" or \"es\" to words, whichever is appropriate. Similarly, -Z will \
-    also output \"s\" or \"es\" to make other words plural (such as those already ending in \"s\").",
-    width: 725},
-    {text: "-D serves a similar purpose. It adds \"ed\" to words to make them past tense. You can use these suffixes with a word you type, or right after. E.g. STARS (all in \
-    one movement, or \"chord\") and STAR\/-S (two chords, separated by the forward slash -- press S,T,A,R together, release keys, then press -S) both output \"stars\".",
-    width: 725},
-    {text: "-T is another brief. If you type it, your steno software will output \"the\".", vocab: ["the: -T"]},
+    {text: "Time for your first briefs! In stenography, most words are written based on how they sound (phonetically). Briefs are shortened forms for \
+    words. So, instead of typing out something like IS for \"is\", \
+    you can just type S.", vocab: ["is: S"], lesson: ["is", "S", "is", "is", "S"]},
+    {text: "You can click on a word in the vocab box to move the hands above to the corresponding keys.", highlight: true,
+    highlightElement: document.getElementById("notebook-paper"), vocab: ["is: S"]},
+    {text: "You can also click on a word in the practice drill to move the hands.", highlight: true,
+    highlightElement: document.getElementById("practice"), lesson: ["is"]},
+    {text: "Note that S, but not -S, is a brief."},
+    {text: "If you just type -S in word processor with your steno software on, it will likely output \"es\". This is \
+    because -S is used to make words plural. It will add \"s\" or \"es\" to words, whichever is appropriate."},
+    {text: "-Z is also used to output \"s\" or \"es\" to make other words plural (such as those already ending in \"s\")."},
+    {text: "-D serves a similar purpose. It adds \"ed\" to words to make them past tense."},
+    {text: "You can use these suffixes with a word you type, or right after. E.g. STARS (all in one movement, or \"chord\") and \
+    STAR\/-S (two chords, separated by the forward slash -- press S,T,A,R together, release keys, then press -S) both output \"stars\"."},
+    {text: "So we know that S is a brief, but -S, -D, and -Z are not. -T is another brief. If you type it, your steno software will output \"the\".",
+    vocab: ["the: -T"], lesson: ["the", "-T", "the", "the", "-T"]},
     {text: "Now we will practice some briefs and do a little bit of letter review as well.",
     extraCode: "pinkyLessonsBriefs"},
     {text: "And, for extra credit ... You haven't been formally introduced to all of these letters, but you have typed them if you \
-    did the tutorial. Give these a try. The vocab words written with a \"~\" in the vocab list are included to teach theory, \
-    but we will not practice them in these exercises.", vocab: ["star: STAR", "stars: STARS", "~(or STAR\\-S)", "starred: STARD", "~(or STAR\\-D)"],
+    did the tutorial. Give these a try.", vocab: ["star: STAR", "stars: STARS", "starred: STARD"],
     lesson: ["S", "T", "A", "-R", "star", "stars", "starred"]},
+    {text: "Take one more look at this \"stars\" vocab list. The added words, written with a \"~\", are included to teach theory only. \
+    That is, we will not practice them in these exercises. These theory words just show other ways to type the same words (usually with more strokes). \
+    Using more strokes can sometimes make it easier to type complicated words.",
+    vocab: ["star: STAR", "stars: STARS", "~(or STAR\\-S)", "starred: STARD", "~(or STAR\\-D)"]},
     {text: document.getElementById("lesson2").textContent,  top: lessonTitleTop, width: lessonTitleWidth, extraCode: "clearGreenPinkies"},
     {text: "This lesson will focus on vowels. To begin, let's practice the keys.", extraCode: "vowelKeys"},
-    {text: "Where is the I key, you ask? There isn't one. Instead, you press the E and U keys together.",
+    {text: "Where is the I key, you ask? There isn't one. Instead, you press the E and U keys together. To do this, place your thumb over \
+    the crack between the two keys.",
     extraCode: "greenThumbs", lesson: ["E", "U", "I", "E", "U", "I", "I", "I", "I", "I"]},
+    {text: "Let's practice these a little more.", extraCode: "vowelKeys2"},
     {text: "When you press a vowel key by itself, you get the short vowel sounds, such as in \
-    sat, set, sit, sod, and suds. Let's practice these short vowels.",
+    sat, set, sit, sod, and suds.",
+    vocab: ["sat: SAT", "set: SET", "sit: SEUT", "sod: SOD", "suds: SUDZ"], extraCode: "preShortVowels"},
+    {text: "To press -DZ, center your pinky over the crack between the -D and -Z.",
     vocab: ["sat: SAT", "set: SET", "sit: SEUT", "sod: SOD", "suds: SUDZ"], extraCode: "shortVowels"},
     {text: "You probably noticed that \"suds\" was written with a -Z at the end instead of an -S. \
     If we used an -S, we would have written SUSD (\"sussed\") instead since -S is before -D in steno order. \
     This is why we use -Z to add -s or -es to words ending in -D.",
-    lesson: ["suds", "stars", "suds", "stars", "suds"]},
-    {text: "** LONG VOWEL Similarly, to add -s or -es to words that already end in -S, we use -Z.", vocab: ["use", "uses"],
-    vocab: ["use: AOUS", "uses: AOUSZ"], lesson: ["use", "use", "uses", "use", "uses", "uses"]},
+    lesson: ["suds", "stars", "suds", "stars", "suds", "suds", "stars"]},
+    {text: "Similarly, to add -s or -es to words that already end in -S, we use -Z. Again, to press two keys at once, \
+    focus on centering your finger (your pinky in this case) over the crack between the keys.",
+    vocab: ["suss: SUS", "susses: SUSZ"], lesson: ["suss", "suss", "susses", "suss", "susses", "susses"]},
+    {text: "If you did the tutorial, you saw that we use -D to add -ed. It can be a little tricky to type -S and -D \
+    together, but give it a try. Try to press the top-right corner of -S and the bottom-left corner of -D (without \
+    pressing the corners of -T and -Z.)", vocab: ["sussed: SUSD"], lesson: ["sussed", "sussed", "sussed"]},
+    {text: "Do you remember that words with a \"~\" are included to teach theory and sometimes show easier strokes? \
+    This is an example of a word that may be easier to type in two strokes.", vocab: ["sussed: SUSD", "~(or SUS\\-D)"]},
     {text: "Now we will look at long vowel sounds, such as in say, seed, sight, sow (like sow seeds), and suit."},
     {text: "To form these, press the letter key for the vowel, then add in all the thumb keys of the opposite thumb. \
-    So long A is AEU, long E is AOE, long I is AOEU, and long U is AOU."},
-    {text: "Long O is the only exception -- you will press OE to make a long O sound."},
+    So long A (shown as \"ā\" in the exercise above) is AEU, long E (ē) is AOE, long I (ī) is AOEU, and long U (ū) is AOU. \
+    " + '<br><br>' + "You may need to arpeggiate these on a non-NKRO keyboard. (E.g. for ā, press A. Without releasing A, press E. \
+    Release A while still holding E. Then press U while still holding E. Release all keys, and you should see AEU highlighted in the steno \
+    order bar.)", extraCode: "longVowelKeys"},
+    {text: "Long O (ō) is the only exception -- you will press OE to make a long O sound.", extraCode: "longVowelKeys2"},
     {text: "We will learn more about why O doesn't follow the rules soon. For now, let's practice the long vowel \
-    sounds."},
-    {text: "You may have some trouble pressing more than two vowel keys at once on a non-NKRO keyboard. \
-    So I will repeat the arpeggiating technique once more for the word \"seed\": \
-    Press S, press A without releasing S. Release S. Without releasing A, press O. Release A. And so on for O to E, E to D.",
-    vocab: ["say: SAEU", "seed: SAOED", "sight: SAOEUT", "sow: SOE", "suit: SAOUT"], extraCode: "longVowels"},
+    sounds.", vocab: ["say: SAEU", "seed: SAOED", "sight: SAOEUT", "sow: SOE", "suit: SAOUT"], extraCode: "preLongVowels"},
+    {text: "We will learn more about why O doesn't follow the rules soon. For now, let's practice the long vowel \
+    sounds.", vocab: ["say: SAEU", "seed: SAOED", "sight: SAOEUT", "sow: SOE", "suit: SAOUT"], extraCode: "longVowels"},
     {text: "Once you get used to arpeggiating with one key at a time, try two or three keys at a time. Depending on your keyboard and \
     the word you are typing, you may even be able to press all the left-hand keys at once followed by all the right-hand keys. \
-    For instance, try arpeggiating \"sight\" by pressing SAO (all keys at once), continue pressing SAO down and press EUT all at once, \
-    then release SAO, then release EUT.",
+    For instance, try arpeggiating \"sight\" by pressing SAO (all keys at once). Continue pressing SAO down, then press EUT all at once. \
+    Then release all the keys.",
     lesson: ["sat", "say", "set", "seed", "sit", "sight", "sod", "sow", "suds", "suit"]},
     {text: "We will revisit that pesky O now. The chord that should be a long O, OEU, is instead reserved for \"oy\" sounds, like \
     in soy.", vocab: ["soy: SOEU"], lesson: "soy soy soy soy soy".split(" "), extraCode: "greenO"},
     {text: "We have another set of keys, AO, for \"oo\", like in soot. However, AO is also used to distinguish between homophones. \
     Rode is ROED, while road is RAOD. We will practice these R- words even though we haven't learned the R- key. Use the left-hand R. \
-    (Note that you may need to arpeggiate single keys for \"road\" since the keys are close together.)",
+    (Note that you may need to arpeggiate for \"road\" since the keys are close together.)",
     vocab: ["soot: SAOT", "road: RAOD", "rode: ROED"],
     lesson: ["soot", "road", "soot", "road", "rode", "road", "rode", "rode", "road", "soot"], extraCode: "greenOO"},
     {text: "Similarly, AE is used for words like see (SAOE) and sea (SAE). The word containing \"ea\" gets the EA. If neither word contains \
@@ -176,7 +195,18 @@ function menuListener() {
     {text: "Another combo is AU, used for aw-sounds like in saw (SAU). Notice that \"sod\" was writted SOD, not SAUD, even though you \
     might say the vowel sounds the same. AU is used with aw sounds in words spelled with \"au\"/\"aw\", like \"laud\" and \"law\"",
     vocab: ["saw: SAU"], lesson: "saw saw saw saw saw".split(" "), extraCode: "greenAU"},
-    {text: "One last combo is OU, used for ow-sounds like in out (OUT). Words with this sound will have an \"ou\" (ouch) or \"ow\" (now).",
+    {text: "We tend to use spelling when a singleton vowel -- one with no vowels right next to it -- makes a short sound. Otherwise, we \
+    write words phonetically (\
+      " + '<em><a href="https://sites.google.com/site/learnplover/lessons-1-fingers-and-keys#TOC-Rules-For-Short-Vowel-Sounds" target="_blank">' + "Learn Plover!\
+      " + '</a></em>' + ")."},
+    {text: "Also, if we have letters like w/y/h that modify the vowel sound, like in how/hay/hah, we write words phonetically. We saw this before \
+    with \"saw\" and \"soy\". Many of these types of words are considered diphthongs."},
+    {text: "Just remember that Single Short = Spelling (SSSpell). This is why \"sod\" is SOD and \"saw\" is SAU. Consider the word \
+    \"learn\". This has two vowels next to each other, \"ea\". So we write this word phonetically (using the E key)."},
+    {text: "What about \"hurt\"? That vowel sounds like the one in \"learn\", right? So we use E, right? No. Remember, it is a Single vowel \
+    making a Short sound, so we use Spelling (U)."},
+    {text: "How about \"heart\", then? Multiple vowels means write it phonetically. This \"ea\" makes a short \"a\" sound (A)."},
+    {text: "One last sound combination we need to learn is OU, used for ow-sounds like in out (OUT). Words with this sound will have an \"ou\" (ouch) or \"ow\" (now).",
     vocab: ["out: OUT"], lesson: "out out out out out".split(" "), extraCode: "greenOU"},
     {text: "Note that for words beginning with out- the prefix AOUT is used, rather than the chord OUT. This helps keep words together \
     -- e.g. outset instead of out set. (This is known as a word boundary error.) When we practice prefixes and suffixes in these lessons, \
@@ -190,9 +220,13 @@ function menuListener() {
     {text: "That's enough vowel practice for now. Let's move on to a new lesson."},
     {text: document.getElementById("sentences1").textContent,  top: lessonTitleTop, width: lessonTitleWidth, extraCode: "clearGreenThumbs"},
     {text: "We will learn a little bit of punctuation now. We haven't met all of these keys yet, but we will get better \
-    acquainted with them later. ** These are all single chords. The hyphen between letters is for clarity, for left-hand keys not followed by a vowel.",
+    acquainted with them later. Click on an entry in the vocab box if you are unsure how to type something.",
+    vocab: ["\.: TP-PL", "\,: KW-BG", "\-: H-PB"]},
+    {text: "Note that these are all single chords. The hyphen between letters is for clarity. It indicates left-hand keys not followed by a vowel.",
     vocab: ["\.: TP-PL", "\,: KW-BG", "\-: H-PB"]},
     {text: "You won't have to worry about typing spaces. Steno software adds them automatically."},
+    {text: "Don't forget -- you can also click on a word in the practice drill to see the hand position for that word.", highlight: true,
+    highlightElement: document.getElementById("practice"), lesson: [".", ",", "\-"]},
     {text: "EU SAEU KW-BG -T SAOE H-PB SAU EU ROED S- SO STARD TP-PL", vocab: ["\.: TP-PL", "\,: KW-BG", "\-: H-PB", "I: EU", "so: SO"],
     lesson: ("I say , the see - saw I rode is so starred .").split(" "), full: true},
     {text: "U SET -T SOD TP-PL U SEUT TP-PL U SOE SAOEDZ TP-PL", vocab: ["you: U"],
@@ -204,51 +238,65 @@ function menuListener() {
     full: true},
     {text: "-T SOEU SAOUT S- AEU SAOEUT TP-PL", lesson: ("The soy suit is a sight .").split(" "), full: true},
     {text: document.getElementById("lesson3").textContent, top: lessonTitleTop, width: lessonTitleWidth},
-    {text: "The left ring finger is in charge of T and K. We mentioned in the last lesson that stenography is phonetic -- so any words starting with a \"k\" \
-    sound will use the K key -- e.g. call and cat. By pressing T and K together, we get the letter D. Each of these letters, in\
-    turn, also functions as a brief.",
-    vocab: ["it: T", "can: K", "did: TK"], extraCode: "leftRing"},
-    {text: "For the right ring finger, we have -L and -G. G is also used to add -ing to the ends of words. -LG is used for words \
-    that end in -lge. This is not phonetic (-lge sounds like -lj), but it is used so that the -L and -J keys are not in conflict (more \
-    on this when we get to the middle finger keys). -LG is also used for -lch, as there are not many words that are the same other than ending \
-    in -lch or -lge.", affix: ["-ing: -G", "-lch, -lge: -LG"], vocab: ["starring: STARG", "~(or STAR\-G)"],
-    extraCode: "rightRing"},
+    {text: "The left ring finger is in charge of T and K. By pressing T and K together, we get the letter D.",
+    extraCode: "leftRing"},
+    {text: "Each of these letters, in turn, also functions as a brief.", vocab: ["it: T", "can: K", "did: TK"], extraCode: "leftRing2"},
+    {text: "We mentioned in earlier lessons that stenography is phonetic, so any words starting with a \"k\" \
+    sound will use the K key.", vocab: ["cat: KAT"], lesson: ["K", "A", "-T", "cat", "K", "A", "-T", "cat"]},
+    {text: "For the right ring finger, we have -L and -G.", extraCode: "rightRing"},
+    {text: "G is also used to add -ing to the ends of words, and -LG is used for words that end in -lge and -lch. \
+    We would normally want to use -LJ to make the phonetic -lge sound. However, -J keys overlap with -L, as we will see later.",
+    affix: ["-ing: -G", "-lch, -lge: -LG"], vocab: ["starring: STARG", "~(or STAR\-G)"], extraCode: "rightRing2"},
     {text: "Let's practice these letters in a few new words.", vocab: ["call: KAUL", "kale: KAEUL", "tug: TUG", "dig: TKEUG", "tile: TAOEUL",
-    "dial: TKAOEUL"],
-    extraCode: "rightRingReview"},
-    {text: "Do you remember that we mentioned \"sale\" vs \"sail\" in the pinkies lesson? Let's practice them now that we have -L."},
-    {text: "Do you remember which word gets the EA?" + '<br><br>' + "The one that has an \"ea\" (like when we wrote \"sea\")" + '<br>' + "OR" + '<br>' + "the one that has \
-    an \"e\" and an \"a\" (like in sale).",
+    "dial: TKAOEUL"], extraCode: "rightRingReview"},
+    {text: "Do you remember that we mentioned \"sale\" vs \"sail\" in the pinkies lesson? Let's practice them now that we have -L. \
+    Recall that the word that has an \"e\" and an \"a\" (or an \"ea\") gets the AE.",
     vocab: ["sale: SAEL", "sail: SAEUL"], lesson: ["sale", "sale", "sail", "sail", "sale", "sail", "sale", "sail"]},
-    {text: "Now we will learn a technique for writing words called inversion. Every once in a while, you can bend the application of steno order \
-    just a teensy bit so you can fit a word into one chord. If two letters are adjacent in a chord, but are out of steno order, you can swap \
-    their order. Consider the word \"decide\". We could write this in two strokes as TKE/SAOEUD. S and TK are adjacent, so we can invert them to \
-    get STKAOEUD.", vocab: ["decide: STKAOEUD", "~(or TKE/SAOEUD)"], lesson: ["decide", "decide", "decide", "decide", "decide"]},
-    {text: "Notice that to write STKAOEUD, we dropped an unstressed vowel. This is a common practice in stenography for words that have more than one \
-    syllable. Generally, vowels that are pronounced like \
+    {text: "Now we will learn a few principles of Plover Theory that are used for fitting words into fewer strokes."},
+    {text: "The first principle is dropping unstressed vowels. This is commonly used for words that have more than one syllable."},
+    {text: "When we look at word stress, we are looking at which syllable is stated with most emphasis."},
+    {text: "If a word just has just one syllable, it does not have word stress (so it does not have stressed or unstressed vowels)."},
+    {text: "For multi-syllable words, we can look at word stress to determine which vowels are stressed. If the syllable is stressed, its vowels are stressed. \
+    If the syllable is unstressed, its vowels are unstressed."},
+    {text: "Generally, vowels that are pronounced like \
     \"uh\" (" + '<a href="https://blog.allaboutlearningpress.com/schwas/" target="_blank">' + "schwa sound" + '</a>' + ") are \
-    unstressed. For instance, banana is often spoken as buh-na-nuh, \
-    " + '<a href="https://pronuncian.com/intro-to-schwa" target="_blank">' + "with the first and third a's unstressed" + '</a>' + "."},
-    {text: "Consider the word \"setting\". We could write SET/-G. But there are just four keys here. Can we fit this into \
+    unstressed. For instance, banana is often spoken as buh-na-nuh, " + '\
+    <a href="https://pronuncian.com/intro-to-schwa" target="_blank">' + "\
+    with the first and third a's unstressed" + '</a>' + "."},
+    {text: "In dictionaries, word stress is often indicated with a stress mark, which looks like a single quote. For instance, \
+    banana would look like ba-\'na-na, with a \' before the second syllable."},
+    {text: "Unstressed vowels will often appear with a schwa symbol, which looks like an upside down \"e\"."},
+    {text: "Consider the word \"islet\" (pronounced EYE+let). The \"i\" sound is stressed. The \"e\" sound in the second syllable is unstressed, \
+    so we can drop that vowel. This allows us to type this word in just one stroke.", vocab: ["islet: AOEULT"],
+    lesson: ["islet", "islet", "islet", "islet"]},
+    {text: "We have technically been dropping unstressed syllables when we've written -ed as -D, and when we've written -es as -S."},
+    {text: "Now we will learn a principle for writing words called inversion."},
+    {text: "Every once in a while, you can bend the application of steno order just a teensy bit so you can fit a word into \
+    one chord. If two letters are adjacent in a chord, but are out of steno order, you can swap their order."},
+    {text: "Consider the word \"decide\". We could write this in two strokes as TKE/SAOEUD. Then, we can drop the unstressed \"e\" \
+    to get TK/SAOEUD. S and TK are adjacent, so we can invert them to get STKAOEUD.",
+    vocab: ["decide: STKAOEUD", "~(or TKE/SAOEUD)"], lesson: ["decide", "decide", "decide", "decide", "decide"]},
+    {text: "Now consider the word \"setting\". We could write SET/-G. But there are just four keys here. Can we fit this into \
     a single stroke somehow? Perhaps we can use inversion?"},
-    {text: "Suppose we try SETG. This does not follow steno order. What we can do is move the -G to get SEGT. \
-    This is called \"folding in\" the ending, and is similar to inversion. However, folding in the ending does \
-    not always involve inversion. When we wrote \"starring\" as STARG instead of STAR/-G, we folded in the ending without inversion.",
-    vocab: ["setting: SEGT", "calling: KAULG", "kidding: KEUGD"],
+    {text: "We can invert the T and -G to get SEGT. This is called \"folding in\" the ending."},
+    {text: "However, folding in the ending does not always involve inversion. When we wrote \"starring\" as STARG instead \
+    of STAR/-G, we folded in the ending without inversion.", vocab: ["setting: SEGT", "calling: KAULG", "kidding: KEUGD"],
     lesson: ["setting", "starring", "calling", "kidding", "setting", "kidding", "calling", "kidding", "setting", "setting"]},
-    {text: "We can also use a folded in -E for some words ending in -y. For instance, sorry = SOR + a folded in -E = SOER.",
-    vocab: ["sorry: SOER", "~(or SOR/REU)", "carry: KAER", "~(or KAR/REU)"], lesson: ["sorry", "carry", "sorry", "carry", "sorry"]},
-    {text: "Time for more practice. Recall that \"use\" can be written either phonetically (AOUZ) or based on spelling (AOUS)." + '<br><br>' + "\
+    {text: "We can also use a folded-in -E for some words ending in -y. For \"sorry\", we can use SOR and folded-in -E, giving us SOER.",
+    vocab: ["sorry: SOER", "~(or SOR/REU)", "worry: WOER", "~(or WOR/REU)"], lesson: ["sorry", "worry", "sorry", "worry", "sorry"]},
+    {text: "Time for more practice. The word \"use\" can be written either phonetically (AOUZ) or based on spelling (AOUS)." + '<br><br>' + "\
     -T TKOG SAEUD TO US T- KO AOUZ AEU TKAEU OUT TP-PL",
-    vocab: ["dog: TKOG", "said: SAEUD", "(say was SAEU)", "to: TO", "us: US", "could: KO", "day: TKAEU"],
+    vocab: ["dog: TKOG", "said: SAEUD", "(say was SAEU)", "to: TO", "us: US", "could: KO", "use: AOUS", "use: AOUZ", "day: TKAEU"],
     lesson: ("The dog said to us it could use a day out .").split(" "), full: true},
     {text: "T-S AS KOELD AS AOEUS OUDZ TP-PL",
-    vocab: ["it's: T-S", "as: AS", "cold: KOELD", "ice: AOEUS", "outside: OUDZ"],
+    vocab: ["it's: T-S", "as: AS", "as: AZ", "cold: KOELD", "ice: AOEUS", "outside: OUDZ"],
     lesson: ("It's as cold as ice outside .").split(" ")},
     {text: "AE is used to distinguish between the homophones in this sentence. Tale has an A and E in it, and tail does not, \
-    so tale is the one that is mapped to AE.)",
+    so tale is the one that is mapped to AE.",
     vocab: ["sagged: SAGD", "its: EUTS", "tail: TAEUL", "at: AT", "sad: SAD", "tale: TAEL"],
     lesson: ("The dog sagged its tail at the sad tale .").split(" "), full: true},
+    {text: "We will use some new punctuation in the next exercise. Like in the sentences lesson, we haven't formally used these letters. \
+    Give it a try anyway, then compare your finger positions to the keyboard above."},
     {text: "To type -TD, place your pinky on the crack between -T and -D. Normally, fingers stay in their own columns. \
     The right pinky is an exception since it has to press two columns of keys. The pointers will also break this rule for \
     asterisks, as we will see soon enough.",
@@ -270,7 +318,7 @@ function menuListener() {
     vocab: ["an: -N", "be: -B", "being: -BG", "can be: K-B", "between: PWE/TWAOEPB", "(or TWEPB)"], extraCode: "rightMiddle"},
     {text: "Now that we have the P key, we can write the brief for \"and\", SKP (all left keys). We can combine this with other keys to make many short phrases. \
     The vocab list shows a handful of examples.",
-    vocab: ["and: SKP", "and the: SKP-T", "and you: SKPU", "and I: SKPEU", "and a: SKPA", "and I can: SKPEUBG"],
+    vocab: ["and: SKP", "and I: SKPEU", "and you: SKPU", "and a: SKPA", "and the: SKP-T", "and I can: SKPEUBG"],
     lesson: ["and", "and I", "and you", "and a", "and the", "and I can"], extraCode: "leftMiddleAgain"},
     {text: "We can make some similar phrases using \"it\".",
     vocab: ["it was: TWAS", "it wasn't: TWAEPBT", "it would: T-LD", "it can: T-BG", "it could: T-BGD", "it'll: T-L", "it has: T-Z", "-ing it: T-G"],
@@ -314,27 +362,40 @@ function menuListener() {
     extraCode: "greenAsterisks"},
     {text: " On a steno machine, there is just one long key for the asterisk, kind of like the left S key. Normally, the right index finger is in charge of the \
     asterisk. However, it is acceptable to use whichever index finger feels suitable for the word you are trying to write."},
-    {text: "The asterisk allows you to delete the last stroke that was output. It also is used to distinguish between homophones or other chords that have the same keys. \
+    {text: "The asterisk also allows you to delete the last stroke that was output. In addition, it can be used to distinguish between homophones or other chords that have the same keys. \
     We will not be doing any deleting in these lessons, but we will use the asterisk to distinguish chords."},
-    {text: "First, let's take a look at the other letters for the index fingers. The left index finger controls the H and R keys. Combined, these \
+    {text: "Before we practice using the asterisk, let's take a look at the other letters for the index fingers. The left index finger controls the H and R keys. Combined, these \
     produce L.", vocab: ["had: H", "are: R", "will: L"], extraCode: "leftPointer"},
-    {text: "The right pointer presses the -F key and the -R key. -FR does not produce a letter, but it is a brief for \"ever\". You can produce related briefs \
+    {text: "The right pointer presses the -F key and the -R key.", extraCode: "rightPointer"},
+    {text: "-FR does not produce a letter, but it is a brief for \"ever\". You can produce related briefs \
     by adding letters. You can get \"every\" by folding in an -E. Then we can get \"everybody\" as \"every\" + -B, and \"everything\" as \"every\" + -ing (-G)",
     vocab: ["of: -F", "off: OF", "are: -R", "(or R-)", "ever: -FR", "every: EFR", "everything: EFRG", "everywhere: WEFR",
-    "everybody: EFRB", "everyday: EFRD", "everyone: EFRPB"], extraCode: "rightPointer"},
-    {text: "We have a number of new letters that we type now that we have the pointer finger keys, such as M (PH) and N (TPH).",
-    extraCode: "pointerLetters2"},
-    {text: "We also have Z (S*), V (SR), and -V (*F). Frequently, if there is no conflict, just the -F can be used in place of *F. \
-    (We will use *F to practice typing -V key here, and -F in the words.)",
-    vocab: ["love: HRUF", "(or HROF)", "(or HR*UF)", "save: SAF", "savvy: SA*EF", "(^ folded-in -E suffix)", "satisfy: SAEF", "safe: SAEUF"],
+    "everybody: EFRB", "everyday: EFRD", "everyone: EFRPB"], extraCode: "everWords"},
+    {text: "We have a number of new letters now that we have the pointer finger keys, such as M (PH) and N (TPH).",
     extraCode: "pointerLetters1"},
+    {text: "We also have Z (S*), V (SR), and -V (*F). Frequently, if there is no conflict, just the -F can be used in place of *F. \
+    (We will use *F to practice typing -V key here, and we will use -F in the words.)",
+    vocab: ["love: HRUF", "(or HROF)", "(or HR*UF)", "save: SAF", "savvy: SA*EF", "(^ folded-in -E suffix)", "satisfy: SAEF", "safe: SAEUF"],
+    extraCode: "pointerLetters2"},
     {text: "You can also use -F in place of -S in words that have an -S before the end, such as MOFT (most) and MAFK (mask). \
     Sometimes you will need to use *S instead of -F, such as to differentiate LIFT (lift) and L*IS (list).", affix: ["-st: -FT", "-st: *S"],
     vocab: ["most: MOFT", "mask: MAFK", "~(or PHAS/-BG)", "lift: LIFT", "list: L*IS"],
     lesson: ["most", "mask", "most", "mask", "lift", "list", "list", "lift", "list", "list"]},
-    {text: "We also have C (KR) as well as the ch-sound (KH). We generally use S- or K- to write words beginning with \"c\". However, there \
+    {text: "You can also use *S to avoid inversion, such \
+    as in WOFRT (\"worst\"). Or you can use both, such as CAFT and CA*S for \"cast\".", affix: ["(ent-, int-: SPW)"],
+    vocab: ["cast: KA*S", "(or KAST)", "fast: TPAFT", "(or TPA*S)", "interest: SPWR*ES", "(or TR or T-R)", "loft: HROFT", "lost: HRO*S",
+    "twist: TW*EUS", "(or TWEUFT)", "worst: WO*RS", "(or WOFRT)"],
+    lesson: ["cast", "cast", "fast", "fast", "interest", "interest", "interest", "loft", "lost", "twist", "twist", "worst", "worst"]},
+    {text: "If you recall from the vowels lesson, Single Short = Spell, but anything else should be phonetic. You may have noticed that MOFT does \
+    not appear to follow this rule. Doesn't \"most\" have a long single vowel, so it should be written phonetically as MOEFT?"},
+    {text: "That's right! Actually, MOEFT is included in the Plover Dictionary. MOEFT is the phonetic entry, while MOFT is a brief."},
+    {text: "Here is another useful note on vowels, now that we have the pointer keys. We have AU for \"au\" words, but what about \"ua\"? We usually \
+    use a long u, but it can be helpful to think of this as an \"oo\" (AO) plus a \"u\". In \"actual\" = ak-CHOO-ul, we have this OO-u.",
+    vocab: ["actual: TAOUL", "dual: TKAOUL", "nuance: TPHAOUPBS", "truant: TRAOUPBT"],
+    lesson: ["actual", "actual", "dual", "dual", "nuance", "nuance", "truant", "truant"]},
+    {text: "Continuing our new letters, we have C (KR) as well as the ch-sound (KH). We generally use S- or K- to write words beginning with \"c\". However, there \
     are some cases when we use C to distinguish chords (such as \"sent\" and \"cent\"). The right-hand -ch/-tch is produced using -FP.", extraCode: "pointerLetters3"},
-    {text: "Some other letters that involve the pointers are Y (KWR), J (SKWR).", extraCode: "pointerLetters4"},
+    {text: "Some other letters that include the pointers are Y (KWR), J (SKWR).", extraCode: "pointerLetters4"},
     {text: "There are only a few new briefs for these keys.", vocab: ["in: N", "why: Y", "have: V", "consider: C"], extraCode: "pointerBriefs"},
     {text: "We can form some \"some\" words in the same way that we formed \"every\" words. earlier",
     vocab: ["something: S-G", "somewhere: SWR", "somebody: S-B",
@@ -421,12 +482,12 @@ function menuListener() {
     {text: "Another useful ending is -y, as in \"puppy\".", affix: ["-y: KWREU"], vocab: ["puppy: PUP/KWREU", "kitty: KEUT/KWREU"],
     lesson: "pup -y kit -y pup -y pup -y kit -y".split(" ")},
     {text: "We are going to address a few more conflicts. Consider axe vs action. -ction (you saw this as -kshun before, in the Middles lesson) is normally \
-    written -BGS, and so is -X. Here, -X takes priority and we add an asterisk to -ction.",
+    written -BGS, and so is -X. Here, -X is given priority over -BGS, so we add an asterisk to -ction. This leaves the higher priority -X with the easier stroke.",
     vocab: ["axe: ABGS", "action: A*BGS"], lesson: ["axe", "axe", "action", "action", "axe", "action", "axe", "action"]},
     {text: "Asterisks often follow conflict rules such as these. However, if one word is much more common than the conflicting word, the less common \
     word will use the asterisk instead."},
-    {text: "What if we want to write a word like \"divide\"? If we try to combine TK and SR as STKR, the TK breaks up the SR. Instead, what we can do is substitue a W- \
-    for the V-. So we would write TKWAOEUD. See if you can apply the same rule to \"severe\".",
+    {text: "What if we want to write a word like \"divide\"? If we try to combine TK and SR as STKR, the TK breaks up the SR. Instead, what we can do \
+    is substitue a W- for the V-. So we would write TKWAOEUD. See if you can apply the same rule to \"severe\".",
     vocab: ["divide: TKWAOEUD", "~(or TKEU/SRAOEUD)", "severe: SWAOER", "~(or SE/SRAOER)"],
     lesson: ["divide", "divide", "divide", "divide", "severe", "severe", "severe", "severe"]},
     {text: "Remember using -PBG to write the -nge in sponge? What if we have something like lung and lunge? We use -PBG for the hard G sound and \
@@ -435,16 +496,16 @@ function menuListener() {
     could be mapped to \"lunge\" based on this rule).",
     affix: ["-ng: -PBG", "-nge: -PBG", "(or *PBG)"], vocab: ["bing: PWEUPBG", "binge: PW*EUPBG", "~(or PWEUPB/-PBLG)", "lung: HRUPBG",
     "lunge: HRUPBLG", "~(or HRUPB/-PBLG)", "~(or HRUPB/*PBLG)"], extraCode: "ngeConflict"},
-    {text: "Now for a little more inversion, which we introduced in the ring finger lesson. For \"concept\", we invert con- (K-) and S. We invert d and s to get TKS, the \
+    {text: "Now we will do little more inversion, which we introduced in the ring finger lesson. For \"concept\", we invert con- (K-) and S. We invert d and s to get TKS, the \
     \"dis\" in \"discuss\", and invert m and s to get SPH, the \"mis\" is \"mistake\". We can also invert m and r in \"summer\", SURPL.",
     vocab: ["concept: SKEPT", "~(or KOPB/SEPT)", "~(or KAUPB/SEPT)", "dismiss: STKPHEUS", "~(or TKEUS/PHEUS)", "mistake: SPHAEUBG",
     "~(or PHEUZ/TAEUBG)", "summer: SURPL", "~(or SUPL/ER)"],
     lesson: ["concept", "dismiss", "summer", "mistake", "mistake", "summer", "dismiss", "concept"]},
-    {text: "One final trick -- to form some briefs, we can drop consonants or even full syllables. Recall that K is used for com- and con- prefixes. \
-    Here we drop the leading a- in again, the middle t in control, the middle c in document, and the middle c in discuss.",
-    vocab: ["again: TKPWEPB", "control: KROL", "~(or KAUPB/TROEL)", "~(or KOPB/TROEL)", "(or TKROEL)", "document: TKOUPLT", "~(or TKOBG/AOUPLT)",
+    {text: "We have one final trick. To form some briefs, we can drop consonants. Recall that K is used for com- and con- prefixes. \
+    Here we drop the the middle t in control, the middle c in document, and the middle c in discuss.",
+    vocab: ["control: KROL", "~(or KAUPB/TROEL)", "~(or KOPB/TROEL)", "(or TKROEL)", "document: TKOUPLT", "~(or TKOBG/AOUPLT)",
     "~(or TKOBG/KWRAOUPLT)", "discuss: STKUS", "~(or TKEUS/KUS)"],
-    lesson: ["again", "again", "control", "document", "discuss", "again", "document", "control", "discuss", "document"]},
+    lesson: ["control", "document", "discuss", "document", "control", "discuss", "document"]},
     {text: "Here are a few more words that drop middle t's or th's. The word \"other\", which you saw as OER, also follows this pattern.",
     vocab: ["mother: MOER", "water: WAUR", "rather: RAER", "bother: PWOER"],
     lesson: ["mother", "water", "rather", "bother", "water", "water", "rather", "mother", "bother"]},
@@ -567,17 +628,211 @@ function menuListener() {
     " + "subject-verb phrases total (I don't find, you find, we find)."},
     {text: "I have generated some of my own dictionaries for Plover to make these phrase lists more complete. I have attempted \
     " + " to mimic the phrasing provided in Plover Theory as much as possible."},
-    {text: "You can find these files and learn more about their entries by clicking \"Downloads\" in the menu above."},
+    {text: "You can find these files and learn more about their entries " + '<a href="downloads.html" target="_blank">' + "here" + '</a>' + "."},
     {text: document.getElementById("lesson10").textContent, top: lessonTitleTop, width: lessonTitleWidth},
+    {text: "We will look at some common patterns for forming one-stroke briefs in the Plover dictionary. These briefs are not the simplest \
+    forms for most of these words. "},
+    {text: "However, knowing these patterns will help you write words you don't know a brief for. These patterns will also help you \
+    understand how many other briefs in the dictionary are derived."},
+    {text: "Recall that dropping unstressed vowels and inversion are both part of Plover Theory. The other techniques you will see here \
+    are techniques used to form briefs, but are not rules of Plover Theory."},
+    {text: "There are too many new words to include them all in the vocab box. Therefore, only tricky words will be included there."},
+    {text: "If you are unable to figure out how to type a word, click the word in the practice drill.",
+    highlight: true, highlightElement: document.getElementById("practice"), lesson: ["click", "me"]},
+    {text: "Phonetic Words with Possibly Unexpected Spelling", vocab: ["talk: TAUBG", "walk: WAUBG", "view: SRAOU"],
+    lesson: ["talk", "talk", "walk", "walk", "view", "view"]},
+    {text: "Phonetic Words with Complex Sounds", affix: ["-rch: -FRPB", "-ch: -FP", "-nge: -PBG"],
+    vocab: ["church: KHUFRPB", "each: AOEFP", "speech: SPAOEFP", "such: SUFP", "watch: WAFP", "range: RAEUPBG"],
+    lesson: ["church", "each", "speech", "such", "watch", "range"]},
+    {text: "Phonetic Words with Complex Sounds:" + '<br>' + "-F as -S" + '<br><br>' + "\
+    Recall that -st can often be written as *S.", vocab: ["cost: KOFT", "(or KO*S)", "post: POEFT", "(or PO*ES)"],
+    lesson: ["cost", "costs", "least", "past", "post", "rest", "risk", "test"]},
+    {text: "Phonetic Words with Affixes", affix: ["ex-: KP", "-mp: -FRP", "(or *PL)", "-shun: -GS", "(e.g. -tion, -sion)", "com: K-", "-ment: -PLT", "ent-/int-: SPW"],
+    vocab: ["comment: KPHEPBT", "(or KOPLT)", "comments: KPHEPBTS", "(or KOPLTS)"],
+    lesson: ["version", "common", "comment", "comments", "compared", "complete", "complex", "moment", "entire"]},
+    {text: "Phonetic Words with Basic Endings", affix: ["-ing: -G", "-ly: -L", "-D: -ed"],
+    vocab: ["clearly: KHRAOURL", "using: AOUFG", "used: AOUFD", "(or AOUSD)"],
+    lesson: ["clearly", "highly", "nearly", "during", "feeling", "coming", "getting", "growing", "morning", "playing", "saying", "training",
+    "trying", "watching", "giving", "living", "using", "used"]},
+    {text: "Phonetic Words with Folded-In Endings", affix: ["-er: -R", "-ing: -G", "-y: E", "-ly: -L", "-or: -R"],
+    vocab: ["computer: KPAOURT", "(^ folded-in -R)", "binding: PWAOEUPBGD", "company: KPAEPB", "completely: KPHRAOELT", "earlier: RERL", "(early: ERL)", "movie: PHOEF"],
+    lesson: ["computer", "binding", "company", "completely", "earlier", "factor", "factors", "later", "leading", "longer", "meeting",
+    "mostly", "movie", "movies", "older", "paper", "papers", "party", "spending", "starting", "stories", "story"]},
+    {text: "Notice the spelling of \"movie\". This word is tricky, since it makes a sound like a long \"u\", but is not spelled with a \"u\".\
+    So should we consider this to be a short single vowel, or a long vowel?", vocab: ["movie: PHOEF"]},
+    {text: "The Plover Dictionary allows for either interpretation in this case. It uses a long \"u\" in PHAO*UF/SRAOE and PHAOU/SRAOE. \
+    Notice that you can put the v-sound in both syllables or just the last. Plover typically allows words to be broken up either way."},
+    {text: "There are also entries using just an \"o\" -- PHO*F/SRAOE, PHOF/KWREU, PHO/SRAOE, as well as PHOEF as we used before (remember that \
+    the E here is for the folded in -y ending)."},
+    {text: "Other words that are kind of tricky like this include \"ring\" and \"string\", which make a sound almost like a long \"e\". \
+    In this case, Plover only includes entries based on spelling, REUPBG and STREUPBG."},
+    {text: "In general, if you have a single vowel that makes a long vowel sound, but the sound doesn't match that vowel (e.g. ee with \"i\" \
+    instead of \"e\", or oo\/u with \"o\"), try using SPELLING first. In other words ..."},
+    {text: "... since \"ring\" is spelled with an \"i\", we try EU first (instead of ee = AOE). Since \"movie\" \
+    is spelled with an \"o\", we try O (instead of oo = AO; instead of u = AOU) first.",
+    vocab: ["ring: REUPBG", "string: STREUPBG", "(movie: PHOEF)"],
+    lesson: ["ring", "string", "movie", "ring", "string", "movie"]},
+    {text: "Phonetic Words with Folded-In Endings: Conflicting Keys" + '<br><br>' + "Sometimes it will seem like you cannot fold in an ending. \
+    For instance, with \"basically\", we would need to break up the -BG (c-sound) in order to insert -L. We can work around this by using the left-hand \
+    HR (L) instead.", affix: ["-ly: HR"],
+    vocab: ["basically: PWHRAEUFBG", "actually: THRAOUL"],
+    lesson: ["basically", "basically", "basically", "actually", "actually", "actually"]},
+    {text: "Similarly, \"former\" already uses the -R key in \"form\". So we use the left-hand R to add \"-er\".", affix: ["-er: R"],
+    vocab: ["former: TPRORPL", "workers: WRORBGS"], lesson: ["former", "former", "former", "workers", "workers", "workers"]},
+    {text: "Words with Unstressed Vowels" + '<br><br>' + "Remember that you can look a word up in a normal dictionary to determine stress."},
+    {text: "Words with Unstressed Vowels" + '<br><br>' + "Here, I will show stress with all caps. For instance, \"above\" is a-BOV. \
+    This shows stress on the second syllable. Plover Theory allows us to drop unstressed vowels (shown in lowercase here), so we get a-BOV = BOV. We use O (PWOF) instead of U (PWUF) since \
+    short-sounding single vowels " + '<a href="https://sites.google.com/site/learnplover/lessons-1-fingers-and-keys#TOC-Rules-For-Short-Vowel-Sounds" target="_blank">' + "\
+    use spelling" + '</a>' + ", as we learned in the Vowels lesson.",
+    vocab: ["above: PWOF"],
+    lesson: ["above", "above", "above"]},
+    {text: "Let's practice a few more examples so we can get used to dropping unstressed vowels. Notice that dropping unstressed vowels amounts to \
+    dropping lowercase vowels here." + '<br><br>' + " \
+    associated = a-SOE-shee-ate-ed = SOE-sh-t-d", vocab: ["associated: SOERBTD"], lesson: ["associated", "associated", "associated"]},
+    {text: "collection = ko-LEK-shun = k-LEK-shn", affix: ["-ction (-kshun): -BGS"], vocab: ["collection: KHREBGS"],
+    lesson: ["collection", "collection", "collection"]},
+    {text: "You may have noted that associated can also be pronounced a-SOE-see-ate-ed (no \"sh\" in the third syllable). The Plover Dictionary does \
+    include entries for this pronunciation. However, none of them can be compressed into a single stroke, which is our aim in this lesson."},
+    {text: "community = ko-MYU-ni-tee = k-MYOO-n-t" + '<br><br>' + "Here, we use a long u (AOU) in MYU, since m (PH) and y (KWR) together would \
+    break steno order. Similarly, \"value\" uses just a long u.", vocab: ["community: KPHAOUPBT", "value: SRAOUL"],
+    lesson: ["community", "community", "community", "value", "value", "values"]},
+    {text: "Words with Unstressed Vowels",
+    vocab: ["agree: TKPWRAOE", "apparently: PAEURPBLT", "(^ folded-in -L)", "effect: TPEBGT", "affect: TPAEBGT", "(^ AE disambiguator)"],
+    lesson: ["again", "agree", "allow", "among", "apparently", "approach", "effect", "affect", "effect", "affect",
+    "effects", "enough", "initial", "official", "officials"]},
+    {text: "Words with Unstressed Vowels" + '<br><br>' + "Let's look at some words with first-syllable stress. The word \"average\" can be pronounced \
+    AV-er-ij or AV-rij. Dropping unstressed vowels in the first pronunciation, we get AV-er-ij = AV-r-j. Dropping vowels in the \
+    second pronunciation, we get AV-rij = AV-rj. This results in the same spelling with Plover either way, AFRPBLG.",
+    vocab: ["average: AFRPBLG"], lesson: ["average", "average", "average"]},
+    {text: "Words with Unstressed Vowels: First Syllable Stress", vocab: ["money: PHUPB", "foreign: TPOERPB", "(or TPORPB)",
+    "quality: KWAULT", "security: SKAOURT", "unit: AOUPBT", "(or KWRAOUPBT)"],
+    lesson: ["current", "different", "differences", "different", "differences", "effort", "efforts", "evil", "favorite", "final", "finally", "followed",
+    "following", "foreign", "given", "levels", "limited", "market", "method", "methods", "money", "music", "noted", "offer", "office", "often",
+    "parents", "period", "practice", "private", "quality", "security", "serious", "several", "social", "special", "unit", "various", "visit"]},
+    {text: "Words with Unstressed Vowels: Last Syllable Stress" + '<br><br>' + "Notice that \"toward\" has different spellings available for \
+    different pronunciations (tord => TORD, to-WARD = t-WARD => TWARD or TWORD). For \"supposed\", we have suh-POHZD = s-POHZD => SPOEFD, \
+    or suh-POH-zid = s-POH-zd = SPOEFD.", vocab: ["behind: PWHAOEUPBD", "direct: TKREBGT", "supposed: SPOEFD", "toward: TORD", "(or TWARD)", "(or TWORD)"],
+    lesson: ["behind", "behind", "direct", "direct", "supposed", "supposed", "toward", "toward", "toward"]},
+    {text: "Sometimes we design briefs by \
+    " + '<a href="https://sites.google.com/site/learnplover/lesson-9-designing-briefs#TOC-Overlap-Chords" target="_blank">\
+    ' + "allowing chords to overlap" + '</a>' + ". In \"directly\", we want to fold in an -L, but we can't because it would break \
+    the -BG. Sometimes we go ahead and use these overlapping keys anyway.", vocab: ["directly: TKREUBLGT", "direct: TKREUBGT"],
+    lesson: ["directly", "direct", "directly", "direct"]},
+    {text: "We can use overlap to write \"function\" as TPUPBGS. Alternatively, we can \
+    " + '<a href="https://sites.google.com/site/learnplover/lesson-9-designing-briefs#TOC-Drop-More-Sounds" target="_blank">\
+    ' + "drop consonants" + '</a>' + ", as in TPUBGS. Dropping consonants (or other sounds) is another technique for designing briefs.",
+    affix: ["-ction (-kshun): -BGS"], vocab: ["function: TPUPBGS", "(or TPUBGS)"], lesson: ["function", "function", "function", "function"]},
+    {text: "Dropping Other Sounds: Stressed Vowels" + '<br><br>' + "These words drop unstressed vowels as before, but also drop stressed vowels.",
+    vocab: ["already: L-RD", "before: PW-FR"], lesson: ["already", "already", "already", "before", "before", "before"]},
+    {text: "Dropping Other Sounds: Stressed Vowels" + '<br><br>' + "The words here drop stressed vowels, but leave one unstressed vowel.",
+    vocab: ["ability: ABLT", "ago: AG", "events: AOEFPBTS"],
+    lesson: ["ability", "ability", "ago", "ago", "events", "events"]},
+    {text: "Now compare these same words to what we would have gotten by just dropping unstressed vowels as before." + '<br>' + "\
+    ability = a-BIL-i-tee = BIL-t => PWEULT = built" + '<br>' + "ago = a-GOE => GOE = go" + '<br>' + "\
+    events = e-VENTS = VENTS => SREPBTS = vents"},
+    {text: "Also notice that we did not just drop both the stress and unstressed vowels. Before, we got PW-FR, which still resembles the word \
+    \"before\". For this last set of words, we would have gotten BLT, G, and VNTS. None of these closely resemble the words we wanted to derive them \
+    from. These are also already briefs for other words."},
+    {text: "Dropping Other Sounds: Stressed Vowels" + '<br><br>' + "Here are some more words where we drop stressed syllables. For these words, \
+    the first unstressed vowel remains in the brief.", affix: ["-shun: -GS", "(e.g. -tion, -sion)"],
+    vocab: ["however: HOUFR", "provide: PROEFD", "reaction: RAOEBGS", "related: RELTD"], lesson: ["however", "however", "provide", "provide",
+    "provides", "reaction", "reaction", "related", "related"]},
+    {text: "Dropping Other Sounds: Stressed Vowels" + '<br><br>' + "This time, the last unstressed vowel remains in the brief.",
+    vocab: ["college: KHREPBLG", "dollars: TKHRARS", "equal: KWAUL", "sequence: SKWEPBS"], lesson: ["college", "college", "dollars", "dollars",
+    "equal", "equal", "sequence", "sequence", "sequences"]},
+    {text: "Dropping Other Sounds: Vowels in Single-Syllable Words" + '<br><br>' + "Words with one syllable do not have word stress. So we \
+    cannot technically drop stressed/unstressed vowels in these words. However, some briefs for these words are formed by dropping vowels. \
+    Here, we have ask = sk, and been = b-n.",
+    vocab: ["ask: SK", "been: PWPB", "asked: SK-D"], lesson: ["ask", "ask", "been", "been", "asked", "asked"]},
+    {text: "Inversion" + '<br><br>' + "We first covered inversion in the Rings lesson. Let's see if we can write \"benefit\" using inversion. \
+    Note that these words also drop unstressed vowels, since that is a principle of Plover Theory. We will show inverted letters in parentheses."},
+    {text: "benefit = BEN-e-fit = BEN-ft"},
+    {text: "***unclear For BEN-ft, we use a left-hand B-, vowel E. Then we have nft as right-hand keys, so we need -PB, -F, -T. To write these in steno order, \
+    we would need -F, -PB, -T. We can make this swap since -F and -PB are adjacent on the keyboard."},
+    {text: "So we can write PWEFPBT => befnt = be(nf)t."},
+    {text: "Inversion" + '<br><br>' + "Let's practice this, as well as some other words that use inversion.",
+    vocab: ["benefit: PWEFPBT", "credit: KRETD", "(cre(dt))", "decision: STKEUGS", "((ds)ision)", "design: STKAOEUPB", "((ds)in)"],
+    lesson: ["benefit", "benefits", "credit", "decision", "design", "designed"]},
+    {text: "***rephrase Inversion" + '<br><br>' + "See if you can figure out ways to write these words using inversion. Remember, if you don't know, you \
+    can always click the word in the exercise above, and you will see its brief on the keyboard. Some hints are provided in the vocab box.",
+    vocab: ["either: e(thr)", "(e(thr) = erth)", "enjoy: n(joi)", "(n(joi) = noij)", "history: his(tr)", "(^ try -F as s)"],
+    lesson: ["either", "either", "enjoy", "enjoy", "history", "history"]},
+    {text: "Inversion" + '<br><br>' + "See if you can figure out ways to write these words using inversion. Remember, if you don't know, you \
+    can always click the word in the exercise above, and you will see its brief on the keyboard. Note that \"totally\" is the same as \"total\"\
+    but adds a folded-in -ly ending.",
+    vocab: ["models: PHOLSD", "(^ fold in -S)", "(or PHO*LDZ)", "(^ easier to type)"],
+    lesson: ["despite", "disease", "model", "models", "single", "total", "totally"]},
+    {text: "Inversion" + '<br><br>' + "These words use inversion and also drop consonants.",
+    vocab: ["instead: STPHED", "((ns)ed, drop t)", "involved: SROFLD", "(vo(lv)d, drop n)", "remains: RAEUPLS", "(r(ma)s, drop n)"],
+    lesson: ["instead", "instead", "involved", "involved", "remains", "remains"]},
+    {text: "Inversion" + '<br><br>' + "These words use inversion and other brief-designing techniques. For \"general\" we use inversion, a folded-in \
+    -ly ending, AND the -ly ending overlaps with the SKWR. For \"described\", we use inversion. We could either say that we drop the K consonant, or that \
+    it overlaps with the TK.",
+    vocab: ["generally: SKWHRERPBL", "(je(nr)l + fold in -ly)", "described: STKRAOEUBD", "((ds)ribd)"],
+    lesson: ["generally", "generally", "described", "described"]},
+    {text: "We also have \"concentration\", which drops the n and t." + '<br><br>' + "kon-sen-TRA-shun = K-sn-TRA-shn (K for con-) \
+    " + '<br>' + "= K-s-RA-shn (drop n and t) => (KS)RAEUGS => SKRAEUGS",
+    affix: ["con-: K-", "-shun: -GS"], vocab: ["concentration: SKRAEUGS"], lesson: ["concentration", "concentration", "concentration"]},
+    {text: "In \"administration\", we drop several vowels and consonants." + '<br><br>' + "ad-min-u-STRA-shun = d-mn-STRA-shun \
+    " + '<br>' + "= d-STRA-shun (drop m, n) => (S(d&t))RAEUGS (overlap d,t) => STKRAEUGS",
+    affix: ["-shun: -GS"], vocab: ["administration: STKRAEUGS"], lesson: ["administration", "administration", "administration"]},
+    {text: document.getElementById("lesson11").textContent, top: lessonTitleTop, width: lessonTitleWidth},
+    {text: "Other Patterns: \"Folding In\" a Prefix" + '<br><br>' + "We disambiguate long/along and cross/across by using AO in the a- words. \
+    However, it can be useful to think of this as folding in the prefix.",
+    vocab: ["long: HROPBG", "along: HRAOPBG", "cross: KROS", "across: KRAOS", "tension: TEPBGS", "attention: TAEPBGS"],
+    lesson: ["long", "along", "long", "along", "cross", "across", "cross", "across", "tension", "attention", "tension", "attention"]},
+    {text: "Other Patterns: ex- as S" + '<br><br>' + "Sometimes you will see ex- words whose briefs begin with S-. Consider \"experience\". \
+    This is pronounced ik-SPEER-ee-uns. We drop the unstressed vowels and drop the first stressed consonant. We end up with SPEER-ns.",
+    vocab: ["experience: SPAOERPBS", "(or KPAOERPBS)", "experiments: SPAOERPLTS", "executive: SKAOUF"],
+    lesson: ["experience", "experience", "experiments", "experiments", "executive", "executive"]},
+    {text: "Other Patterns: -kly as -LG", vocab: ["likely: HRAOEULG", "quickly: KWEULG", "weekly: WAOELG"],
+    lesson: ["likely", "quickly", "weekly", "likely", "likely", "quickly", "quickly", "weekly", "weekly"]},
+    {text: "Other Patterns: -king as -G", vocab: ["looking: HRAOG", "walking: WAUG", "talking: TAUG"],
+    lesson: ["look", "looking", "looking", "walk", "walking", "walking", "talk", "talking", "talking"]},
+    {text: "Other Patterns: -ded as -TD", vocab: ["needed: TPHAOETD", "decided: STKAOEUTD", "divided: TKWAOEUTD"],
+    lesson: ["needed", "needed", "needed", "decided", "decided", "decided", "divided", "divided", "divided"]},
+    {text: "Other Patterns: -cal as *LG", vocab: ["magical: PHA*LG", "logical: HR*LG", "neurological: TPH*LG"],
+    lesson: ["magical", "logical", "neurological", "magical", "logical", "neurological"]},
+    {text: "Other Patterns: Folding In -F for -ive Endings",
+    vocab: ["motive: PHO*EUFT", "(PHOEUFT is moist)", "intuitive: TWAOUFT", "decisive: STKAOEUFS",
+    "adhesive: HAO*EFS", "(HAOEFS is heaves)", "alternative: HR-FRPBT"], lesson: ["motive", "motive", "intuitive", "intuitive", "decisive", "decisive",
+    "adhesive", "adhesive", "alternative", "alternative"]},
+    {text: "Other Patterns: -gion, -son, -tial as -GS", affix: ["(-shun: -GS)", "(e.g. -tion, -sion)"],
+    vocab: ["region: RAOEGS", "regions: RAOEGSZ", "poison: POEUGS", "season: SAOEGS", "treason: TRAOEGS", "essential: AOEGS", "confidential: K-FGS"],
+    lesson: ["region", "regions", "poison", "season", "treason", "essential", "essential", "confidential", "confidential"]},
+    {text: "Other Patterns: cans-, canc- as SK", vocab: ["cancer: SKER", "cancel: SKEL"],
+    lesson: ["cancer", "cancer", "cancel", "cancel", "cancer", "cancel", "cancer", "cancel"]},
+    {text: "Disambiguators: OEU", vocab: ["policy: POEULS", "poles: POELS", "theist: THAOEFT", "atheist: THOEUFT"],
+    lesson: ["policy", "policy", "poles", "poles", "theist", "theist", "atheist", "atheist"]},
+    {text: "Disambiguators: SK",
+    vocab: ["can't:  K-PBT", "cannot: SK-PBT", "corral: KRAL", "central: SKRAL", "(or STRAL)", "center: STR", "craft: KRAFT",
+    "contrast: SKRAFT", "(or KRAEFT)", "seen: SAOEPB", "scene: SKAOEPB", "(or SAEPB)", "signs: SAOEUPBS", "science: SKAOEUPBS"],
+    lesson: ["can't", "cannot", "can't", "cannot", "corral", "central", "central", "center", "craft", "contrast", "contrast", "seen",
+    "seen", "scene", "scene", "signs", "science", "science"]},
+    {text: "Unexpected Spellings" + '<br><br>' + "\"Culture\" and \"future\" use spelling instead of sound (\"ture\" sounds like \"chur\"). \
+    \"Situation\" is sometimes pronounced as \"sich-u-way-shun\", hence the W. \"Indeed\" is disambiguated from \"need\" with an unexpected -PB.",
+    vocab: ["culture: KURLT", "future: TPAOURT", "situation: STWAEUGS", "(or SWAEUGS)", "indeed: TPHAOEPBD"],
+    lesson: ["culture", "future", "situation", "situation", "indeed", "indeed", "culture", "future"]},
+    {text: "Unexpected Spellings" + '<br><br>' + "\"Pretty\" has a Single Short vowel, so we expect it to be SSSpelled, but it uses sound (\"i\") instead. \
+    However, some of its multistroke forms (PRET/TEU, PRET/AOE) do use spelling.",
+    vocab: ["pretty: PREUT"], lesson: ["pretty", "pretty", "pretty"]},
+    {text: "Inversion" + '<br><br>' + "Sometimes we take inversion and apply it to parts of a word. Here, \"animal\" becomes \
+    \"manl\" (drop unstressed vowels, invert \"m\" and \"an\"). \"Area\" (\"er-e-ya\") becomes \"ya-er\". \"Really\" (\"reel-lee\") becomes \"lee-reel\".",
+    vocab: ["animals: PHAPBL", "areas: KWRA*ERS", "really: HRAOERL"], lesson: ["animals", "animals", "areas", "areas", "really", "really"]},
+    {text: "In the Practice section (menu above), you will see a list of words titled \"Multiple Strokes Only\". See if you can apply some of the \
+    shortening techniques to come up with your own briefs" + " \
+    (or check " + '<a href="my_briefs_top_1000.xlsx">' + "here" + '</a>' + " for some ideas)."},
+    {text: document.getElementById("lesson12").textContent, top: lessonTitleTop, width: lessonTitleWidth},
+    {text: "If you have gone through all of the lessons, you have learned the \
+    " + '<a href="https://github.com/openstenoproject/plover/wiki/Top-100-English-Words-in-Plover\'s-Dictionary" target="_blank">' + "\
+    Top 100 English Words in Plover's Dictionary" + '</a>' + "."},
+    {text: "You have also learned many patterns that can be used to write many of the 1000 Most Commonly Used Words in English."},
+    {text: "If you click Practice in the menu above, you will see exercises to practice those 1000 words. These exercises divide \
+    the words into categories (such as \"Phonetic Words\" and \"Words with Inversion\")."},
     {text: "I strongly recommend you read both \
-    " + '<em><a href="https://www.artofchording.com" target="_blank">' + "The Art of Chording" + '</a></em>' + " and \
     " + '<em><a href="https://sites.google.com/site/learnplover" target="_blank">' + "Learn Plover!" + '</a></em>' + " \
-    These books are free and online, and will help you solidify and build on what you've learned here. Consider reading \
-    " + '<em>' + "The Art of Chording" + '</em>' + " first, as " + '<em>' + "Learn Plover!" + '</em>' + " has a ton of \
-    information, and " + '<em>' + "The Art of Chording" + '</em>'  + " will help build foundation for remembering it all."},
-    {text: "Also try out the Practice section in the menu above. It is based on \
-    " + '<a href="#" target="_blank">' + "Steno Jig" + '</a>' + " but adds features to practice errors and to use a metronome.",
-    highlight: true, highlightElement: document.getElementById("nav-practice")},
+    " + " and " + '<em><a href="https://www.artofchording.com" target="_blank">' + "The Art of Chording" + '</a></em>' + "\
+    These books are free and online, and will help you solidify and build on what you've learned here."},
     {text: "For more practice, check out the resources on the \
     " + '<a href="https://github.com/openstenoproject/plover/wiki/Learning-Stenography" target="_blank">' + "Open Steno Project GitHub page\
     " + '</a>' + "."}
@@ -641,7 +896,7 @@ function menuListener() {
     // add appropriate heading styles in vocab box
     if (narrationText[index].affix) {
       // vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Prefixes & Suffixes" + '<br>' + '</span>';
-      vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Prefixes & Suffixes" + '</span>';
+      vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Affixes & Sounds" + '</span>';
       if (window.innerWidth <= 750) {
         vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].affix.join("</span><span class='vocabSpan'>") + '</span>';
       } else {
@@ -690,13 +945,21 @@ function menuListener() {
   let menuIndices = [];
   for (let i = 0; i < items.length; i++) { menuIndices.push(narrationText.findIndex(obj => obj.text === items[i].textContent)); }
 
+  function clearHighlights() {
+    // unhighlight any highlighted elements
+    let highlighted = document.querySelectorAll(".highlight-element"), greenKeys = document.querySelectorAll(".green-key");
+    highlighted.forEach(function (element) { element.classList.remove("highlight-element") });
+    greenKeys.forEach(function (element) { element.classList.remove("green-key") });
+  }
+
   // show proper narration when a menu item is clicked; clear exercise and steno order
   for (let i = 0; i < items.length; i++) {
     items[i].addEventListener("click", function() {
-      // unhighlight any highlighted elements
-      let highlighted = document.querySelectorAll(".highlight-element"), greenKeys = document.querySelectorAll(".green-key");
-      highlighted.forEach(function (element) { element.classList.remove("highlight-element") });
-      greenKeys.forEach(function (element) { element.classList.remove("green-key") });
+      clearHighlights();
+      // // unhighlight any highlighted elements
+      // let highlighted = document.querySelectorAll(".highlight-element"), greenKeys = document.querySelectorAll(".green-key");
+      // highlighted.forEach(function (element) { element.classList.remove("highlight-element") });
+      // greenKeys.forEach(function (element) { element.classList.remove("green-key") });
 
       // show initial narration; clear steno order, exercise letters
       narration.hidden = false;
@@ -717,6 +980,7 @@ function menuListener() {
       clearPracticeLetters();
       clearStenoOrder();
       positionHand("");
+      clearHighlights();
       // let vocabSpans = document.querySelectorAll(".vocabSpan:not(.headingSpan):hover");
       // for (let i = 0; i < vocabSpans.length; i++) { vocabSpans[i].removeEventListener("click", vocabListener, false); }
 
