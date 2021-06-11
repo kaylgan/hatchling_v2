@@ -202,7 +202,8 @@ function determineKeystroke(keyArray) {
     "mn": "i",
     "ik": "\-n",
     "io": "\-m", "kl": "\-k", "uy": "\-v",
-    "tu": "\-v", "gu": "\-v", "hu": "-v"
+    "tu": "\-v", "gu": "\-v", "hu": "-v",
+    "\;\[": "\-sd"
   };
   let threeKeyMap = {
     "erw": "n", "dfs": "y",
@@ -214,12 +215,14 @@ function determineKeystroke(keyArray) {
     "adeqsw": "z", "deqsw": "z", "adesw": "z",
     "desw": "g", "adfs": "j",
     "iklo": "\-j",
+    "cmnv": "ī"
   }
 
   // make sure longest chord is processed and not its substrings
   let length = arrayToString.length;
   if (length >= 4 && fourPlusKeyMap[arrayToString]) {
-    return fourPlusKeyMap[arrayToString].toUpperCase();
+    if (fourPlusKeyMap[arrayToString] == "ī") { return fourPlusKeyMap[arrayToString]; }
+    else { return fourPlusKeyMap[arrayToString].toUpperCase(); }
   } else if (length === 3 && threeKeyMap[arrayToString]) {
     return threeKeyMap[arrayToString].toUpperCase();
   } else if (length === 2 && twoKeyMap[arrayToString]) {
@@ -334,6 +337,8 @@ function positionHand(keysPressed, stenoKey = "") {
 
   // move each finger to the proper key
   function moveFinger(keyDown, currentFinger, middle = false, special = false) {
+    console.log(stenoKey);
+
     if (currentFinger === "rightRotatedPinky") {
       f["rightRotatedPinky"].full.hidden = false;
       f["rightPinky"].full.hidden = true;
@@ -375,6 +380,12 @@ function positionHand(keysPressed, stenoKey = "") {
           f[currentFinger].full.classList.add("pointer-asterisk");
         }
       }
+    }
+
+    //---adjust pinky for -SD press---
+    if (stenoKey === "\-SD") {
+      f[currentFinger].finger.classList.remove("top-key");
+      f[currentFinger].dot.classList.remove("top-dot");
     }
 
     //---middle keys (no movement)---
@@ -486,10 +497,12 @@ function generatePracticeLetters(letters = [], start = 0, end = 10) {
   if (practiceDiv.firstChild || metronomeDiv.firstChild) { clearPracticeLetters(); } // clear practice and metronome divs
 
   getPracticeIndex(true, start);
+
   for (let i = start; i < end; i++) {
     let currentLetter = document.createElement("div");
     currentLetter.textContent = letters[i];
     currentLetter.classList.add("practice-letter");
+    currentLetter.addEventListener("click", vocabWordListener, false);
     practiceDiv.appendChild(currentLetter);
 
     if (i === start) {
@@ -507,6 +520,26 @@ function generatePracticeLetters(letters = [], start = 0, end = 10) {
     metronomeLetter.textContent = letters[i];
     metronomeLetter.classList.add("practice-letter");
     metronomeDiv.appendChild(metronomeLetter);
+  }
+
+  // show hand positions when a practice word is clicked
+  // let practiceWords = document.querySelectorAll("practice-letter");
+  // console.log("adding practiceWords?");
+  // for (let i = 0; i < practiceWords.length; i++) { practiceWords[i].addEventListener("click", vocabWordListener, false); }
+  function vocabWordListener() {
+    console.log("pressed a span, text is " + event.target.textContent);
+    // let wordIndex = event.target.textContent.indexOf(":");
+    // let word = event.target.textContent.substring(0, wordIndex);
+    let word = event.target.textContent.toLowerCase();
+    // console.log(word);
+    let reversed = checkDictionary([], true, word).split("");
+    // console.log("reversed: " + reversed);
+    if (reversed) {
+      positionHand(reversed);
+      pressKeys(reversed);
+      clearStenoOrder();
+      setStenoOrder(reversed);
+    }
   }
 }
 
