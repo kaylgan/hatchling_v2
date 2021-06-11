@@ -337,7 +337,7 @@ function positionHand(keysPressed, stenoKey = "") {
 
   // move each finger to the proper key
   function moveFinger(keyDown, currentFinger, middle = false, special = false) {
-    console.log(stenoKey);
+    // console.log(stenoKey);
 
     if (currentFinger === "rightRotatedPinky") {
       f["rightRotatedPinky"].full.hidden = false;
