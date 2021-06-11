@@ -190,7 +190,7 @@ function menuListener() {
     {text: "Similarly, AE is used for words like see (SAOE) and sea (SAE). The word containing \"ea\" gets the EA. If neither word contains \
     \"ea\", e.g. sail and sale, the one that contains \"a\" and \"e\" would get the AE (sale, in this case).",
     vocab: ["see: SAOE", "sea: SAE"],
-    lesson: ["see", "see", "sea", "sea"],
+    lesson: ["see", "see", "sea", "sea", "see", "sea", "see", "sea"],
     extraCode: "greenAE"},
     {text: "Another combo is AU, used for aw-sounds like in saw (SAU). Notice that \"sod\" was writted SOD, not SAUD, even though you \
     might say the vowel sounds the same. AU is used with aw sounds in words spelled with \"au\"/\"aw\", like \"laud\" and \"law\"",
@@ -272,7 +272,10 @@ function menuListener() {
     {text: "We have technically been dropping unstressed syllables when we've written -ed as -D, and when we've written -es as -S."},
     {text: "Now we will learn a principle for writing words called inversion."},
     {text: "Every once in a while, you can bend the application of steno order just a teensy bit so you can fit a word into \
-    one chord. If two letters are adjacent in a chord, but are out of steno order, you can swap their order."},
+    fewer strokes. If two letters are adjacent in a chord, but are out of steno order, you can swap their order."},
+    {text: "Inversion is meant to be used\
+    " + '<a href=https://sites.google.com/site/learnplover/lessons-2-steno-order#TOC-Inversion" target="_blank">' + "\
+    only once per word" + '</a>' + ", and only if the result does not conflict with an existing word."},
     {text: "Consider the word \"decide\". We could write this in two strokes as TKE/SAOEUD. Then, we can drop the unstressed \"e\" \
     to get TK/SAOEUD. S and TK are adjacent, so we can invert them to get STKAOEUD.",
     vocab: ["decide: STKAOEUD", "~(or TKE/SAOEUD)"], lesson: ["decide", "decide", "decide", "decide", "decide"]},
@@ -382,7 +385,7 @@ function menuListener() {
     vocab: ["most: MOFT", "mask: MAFK", "~(or PHAS/-BG)", "lift: LIFT", "list: L*IS"],
     lesson: ["most", "mask", "most", "mask", "lift", "list", "list", "lift", "list", "list"]},
     {text: "You can also use *S to avoid inversion, such \
-    as in WOFRT (\"worst\"). Or you can use both, such as CAFT and CA*S for \"cast\".", affix: ["(ent-, int-: SPW)"],
+    as in WOFRT (\"worst\"). Or you can use both, such as CAFT and CA*S for \"cast\".", affix: ["ent-, int-: SPW"],
     vocab: ["cast: KA*S", "(or KAST)", "fast: TPAFT", "(or TPA*S)", "interest: SPWR*ES", "(or TR or T-R)", "loft: HROFT", "lost: HRO*S",
     "twist: TW*EUS", "(or TWEUFT)", "worst: WO*RS", "(or WOFRT)"],
     lesson: ["cast", "cast", "fast", "fast", "interest", "interest", "interest", "loft", "lost", "twist", "twist", "worst", "worst"]},
@@ -636,7 +639,8 @@ function menuListener() {
     understand how many other briefs in the dictionary are derived."},
     {text: "Recall that dropping unstressed vowels and inversion are both part of Plover Theory. The other techniques you will see here \
     are techniques used to form briefs, but are not rules of Plover Theory."},
-    {text: "There are too many new words to include them all in the vocab box. Therefore, only tricky words will be included there."},
+    {text: "There are too many new words to include them all in the vocab box. Therefore, only a few sample words, along with any tricky words, \
+    will be included there. Affixes have been included in the vocab box for review."},
     {text: "If you are unable to figure out how to type a word, click the word in the practice drill.",
     highlight: true, highlightElement: document.getElementById("practice"), lesson: ["click", "me"]},
     {text: "Phonetic Words with Possibly Unexpected Spelling", vocab: ["talk: TAUBG", "walk: WAUBG", "view: SRAOU"],
@@ -651,7 +655,7 @@ function menuListener() {
     vocab: ["comment: KPHEPBT", "(or KOPLT)", "comments: KPHEPBTS", "(or KOPLTS)"],
     lesson: ["version", "common", "comment", "comments", "compared", "complete", "complex", "moment", "entire"]},
     {text: "Phonetic Words with Basic Endings", affix: ["-ing: -G", "-ly: -L", "-D: -ed"],
-    vocab: ["clearly: KHRAOURL", "using: AOUFG", "used: AOUFD", "(or AOUSD)"],
+    vocab: ["clearly: KHRAOERL", "using: AOUFG", "used: AOUFD", "(or AOUSD)"],
     lesson: ["clearly", "highly", "nearly", "during", "feeling", "coming", "getting", "growing", "morning", "playing", "saying", "training",
     "trying", "watching", "giving", "living", "using", "used"]},
     {text: "Phonetic Words with Folded-In Endings", affix: ["-er: -R", "-ing: -G", "-y: E", "-ly: -L", "-or: -R"],
@@ -797,7 +801,7 @@ function menuListener() {
     vocab: ["motive: PHO*EUFT", "(PHOEUFT is moist)", "intuitive: TWAOUFT", "decisive: STKAOEUFS",
     "adhesive: HAO*EFS", "(HAOEFS is heaves)", "alternative: HR-FRPBT"], lesson: ["motive", "motive", "intuitive", "intuitive", "decisive", "decisive",
     "adhesive", "adhesive", "alternative", "alternative"]},
-    {text: "Other Patterns: -gion, -son, -tial as -GS", affix: ["(-shun: -GS)", "(e.g. -tion, -sion)"],
+    {text: "Other Patterns: -gion, -son, -tial as -GS", affix: ["-shun: -GS", "(e.g. -tion, -sion)"],
     vocab: ["region: RAOEGS", "regions: RAOEGSZ", "poison: POEUGS", "season: SAOEGS", "treason: TRAOEGS", "essential: AOEGS", "confidential: K-FGS"],
     lesson: ["region", "regions", "poison", "season", "treason", "essential", "essential", "confidential", "confidential"]},
     {text: "Other Patterns: cans-, canc- as SK", vocab: ["cancer: SKER", "cancel: SKEL"],

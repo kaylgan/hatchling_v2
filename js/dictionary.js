@@ -166,12 +166,6 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "acikn": "scene", "jmops": "culture", "cejmpvw": "future", "\[ceiknrvw": "indeed", "\;acdlmnw": "situation", "\;acdlmn": "situation",
     "efmnp": "pretty", "fiklmn": "ring", "afiklmnw": "string", "\;acikmnv": "signs", "\;acikmnsv": "science",
     "\;ceikor": "animals", "\;cdfgjns": "areas", "cfjnorv": "really"
-    // add preferred finger for asterisks for entries
-    // check if need to add/remove vocab on each page
-    // ( around used prefixes)
-    // widths of narration box
-    // keyboard finger position for -SD
-    // resizing page, responsive
   }
 
   // reverse lookup
