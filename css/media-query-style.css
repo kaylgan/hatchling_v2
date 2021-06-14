@@ -1,8 +1,0 @@
-@media screen and (max-width: 950px) {
-  #nav-practice, #nav-about, #nav-contact, #nav-downloads {
-    display: none;
-  }
-  #nav-practice-small, #nav-about-small, #nav-contact-small, #nav-downloads-small {
-    display: inline-block;
-  }
-}

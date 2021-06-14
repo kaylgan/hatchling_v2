@@ -16,7 +16,7 @@ function menuListener() {
     {text: document.getElementById("tutorial").textContent, top: lessonTitleTop, width: lessonTitleWidth, extraCode: "enterToContinue"},
     {text: "Welcome to Hatchling, a web app to help you get used to stenography on a QWERTY keyboard."},
     {text: "Use the ENTER key to move forward through each lesson. Use the BACKSPACE key to go backward. You can press these on your keyboard, or \
-    you can tap them on the keyboard below."},
+    you can tap them on the keyboard above."},
     {text: "Now that you know how to navigate, let's take a closer look at the qwerty keyboard above. You may have noticed that it has some unusual letters added to it.",
     highlight: true, highlightElement: document.getElementById("keyboard")},
     {text: "These are stenography machine letters overlaid on a typical keyboard."},

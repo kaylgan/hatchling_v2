@@ -1,0 +1,6 @@
+@media screen and (orientation: portrait) and (max-width: 900px) {
+  body {
+    background-color: teal;
+    background-image: none;
+  }
+}
