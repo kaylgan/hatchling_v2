@@ -558,6 +558,18 @@ function clearPracticeLetters() {
   removeMetronomeListeners();
 }
 
+// -------------------- clear highlighted elements --------------------
+function clearHighlights() {
+  // unhighlight any highlighted elements
+  let highlighted = document.querySelectorAll(".highlight-element");
+  highlighted.forEach(function (element) { element.classList.remove("highlight-element") });
+}
+
+function clearGreenKeys() {
+  let greenKeys = document.querySelectorAll(".green-key");
+  greenKeys.forEach(function (element) { element.classList.remove("green-key") });
+}
+
 // -------------------- compare user keystroke to practice letters --------------------
 function compareToPractice(userKeystroke, dictionaryWord) {
   let practiceDiv = document.getElementById("practice");

@@ -19,11 +19,6 @@ function extraCode(whichCode) {
     generatePracticeLetters(getNextLesson(), 0, Math.min(getPracticeIndex()+10, getNextLesson().length));
   }
 
-  function updateGreenKeys(add, remove = []) {
-    for (let i = 0; i < add.length; i++) { document.getElementById(add[i]).classList.add("green-key"); }
-    for (let i = 0; i < remove.length; i++) { document.getElementById(remove[i]).classList.remove("green-key"); }
-  }
-
   switch (whichCode) {
     case ("enterToContinue"):
       document.getElementById("side-view").hidden = true;
@@ -32,10 +27,10 @@ function extraCode(whichCode) {
       setTimeout(function() {
         // if user hasn't already hit enter, prompt (early lessons only)
         if (narration.textContent === "Tutorial" || narration.textContent === "Pinkies") {
-          narration.textContent = "press ENTER to continue";
+          narration.textContent = "type/tap ENTER to continue";
         }
         // wiggle only if user still hasn't hit enter
-        if (narration.textContent === "press ENTER to continue") { narration.classList.add("wiggle"); }
+        if (narration.textContent === "type/tap ENTER to continue") { narration.classList.add("wiggle"); }
         setTimeout(function() { narration.classList.remove("wiggle"); }, 7000)
       }, 1500);
     break;
@@ -69,32 +64,8 @@ function extraCode(whichCode) {
       document.getElementById("lp-fend").classList.add("bottom-key");
       document.getElementById("lp-ftip").classList.add("bottom-dot");
       break;
-    case ("showSKeys"):
-      updateGreenKeys(["key-A", "key-Q", "key-colon"]);
-      break;
-    case ("leftSKeys"):
-      updateGreenKeys([], ["key-colon"]);
-      break;
-    case ("hideSKeys"):
-      updateGreenKeys([], ["key-A", "key-Q"]);
-      break;
-    case ("showSS"):
-      updateGreenKeys(["key-colon", "key-A"]);
-      break;
-    case ("leftSKeys2"):
-      updateGreenKeys(["key-Q"], ["key-colon"]);
-      break;
-    case ("rightSKey"):
-      updateGreenKeys(["key-colon"], ["key-A", "key-Q"]);
-      break;
     case ("clearPractice"):
       clearPracticeLetters();
-      break;
-    case ("greenPinkies"):
-      updateGreenKeys(["key-Q", "key-A"]);
-      break;
-    case ("greenPinkiesRight"):
-      updateGreenKeys(["key-P", "key-colon", "key-lbrace", "key-quote"], ["key-Q", "key-A"]);
       break;
     case ("rightPinkies"):
       lesson = [
@@ -106,7 +77,6 @@ function extraCode(whichCode) {
       ];
       break;
     case ("pinkyLessons"):
-      updateGreenKeys(["key-Q", "key-A"]);
       lesson = [
         ["ab", ["S", "-S"]],
         ["abc", ["-S", "-Z", "S"]],
@@ -126,7 +96,6 @@ function extraCode(whichCode) {
       ];
       break;
     case ("vowelKeys"):
-      updateGreenKeys(["key-C", "key-V", "key-N", "key-M"]);
       lesson = [
         ["ab3", ["A", "O"]], ["ab4", ["A", "O"]], ["ab2", ["A", "O"]],
         ["ab3", ["E", "U"]], ["ab2", ["E", "U"]],  ["ab", ["E", "U"]],
@@ -154,9 +123,6 @@ function extraCode(whichCode) {
         ["ab4", ["I", "E"]],
         ["ab3", ["I", "O"]]
       ];
-      break;
-    case ("greenThumbs"):
-      updateGreenKeys(["key-C", "key-V", "key-N", "key-M"]);
       break;
     case ("preShortVowels"):
       lesson = [
@@ -207,21 +173,6 @@ function extraCode(whichCode) {
         ["five3", ["say", "seed", "sight", "sow", "suit"]]
       ];
       break;
-    case ("greenO"):
-      updateGreenKeys([], ["key-C"]);
-      break;
-    case ("greenOO"):
-      updateGreenKeys(["key-C"], ["key-N", "key-M"]);
-      break;
-    case ("greenAE"):
-      updateGreenKeys(["key-N"], ["key-V"]);
-      break;
-    case ("greenAU"):
-      updateGreenKeys(["key-M"], ["key-N"]);
-      break;
-    case ("greenOU"):
-      updateGreenKeys(["key-V"], ["key-C"]);
-      break;
     case ("oVowels"):
       lesson = [
         ["ab2", ["road", "rode"]],
@@ -232,23 +183,7 @@ function extraCode(whichCode) {
         ["asIs", ["out", "out-", "set", "out", "out-", "set"], true],
       ];
       break;
-    case ("clearGreenThumbs"):
-      updateGreenKeys([], ["key-C", "key-V", "key-N", "key-M"]);
-      break;
-    case ("clearGreenPinkies"):
-      updateGreenKeys([], ["key-A", "key-Q", "key-P", "key-colon", "key-lbrace", "key-quote"]);
-      break;
-    case ("clearGreenMiddles"):
-      updateGreenKeys([], ["key-E", "key-D", "key-I", "key-K"]);
-      break;
-    case ("clearGreenPointers"):
-      updateGreenKeys([], ["key-R", "key-F", "key-U", "key-J"]);
-      break;
-    case ("greenAsterisks"):
-      updateGreenKeys(["key-T", "key-G", "key-Y", "key-H"]);
-      break;
     case ("leftRing"):
-      updateGreenKeys(["key-W", "key-S"]);
       lesson = [
         ["ab2", ["T", "K"]], ["ab3", ["T", "K"]], ["ab", ["T", "K"]],
         ["abc", ["T", "K", "D"]], ["abc2", ["T", "K", "D"]],
@@ -267,7 +202,6 @@ function extraCode(whichCode) {
       ];
       break;
     case ("rightRing"):
-      updateGreenKeys(["key-O", "key-L"], ["key-W", "key-S"]);
       lesson = [
         ["ab3", ["-L", "-G"]], ["ab", ["-L", "-G"]], ["ab2", ["-L", "-G"]],
         ["ab2", ["-L", "-T"]], ["ab3", ["-L", "-T"]], ["ab", ["-L", "-T"]],
@@ -280,12 +214,10 @@ function extraCode(whichCode) {
       break;
     case ("rightRing2"):
       lesson = [
-        ["abcd", ["-L", "-G", "-ing", "starring"]],
         ["asIs", ["-lch, -lge", "-lch, -lge", "-ing", "-ing", "-lch, -lge", "-ing", "-lch, -lge", "-lch, -lge", "-ing", "-ing"], true]
       ];
       break;
     case("rightRingReview"):
-      updateGreenKeys(["key-W", "key-S"]);
       lesson = [
         ["ab", ["call", "kale"]],
         ["ab2", ["dig", "dial"]],
@@ -293,11 +225,7 @@ function extraCode(whichCode) {
         ["six", ["call", "kale", "tug", "dig", "tile", "dial"]]
       ];
       break;
-    case ("greenLeftMiddles"):
-      updateGreenKeys([], ["key-W", "key-S", "key-O", "key-L"]);
-      break;
     case ("leftMiddle"):
-      updateGreenKeys(["key-E", "key-D"]);
       lesson = [
         ["ab", ["P", "W"]], ["ab4", ["P", "W"]], ["ab3", ["P", "W"]],
         ["abc", ["P", "W", "B"]], ["abc2", ["P", "W", "B"]],
@@ -314,7 +242,6 @@ function extraCode(whichCode) {
       ];
       break;
     case ("rightMiddle"):
-      updateGreenKeys(["key-I", "key-K"], ["key-E", "key-D"]);
       lesson = [
         ["ab2", ["-P", "-B"]], ["ab3", ["-P", "-B"]], ["ab", ["-P", "-B"]],
         ["abc2", ["-P", "-B", "-N"]],
@@ -332,9 +259,6 @@ function extraCode(whichCode) {
         ["asIs", ["be", "being", "can be", "can be", "being", "can", "be", "can be", "being", "be"], true],
         ["asIs", ["be", "be-", "tween", "between", "being", "be-", "tween", "can be", "be-", "between"], true]
       ];
-      break;
-    case ("leftMiddleAgain"):
-      updateGreenKeys(["key-E", "key-D"]);
       break;
     case ("middleLettersLeft"):
       // F Q X G
@@ -414,7 +338,6 @@ function extraCode(whichCode) {
       ];
       break;
     case ("leftPointer"):
-      updateGreenKeys(["key-R", "key-F"], ["key-T", "key-G", "key-Y", "key-H"]);
       lesson = [
         ["ab3", ["H", "R"]], ["ab2", ["H", "R"]], ["ab4", ["H", "R"]],
         ["abc", ["H", "R", "L"]], ["abc3", ["H", "R", "L"]],
@@ -431,7 +354,6 @@ function extraCode(whichCode) {
       ];
       break;
     case ("rightPointer"):
-      updateGreenKeys(["key-U", "key-J"], ["key-R", "key-F"]);
       lesson = [
         ["ab", ["-F", "-R"]], ["ab2", ["-F", "-R"]], ["ab3", ["-F", "-R"]],
         ["ab", ["-F", "-P"]], ["ab3", ["-F", "-P"]], ["ab4", ["-F", "-P"]],
@@ -446,12 +368,15 @@ function extraCode(whichCode) {
         ["abc", ["-R", "-B", "-G"]], ["abc2", ["-R", "-G", "-S"]], ["abc3", ["-R", "-B", "-Z"]]
       ];
       break;
-    case ("everWords"):
+    case ("rightPointerBriefs"):
       lesson = [
         ["five", ["-F", "of", "-R", "are", "ever"]],
         ["abc2", ["of", "are", "ever"]],
         ["ab2", ["of", "off"]],
-        ["ab3", ["ever", "every"]],
+      ];
+      break;
+    case ("everWords"):
+      lesson = [
         ["five2", ["everything", "everywhere", "everybody", "everyday", "everyone"]]
       ];
       break;
@@ -463,7 +388,6 @@ function extraCode(whichCode) {
       ];
       break;
     case ("pointerLetters1"):
-      updateGreenKeys(["key-R", "key-F"]);
       lesson = [
         ["ab2", ["M", "N"]],
         ["ab", ["N", "M"]],
@@ -476,11 +400,15 @@ function extraCode(whichCode) {
         ["ab", ["Z", "V"]],
         ["ab3", ["V", "-V"]],
         ["abc2", ["V", "-V", "Z"]],
-        ["five", ["V", "-V", "Z", "-Z", "-V"]],
+        ["five", ["V", "-V", "Z", "-Z", "-V"]]
+      ];
+      break;
+    case ("pointerFBriefs"):
+      lesson = [
         ["abc", ["love", "save", "love"]],
+        ["ab", ["safe", "save"]],
         ["ab", ["save", "savvy"]],
-        ["ab", ["savvy", "satisfy"]],
-        ["ab", ["save", "safe"]]
+        ["ab", ["savvy", "satisfy"]]
       ];
       break;
     case ("pointerLetters3"):
@@ -532,24 +460,6 @@ function extraCode(whichCode) {
         ["ab3", ["lunge", "binge"]]
       ];
       break;
-    case ("highlightNumberBar"):
-      updateGreenKeys(["key-one", "key-two", "key-three", "key-four", "key-five",
-      "key-six", "key-seven", "key-eight", "key-nine", "key-zero", "key-minus", "key-equals"]);
-      break;
-    case ("highlightNumber1"):
-      updateGreenKeys(["key-Q"], ["key-three", "key-four", "key-five",
-      "key-six", "key-seven", "key-eight", "key-nine", "key-zero", "key-minus", "key-equals"]);
-      break;
-    case ("highlightNumber0"):
-      updateGreenKeys(["key-three", "key-four", "key-V"], ["key-one", "key-two", "key-Q"])
-      break;
-    case ("highlightNumbers"):
-      updateGreenKeys(["key-Q", "key-W", "key-E", "key-R", "key-C", "key-U", "key-I", "key-O", "key-P"],
-      ["key-three", "key-four"])
-      break;
-    case ("clearNumbers"):
-      updateGreenKeys([], ["key-Q", "key-W", "key-E", "key-R", "key-C", "key-V", "key-U", "key-I", "key-O", "key-P"])
-      break;
     case ("lrExtendedABC"):
       lesson = [
         ["ab", ["B", "-B"]],
@@ -584,17 +494,6 @@ function extraCode(whichCode) {
         "-sh", "-tion, -sion (-shun)", "-tious, -cious (-shus)", "-ction (-kshun)", "-sh", "-tious, -cious (-shus)"], true]
       ];
       break;
-    // case ("couldLesson"):
-    //   lesson = [
-    //     ["asIs", ["I could", "I could", "you could", "you could", "it could", "it could"], true],
-    //     ["asIs", ["she could", "she could", "he could", "he could", "we could", "we could"], true],
-    //     ["asIs", ["they could", "they could", "who could", "who could", "what could", "what could"], true],
-    //     ["asIs", ["which could", "which could", "that could", "that could"], true],
-    //   ];
-    //   break;
-    case ("images"):
-      document.getElementById("steno-and-keyboard").hidden = true;
-      document.getElementById("just-plover").hidden = false;
     default:
       console.log("extra code not defined");
   }

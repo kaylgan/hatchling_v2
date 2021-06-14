@@ -25,7 +25,7 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "go": "-le", "jk": "-sh", "\;l": "-tion, -sion (-shun)",
     "pu": "-st", "\;g": "-st",
      "gp": "-th", "nv": "ō", "as": "ask",
-    "cl": "ago", "fw": "interest", "jw": "interest"
+    "cl": "ago", "fw": "interest", "jw": "interest", "\[c": "add"
   };
   let threeKeys = {
     "acp": "sat", "anp": "set", "\[av": "sod",
@@ -45,7 +45,7 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "iju": "-mp", "ikl": "-ng, -nge", "jku": "-rve", "\;jk": "-tious, -cious (-shus)",
     "acu": "save", "kmo": "you believe", "\;am": "suss",
     "cmn": "ā", "cnv": "ē", "cmv": "ū", "cps": "cat", "juv": "offer", "\;uv": "office", "\[as": "asked",
-    "afw": "center"
+    "afw": "center", "\[an": "said"
   }
   let fourPlusKeys = {
     "acjw": "star", "\;acjw": "stars", "cmpv": "out-",
@@ -165,7 +165,7 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "cfpsu": "craft", "acfpsu": "contrast", "cfnpsu": "contrast", "aciknv": "seen", "aciknsv": "scene",
     "acikn": "scene", "jmops": "culture", "cejmpvw": "future", "\[ceiknrvw": "indeed", "\;acdlmnw": "situation", "\;acdlmn": "situation",
     "efmnp": "pretty", "fiklmn": "ring", "afiklmnw": "string", "\;acikmnv": "signs", "\;acikmnsv": "science",
-    "\;ceikor": "animals", "\;cdfgjns": "areas", "cfjnorv": "really"
+    "\;ceikor": "animals", "\;cdfgjns": "areas", "cfjnorv": "really", "aiknp": "sent", "fiknps": "cent"
   }
 
   // reverse lookup
