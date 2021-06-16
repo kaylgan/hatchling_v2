@@ -2,37 +2,70 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hatchling</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Grandstander:wght@100&display=swap" rel="stylesheet">
   <link href="fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/alt-menu-style.css">
+  <link rel="stylesheet" href="css/media-queries.css">
 </head>
 <body>
 
   <nav id="nav-bar">
-    <a href="index.html">
-      <div id="logo-box">
-      <div id="logo">
-        <div id="egg-spots"></div>
-        <div id="bird">
-          <div id="eye"></div>
-          <div id="beak"></div>
+    <div id="desktop-logo">
+      <a href="index.html">
+        <div id="logo-box">
+          <div id="logo">
+            <div id="egg-spots"></div>
+            <div id="bird">
+              <div id="eye"></div>
+              <div id="beak"></div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- MOBILE NAV BAR -->
+    <div id="nav-items-mobile" hidden>
+      <div id="dropdown">
+        <span id="nav-lessons" class="navItems">
+          <i class="fas fa-bars" id="hamburger-menu"></i>
+          <div id="mobile-logo">
+            <div id="logo-box">
+              <a href="index.html">
+                <div id="logo">
+                  <div id="egg-spots"></div>
+                  <div id="bird">
+                    <div id="eye"></div>
+                    <div id="beak"></div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </span>
+        <div id="dropdown-content">
+          <a href="index.html"><span id="nav-lessons" class="navItems">Lessons</span></a>
+          <a href="practicing.html"><span id="nav-practice" class="navItems">Practice</span></a>
+          <a href="about.html"><span id="nav-about" class="navItems">About</span></a>
+          <a href="contact.html"><span id="nav-contact" class="navItems">Contact</span></a>
         </div>
       </div>
-    </div>
-    </a>
+    </div><!-- nav-items-mobile -->
 
-  <div id="nav-items">
-    <span id="nav-lessons" class="navItems"><a href="index.html">Lessons</a></span>
-    <span id="nav-practice" class="navItems"><a href="practicing.html">Practice</a></span>
-    <span id="nav-practice-small" class="navItems"><a href="practicing.html"><i class="fas fa-user-check"></i></a></span>
-    <span id="nav-about" class="navItems"><a href="about.html">About</a></span>
-    <span id="nav-about-small" class="navItems"><a href="about.html"><i class="far fa-question-circle"></i></a></span>
-    <span id="nav-contact" class="navItems"><a href="contact.html">Contact</a></span>
-    <span id="nav-contact-small" class="navItems"><a href="contact.html"><i class="far fa-envelope"></i></a></span>
-  </div><!-- nav-items -->
+    <!-- DESKTOP NAV BAR -->
+    <div id="nav-items">
+      <span id="nav-lessons" class="navItems"><a href="index.html">Lessons</a></span>
+      <span id="nav-practice" class="navItems"><a href="practicing.html">Practice</a></span>
+      <span id="nav-practice-small" class="navItems"><a href="practicing.html"><i class="fas fa-user-check"></i></a></span>
+      <span id="nav-about" class="navItems"><a href="about.html">About</a></span>
+      <span id="nav-about-small" class="navItems"><a href="about.html"><i class="far fa-question-circle"></i></a></span>
+      <span id="nav-contact" class="navItems"><a href="contact.html">Contact</a></span>
+      <span id="nav-contact-small" class="navItems"><a href="contact.html"><i class="far fa-envelope"></i></a></span>
+    </div><!-- nav-items -->
   </nav>
 
   <div id="relative-container">

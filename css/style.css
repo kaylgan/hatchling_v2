@@ -313,18 +313,20 @@ a {
 }
 
 .vocabSpan {
-  /* display: inline-block; */
   display: block;
-  /* width: 238px; */
-  /* width: 100%; */
   color: gray;
   margin: 0;
   padding: 0;
   border: 1px solid teal;
   border-bottom: 1px dotted teal;
-  text-indent: 55px;
-  /* padding-left: 55px; */
+  /* text-indent: 55px; */
   z-index: 1;
+}
+
+.vocabSpan p {
+  padding: 0;
+  margin: 0;
+  margin-left: 45px;
 }
 
 .vocabSpan:not(.headingSpan):hover {

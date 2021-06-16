@@ -150,7 +150,6 @@ window.onload = function() {
 		let textArea = document.getElementById("user-text");
 		// let setText = "nothing selected";
 		function listListener() {
-			console.log("in listListener");
 			textArea.value = getWordList(event.target.id);
 		}
 	}

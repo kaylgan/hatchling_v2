@@ -508,10 +508,9 @@ function generatePracticeLetters(letters = [], start = 0, end = 10) {
     if (i === start) {
       // make first letter fully visible, on top
       currentLetter.style.zIndex = 5;
+      let marginSize = currentLetter.getBoundingClientRect().width/5;
+      if (window.innerWidth < 700) { currentLetter.style.marginLeft = marginSize + "%"; }
       currentLetter.style.overflow = "visible";
-      // if (currentLetter.getBoundingClientRect().width > 100) {
-      //   currentLetter.style.minWidth = "auto";
-      // }
       currentLetter.style.minWidth = "auto";
     }
 

@@ -901,6 +901,8 @@ function menuListener() {
 
   // go to selected index, show text for that index
   function showNarration() {
+    if (!narrationText[index]) { return; } // if link to other page clicked, follow link
+
     // use preset width if set, else set a width relative to string length
     if (window.innerWidth <= 450) { narration.style.width = 95 + "\%"; }
     else if (narrationText[index].width != null) { narration.style.width = narrationText[index].width + "px"; }
@@ -965,24 +967,18 @@ function menuListener() {
     if (!narrationText[index].vocab && !narrationText[index].affix) { vocabBox.hidden = true; }
     if (narrationText[index].vocab || narrationText[index].affix) { vocabBox.innerHTML = ""; }
 
-    // add appropriate heading styles in vocab box
+    // add vocab entries
+    //---affixes and sounds entries
     if (narrationText[index].affix) {
       vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Affixes & Sounds" + '</span>';
-      if (window.innerWidth <= 750) {
-        vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].affix.join("</span><span class='vocabSpan'>") + '</span>';
-      } else {
-        vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].affix.join("</span><span class='vocabSpan'>") + '</span>';
-      }
+      vocabBox.innerHTML += '<span class="vocabSpan">' + '<p>' + narrationText[index].affix.join("</p></span><span class='vocabSpan'><p>") + '</p>' + '</span>';
       vocabBox.hidden = false;
     }
 
+    //---vocab entries
     if (narrationText[index].vocab) {
       vocabBox.innerHTML += '<span class="headingSpan vocabSpan">' + "Vocab" + '</span>';
-      if (window.innerWidth <= 750) {
-        vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].vocab.join("</span><span class='vocabSpan'>") + '</span>';
-      } else {
-        vocabBox.innerHTML += '<span class="vocabSpan">' + narrationText[index].vocab.join("</span><span class='vocabSpan'>") + '</span>';
-      }
+      vocabBox.innerHTML += '<span class="vocabSpan">' + '<p>' + narrationText[index].vocab.join("</p></span><span class='vocabSpan'><p>") + '</p>' + '</span>';
       vocabBox.hidden = false;
     }
 
