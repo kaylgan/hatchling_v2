@@ -33,7 +33,7 @@ function menuListener() {
     {text: "Keyboards with n-key rollover are able to press a large number of keys at once without conflict."},
     {text: "You will likely want to get an NKRO keyboard eventually. But a regular keyboard is enough to get you through these lessons. \
     So let's start looking at hand positions now.", extraCode: "showSideView"},
-    {text: "If you type some letter keys, you will notice the hands above moving."},
+    {text: "If you type some letter keys, you will notice the hand images moving."},
     {text: "These hands show a very simplified representation of steno movements. They are much more rigid than real movements."},
     {text: "Just concentrate on placing your fingertips or thumb sides on the proper key or gap (which you will learn soon)."},
     {text: "You can see a video of how keyboard stenography actually \
@@ -44,9 +44,9 @@ function menuListener() {
     highlight: true, highlightElement: document.getElementById("side-view"), extraCode: "readjustThumb"},
     {text: "The thumbs are turned on their sides, also above gaps.",
     highlight: true, highlightElement: document.getElementById("thumb-side"), extraCode: "adjustThumb"},
-    {text: "Each finger can reach forward to press the top key (watch the hands above move when you press ENTER) ...",
+    {text: "Each finger can reach forward to press the top key (watch the hands move when you press ENTER) ...",
     highlight: true, highlightElement: document.getElementById("finger-side-tip"), extraCode: "readjustThumb"},
-    {text: "Notice the movement on the left image, as well -- the teal represents a very simplified fingertip. \
+    {text: "Notice the movement on the full keyboard image, as well -- the teal represents a very simplified fingertip. \
     The grayish circles are just visual aids to help you see which keys are being pressed.",
     extraCode: "pointerForward"},
     {text: "Now, backwards movement." + '<br><br>' + '\
@@ -54,7 +54,7 @@ function menuListener() {
     Here" + '</a>' + " are some useful images showing these positions.", width: 350,
     extraCode: "pointerBackward"},
     {text: "You will notice that some keys are duplicated on the keyboard. For instance, qwerty Q, A, and colon/semicolon \
-    are all steno S's.", greenKeysOn: ["key-A", "key-Q", "key-colon"]},
+    are all steno S's.", greenKeysOn: ["key-A", "key-Q", "key-colon"], extraCode: "hideSideView"},
     {text: "On a steno machine, the left-hand S's are combined into one long key. On a qwerty keyboard, you can use whichever one is easiest for the word \
     you are typing.", greenKeysOn: ["key-A", "key-Q"], greenKeysOff: ["key-colon"]},
     {text: "We will practice typing these different S's soon.", greenKeysOff: ["key-A", "key-Q"]},
@@ -950,7 +950,7 @@ function menuListener() {
       getPracticeIndex(true, 0);
 
       // show the proper number of letters -- all, 10, or length or text
-      if (narrationText[index].full) {
+      if (narrationText[index].full && window.innerWidth > 480) {
         getNextLessonFull(true, true); // set next lesson full to true
         generatePracticeLetters(getNextLesson(), 0, getNextLesson().length);
        }
