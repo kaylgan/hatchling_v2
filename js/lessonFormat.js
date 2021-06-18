@@ -35,7 +35,7 @@ function extraCode(whichCode) {
       }, 1500);
     break;
     case ("showSideView"):
-      if (window.innerWidth > 300) { document.getElementById("side-view").hidden = false; }
+      document.getElementById("side-view").hidden = false;
       document.getElementById("lp-fend").classList.remove("top-key", "bottom-key");
       document.getElementById("lp-ftip").classList.remove("top-dot", "bottom-dot");
       break;
