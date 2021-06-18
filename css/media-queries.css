@@ -215,4 +215,22 @@
     top: 150%;
     left: 25%;
   }
+
+  table {
+    font-size: 10px;
+  }
+
+  #first-table {
+    font-size: 14px;
+  }
+
+  td, th {
+    padding: 1px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .steno-order-letter {
+    font-size: 28px;
+  }
 }
