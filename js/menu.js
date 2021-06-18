@@ -13,12 +13,13 @@ function menuListener() {
   functions for other properties are in this file, menu.js, towards the bottom
   */
   let narrationText = [
-    {text: document.getElementById("tutorial").textContent, top: lessonTitleTop, width: lessonTitleWidth, extraCode: "enterToContinue"},
-    {text: "Welcome to Hatchling, a web app to help you get used to stenography on a QWERTY keyboard."},
+    {text: document.getElementById("tutorial").textContent, top: lessonTitleTop, width: lessonTitleWidth, extraCode: "enterToContinue",
+    greenKeysOn: ["key-enter"]},
+    {text: "Welcome to Hatchling, a web app to help you get used to stenography on a QWERTY keyboard.", greenKeysOff: ["key-enter"]},
     {text: "Use the ENTER key to move forward through each lesson. Use the BACKSPACE key to go backward. You can press these on your keyboard, or \
-    you can tap them on the keyboard above."},
+    you can tap them on the keyboard above.", greenKeysOn: ["key-enter", "key-backspace"]},
     {text: "Now that you know how to navigate, let's take a closer look at the qwerty keyboard above. You may have noticed that it has some unusual letters added to it.",
-    highlight: true, highlightElement: document.getElementById("keyboard")},
+    highlight: true, highlightElement: document.getElementById("keyboard"), greenKeysOff: ["key-enter", "key-backspace"]},
     {text: "These are stenography machine letters overlaid on a typical keyboard."},
     {text: "Stenography differs quite a bit from traditional typing. At its core, however, it is still a process of quickly finding key positions."},
     {text: "These lessons have been designed to mimic typical qwerty keyboarding lessons in order to take advantage of this similarity."},
@@ -643,17 +644,17 @@ function menuListener() {
     {text: "You may have spotted \"in the: TPH-T\" and \"into the: TPHAOT\". Each of these has a phrase expressed as a single stroke."},
     {text: "Plover includes some subject-verb phrases as well. There are eleven commonly-appearing subjects in Plover's dictionary. \
     " + "Notice that most of these use the same strokes that you have already learned for these words (exception: \"which: KH-\"). \
-    " + '<br><br>' + '<table><tr><th>I</th><th>you</th><th>it</th><th>she</th><th>he</th><th>we</th>\
+    " + '<br><br>' + '<table id="first-table"><tr><th>I</th><th>you</th><th>it</th><th>she</th><th>he</th><th>we</th>\
     ' + '<th>they</th><th>who</th><th>what</th><th>which</th><th>that</th>\
     ' + '<tr><td>EU</td><td>U</td><td>T-</td><td>SHE</td><td>HE</td><td>WE</td>\
     ' + '<td>THE</td><td>WHO</td><td>WHA</td><td>KH-</td><td>THA</td>\
     ' + '</tr></table>'},
     {text: "In phrasing, you will often see the verb stroked using the right-hand only. For the (helper) verb \"could\", we will use \"-BGD\" (-KD) rather \
     " + "than \"KO\" as we learned previously. We can then combine this with each of the subjects. \
-    " + '<br><br>' + '<table><tr><th>I could</th><th>you could</th><th>it could</th><th>she could</th><th>he could</th><th>we could</th>\
-    ' + '<th>they could</th><th>who could</th><th>what could</th><th>which could</th><th>that could</th>\
-    ' + '<tr><td>EUBGD</td><td>UBGD</td><td>T-BGD</td><td>SHEBGD</td><td>HEBGD</td><td>WEBGD</td>\
-    ' + '<td>THEBGD</td><td>WHOBGD</td><td>WHABGD</td><td>KH-BGD</td><td>THABGD</td>\
+    " + '<br><br>' + '<table><tr><th>I could</th><th>you could</th><th>it could</th><th>she could</th><th>he could</th><th>we could</th></tr>\
+    ' + '<tr><td>EUBGD</td><td>UBGD</td><td>T-BGD</td><td>SHEBGD</td><td>HEBGD</td><td>WEBGD</td></tr>\
+    ' + '<tr><th>they could</th><th>who could</th><th>what could</th><th>which could</th><th>that could</th></tr>\
+    ' + '<tr><td>THEBGD</td><td>WHOBGD</td><td>WHABGD</td><td>KH-BGD</td><td>THABGD</td>\
     ' + '</tr></table>'},
     {text: "Let's practice these.",
     vocab: ["[phrasing] -BGD: could", "I could: EUBGD", "you could: UBGD", "it could: T-BGD", "she could: SHEBGD", "he could: HEBGD", "we could: WEBGD",
@@ -762,7 +763,7 @@ function menuListener() {
     "effects", "enough", "initial", "official", "officials"]},
     {text: "Words with Unstressed Vowels" + '<br><br>' + "Let's look at some words with first-syllable stress. The word \"average\" can be pronounced \
     AV-er-ij or AV-rij. Dropping unstressed vowels in the first pronunciation, we get AV-er-ij = AV-r-j. Dropping vowels in the \
-    second pronunciation, we get AV-rij = AV-rj. This results in the same spelling with Plover either way, AFRPBLG.",
+    second pronunciation, we get AV-rij = AV-rj. This results in the same stroke either way, AFRPBLG.",
     vocab: ["average: AFRPBLG"], lesson: ["average", "average", "average"]},
     {text: "Words with Unstressed Vowels: First Syllable Stress", vocab: ["money: PHUPB", "foreign: TPOERPB", "(or TPORPB)",
     "quality: KWAULT", "security: SKAOURT", "unit: AOUPBT", "(or KWRAOUPBT)"],
@@ -770,8 +771,8 @@ function menuListener() {
     "following", "foreign", "given", "levels", "limited", "market", "method", "methods", "money", "music", "noted", "offer", "office", "often",
     "parents", "period", "practice", "private", "quality", "security", "serious", "several", "social", "special", "unit", "various", "visit"]},
     {text: "Words with Unstressed Vowels: Last Syllable Stress" + '<br><br>' + "Notice that \"toward\" has different spellings available for \
-    different pronunciations (tord => TORD, to-WARD = t-WARD => TWARD or TWORD). For \"supposed\", we have suh-POHZD = s-POHZD => SPOEFD, \
-    or suh-POH-zid = s-POH-zd = SPOEFD.", vocab: ["behind: PWHAOEUPBD", "direct: TKREBGT", "supposed: SPOEFD", "toward: TORD", "(or TWARD)", "(or TWORD)"],
+    different pronunciations (e.g. tord => TORD, to-WARD = t-WARD => TWARD). For \"supposed\", we have suh-POHZD = s-POHZD => SPOEFD, \
+    or suh-POH-zid = s-POH-zd = SPOEFD.", vocab: ["behind: PWHAOEUPBD", "direct: TKREBGT", "supposed: SPOEFD", "toward: TORD", "(or TWARD)"],
     lesson: ["behind", "behind", "direct", "direct", "supposed", "supposed", "toward", "toward", "toward"]},
     {text: "Sometimes we design briefs by \
     " + '<a href="https://sites.google.com/site/learnplover/lesson-9-designing-briefs#TOC-Overlap-Chords" target="_blank">\
