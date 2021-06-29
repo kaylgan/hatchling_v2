@@ -25,7 +25,8 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "go": "-le", "jk": "-sh", "\;l": "-tion, -sion (-shun)",
     "pu": "-st", "\;g": "-st",
      "gp": "-th", "nv": "ō", "as": "ask",
-    "cl": "ago", "fw": "interest", "jw": "interest", "\[c": "add"
+    "cl": "ago", "fw": "interest", "jw": "interest", "\[c": "add",
+    "aw": "is it"
   };
   let threeKeys = {
     "acp": "sat", "anp": "set", "\[av": "sod",
@@ -45,7 +46,7 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "iju": "-mp", "ikl": "-ng, -nge", "jku": "-rve", "\;jk": "-tious, -cious (-shus)",
     "acu": "save", "kmo": "you believe", "\;am": "suss",
     "cmn": "ā", "cnv": "ē", "cmv": "ū", "cps": "cat", "juv": "offer", "\;uv": "office", "\[as": "asked",
-    "afw": "center", "\[an": "said"
+    "afw": "center", "\[an": "said", "uvw": "to have", "\;rw": "this is"
   }
   let fourPlusKeys = {
     "acjw": "star", "\;acjw": "stars", "cmpv": "out-",
@@ -81,7 +82,7 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "eprvw": "not", "cfklmnrv": "like", "emrw": "new", "cdfgjns": "area", "ceklmnr": "make", "ervw": "no",
     "\;cklmns": "cakes", "ceikr": "man", "ajvw": "store", "cejlmpw": "forgot", "ejlpvw": "forget", "\;iklmnrw": "things",
     "cemnprvw": "night", "diknp": "went", "ikmn": "in-", "\[cdj": "ward", "cmnsu": "cave", "ejmpw": "further", "\;crw": "that is", "cjrw": "that are",
-    "crtu": "1/2", "cruy": "1/2", "jkmr": "hush", "\;efjkn": "precious", "cdekn": "baby", "ciju": "amp", "cijou": "ample", "fnoru": "level",
+    "cruy": "1/2", "cgru": "1/2", "jkmr": "hush", "\;efjkn": "precious", "cdekn": "baby", "ciju": "amp", "cijou": "ample", "fnoru": "level",
     "cmprw": "thought", "cepry": "math", "ceprt": "math", "fnopruv": "a lot of", "inpstw": "depth", "inpswy": "depth", "cdehmnv": "bye",
     "cdemnvy": "bye", "cdkln": "weak", "fnpru": "left", "degmn": "bi-", "cfpru": "last", "cdklnv": "week",
     "\[adjknu": "swerved", "fnsuvw": "drove", "\[cijk": "around", "jkmsu": "curve", "eiklmnrt": "mink",
@@ -165,7 +166,8 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "cfpsu": "craft", "acfpsu": "contrast", "cfnpsu": "contrast", "aciknv": "seen", "aciknsv": "scene",
     "acikn": "scene", "jmops": "culture", "cejmpvw": "future", "\[ceiknrvw": "indeed", "\;acdlmnw": "situation", "\;acdlmn": "situation",
     "efmnp": "pretty", "fiklmn": "ring", "afiklmnw": "string", "\;acikmnv": "signs", "\;acikmnsv": "science",
-    "\;ceikor": "animals", "\;cdfgjns": "areas", "cfjnorv": "really", "aiknp": "sent", "fiknps": "cent"
+    "\;ceikor": "animals", "\;cdfgjns": "areas", "cfjnorv": "really", "aiknp": "sent", "fiknps": "cent",
+    "afmn": "I have", "cmnrw": "that I"
   }
 
   // reverse lookup

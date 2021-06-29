@@ -483,9 +483,9 @@ function menuListener() {
     {text: "HOU R TPHEU -F THEPL ERL (or ER/HREU) KW-PL",
     vocab: ["any: TPHEU", "them: THEPL", "early: ERL", "~(or ER/HREU)"],
     lesson: ("How are any of them early ?").split(" "), full: true},
-    {text: "S- T- OEFR KW-BG THEPB KW-BG OER THAPB THA KW-PL EU APL AUFR/SKWROEUD TP-BG",
-    vocab: ["over: OEFR", "then: THEPB", "other: OER", "than: THAPB", "that: THA", "am: APL", "overjoyed: AUFR/SKWROEUD"],
-    lesson: ("Is it over , then , other than that ? I am over- joyed !").split(" "), full: true},
+    {text: "ST OEFR KW-BG THEPB KW-BG OER THAPB THA KW-PL EU APL AUFR/SKWROEUD TP-BG",
+    vocab: ["is it: ST", "over: OEFR", "then: THEPB", "other: OER", "than: THAPB", "that: THA", "am: APL", "overjoyed: AUFR/SKWROEUD"],
+    lesson: ["Is it", "over", ",", "then", ",", "other", "than", "that", "?", "I", "am", "over-", "joyed", "!"], full: true},
     {text: "WHA F- WH TPHOER KWRAOER STARTS KW-BG TH KWRA*ER S- TPHOT HRAOEUBG TPHU KW-PL",
     vocab: ["what: WHA", "when: WH", "another: TPHOER", "year: KWRAOER", "starts: STARTS", "area: KWRA*ER",
     "not: TPHOT", "like: HRAOEUBG", "new: TPHU"],
@@ -493,17 +493,17 @@ function menuListener() {
     {text: "WHO HR PHAEUBG TPHO KAEUBGS KW-PL",
     vocab: ["who: WHO", "make: PHAEUBG", "no: TPHO", "cakes: KAEUBGS"],
     lesson: ("Who will make no cakes ?").split(" "), full: true},
-    {text: "TH S- TPHOT TP-R -T PHAPB TPR- -T STOR KW-BG WHO TPAURGT THA EU TPORGT THEUPBGS TP-PL" + '<br><br>' + "\
+    {text: "TH-S TPHOT TP-R -T PHAPB TPR- -T STOR KW-BG WHO TPAURGT THAEU TPORGT THEUPBGS TP-PL" + '<br><br>' + "\
     TPAUR is the prefix for-. TPOR is used to differentiate forgot and forget. Also notice that \"for\" is F-R, and \"from\" \
     is FR-, so they use the same R as if they were written out in full.",
-    affix: ["for: TPAUR"], vocab: ["for: TP-R", "from: TPR-", "man: PHAPB", "store: STOR", "forgot: TPAURGT",
+    affix: ["for: TPAUR"], vocab: ["this is: TH-S", "for: TP-R", "from: TPR-", "man: PHAPB", "store: STOR", "that I: THAEU", "forgot: TPAURGT",
     "forget: TPORGT", "things: THEUPBGS"],
-    lesson: ("This is not for the man from the store , who forgot that I forget things .").split(" "), full: true},
+    lesson: ["This is", "not", "for", "the", "man", "from", "the", "store", ",", "who", "forgot", "that I", "forget", "things", "."], full: true},
     {text: "THAS AUL THAR THR TP-PL", vocab: ["that is: THAS", "that are: THAR"],
     lesson: ["That is", "all", "that are", "there", "."], full: true},
-    {text: "EU SR TO SR-T WUPB THA S- HAF OF TP-PL SAOE KW-PL -T TAG SEZ HA*F OF TP-PL",
+    {text: "SREU TOF -T WUPB THA S- HAF OF TP-PL SAOE KW-PL -T TAG SEZ HA*F OF TP-PL",
     vocab: ["I have: SREU", "to have: TOF", "half: HAF", "tag: TAG", "says: SEZ", "(or SAEUZ)", "(or SAEUS)", "1/2: HA*F"],
-    lesson: ("I have to have the one that is half off . See ? The tag says 1/2 off .").split(" "), full: true},
+    lesson: ["I have", "to have", "the", "one", "that", "is", "half", "off", ".", "See", "?", "The", "tag", "says", "1/2", "off", "."], full: true},
     {text: document.getElementById("lesson7").textContent, top: lessonTitleTop, width: lessonTitleWidth},
     {text: "Let's take a look at a few more prefixes and suffixes."},
     {text: "HURB KW-BG PRERBS PWAEB TP-PL", affix: ["-sh: -RB", "-shus: -RBS"], vocab: ["hush: HURB", "precious: PRERBS", "baby: PWAEB", "~(or PWAEU/PWEU)"],
@@ -917,12 +917,12 @@ function menuListener() {
 
     // set narration box x position
     let widthPercentage = 100 * (narration.getBoundingClientRect().width / window.innerWidth);
-    if (window.innerWidth <= 750) { narration.style.left = 2.5 + "\%"; }
-    else if (narrationText[index].left != null) { narration.style.left = narrationText[index].left + "\%"; }
+    if (window.innerWidth <= 750 && (window.innerWidth < window.innerHeight)) { narration.style.left = 2.5 + "\%"; } // not landscape
+    else if (narrationText[index].left != null && (window.innerWidth < window.innerHeight)) { narration.style.left = narrationText[index].left + "\%"; } // not landscape
     else { narration.style.left = ((100 - widthPercentage) / 2) + "\%"; }
 
     // set narration box y position
-    if (window.innerWidth <= 750) { narration.style.top = 85 + "\%"; }
+    if (window.innerWidth <= 750) { narration.style.top = 85 + "\%"; } // include landscape
     else if (narrationText[index].top != null) { narration.style.top = narrationText[index].top + "\%"; }
     else { narration.style.top = 115 + "\%"; }
 

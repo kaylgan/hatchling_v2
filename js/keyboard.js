@@ -520,6 +520,15 @@ function generatePracticeLetters(letters = [], start = 0, end = 10) {
     metronomeLetter.textContent = letters[i];
     metronomeLetter.classList.add("practice-letter");
     metronomeDiv.appendChild(metronomeLetter);
+    metronomeLetter.addEventListener("dblclick", function doublePress() {
+      metronomeLetter.parentNode.removeChild(metronomeLetter);
+      // currentLetter.parentNode.removeChild(currentLetter);
+    }, false);
+
+
+    // el.addEventListener('dblclick', function doublePress() {
+    //   el.parentNode.removeChild(el);
+    // }, false);
   }
 
   // show hand positions when a practice word is clicked
@@ -570,6 +579,18 @@ function clearGreenKeys() {
   greenKeys.forEach(function (element) { element.classList.remove("green-key") });
 }
 
+function resetLesson() {
+  clearPracticeLetters();
+  getPracticeIndex(true, 0);
+  if (getNextLessonFull()) {
+    generatePracticeLetters(getNextLesson(), 0, getNextLesson().length);
+  } else {
+    generatePracticeLetters(getNextLesson(), 0, Math.min(getPracticeIndex()+10, getNextLesson().length));
+  }
+
+  activateMetronomeButtons();
+}
+
 // -------------------- compare user keystroke to practice letters --------------------
 function compareToPractice(userKeystroke, dictionaryWord) {
   let practiceDiv = document.getElementById("practice");
@@ -595,29 +616,26 @@ function compareToPractice(userKeystroke, dictionaryWord) {
     //   getPracticeIndex(true, getPracticeIndex()+1);
     // }
 
-    // repeat or restart lesson if user types S-S
+
     if (dictionaryWord === "SS") {
-      clearPracticeLetters();
-      getPracticeIndex(true, 0);
-      if (getNextLessonFull()) {
-        generatePracticeLetters(getNextLesson(), 0, getNextLesson().length);
-      } else {
-        generatePracticeLetters(getNextLesson(), 0, Math.min(getPracticeIndex()+10, getNextLesson().length));
-      }
+      // repeat or restart lesson if user types S-S
+      resetLesson();
+    } else if (!practiceLetter) {
+      console.log("practice letter undefined");
+    } else if (!metronomeLetter) {
+      console.log("metronome letter undefined");
+    } else if (userKeystroke === metronomeLetter.textContent || dictionaryWord.toLowerCase() === metronomeLetter.textContent.toLowerCase()) {
+      // ^^ using metronomeLetter instead of practice letter to allow matching when metronome letters have been deleted by user (double click)
 
-      activateMetronomeButtons();
-    }
-
-    if (userKeystroke === practiceLetter.textContent || dictionaryWord.toLowerCase() === practiceLetter.textContent.toLowerCase()) {
-      // MATCH
+      // MATCH. include matches if metronomeLetter has been deleted
       getPracticeIndex(true, getPracticeIndex()+1);
+
+      // change the color of the border for metronome letters
       let metronome = getMetronome();
       if (metronomeLetter.style.borderColor == 'yellow') {
-        // console.log("yellow border");
         metronomeLetter.style.backgroundImage = 'none';
         metronomeLetter.style.backgroundColor = 'green';
       } else {
-        // console.log("black border");
         metronomeLetter.style.backgroundImage = 'none';
         if (metronome.isRunning) { metronomeLetter.style.backgroundColor = 'red'; }
         else { metronomeLetter.style.backgroundColor = 'yellow'; }
@@ -625,16 +643,21 @@ function compareToPractice(userKeystroke, dictionaryWord) {
 
       if (practiceLetter != practiceDiv.lastChild) {
         // ANSWER CORRECT, NOT ON LAST LETTER DISPLAYED
-        practiceLetter.textContent = "";
-        practiceLetter.style.zIndex = -10;
-        practiceLetter.style.minWidth = "1px";
-        nextPracticeLetter.style.zIndex = 5;
-        nextPracticeLetter.style.overflow = "visible";
-        // if (nextPracticeLetter.getBoundingClientRect().width > 100) {
-        //   nextPracticeLetter.style.minWidth = "auto";
-        // }
-        nextPracticeLetter.style.minWidth = "auto";
         metronomeLetter.textContent = "";
+
+        // don't clear practice letter if the corresponding metronome letter has been deleted
+        if (document.getElementById("sequencer").hidden == true) {
+          console.log("sequencer hidden");
+          practiceLetter.textContent = "";
+          practiceLetter.style.zIndex = -10;
+          practiceLetter.style.minWidth = "1px";
+          nextPracticeLetter.style.zIndex = 5;
+          nextPracticeLetter.style.overflow = "visible";
+          // if (nextPracticeLetter.getBoundingClientRect().width > 100) {
+          //   nextPracticeLetter.style.minWidth = "auto";
+          // }
+          nextPracticeLetter.style.minWidth = "auto";
+        }
       } else if (getPracticeIndex() < getNextLesson().length) {
         // ON LAST LETTER DISPLAYED, DISPLAY REST OF EXERCISE
         generatePracticeLetters(getNextLesson(), getPracticeIndex(), Math.min(getPracticeIndex()+10, getNextLesson().length));
@@ -647,10 +670,10 @@ function compareToPractice(userKeystroke, dictionaryWord) {
         metronomeLetter.textContent = "";
       }
     } else {
-      // console.log("not match...");
+      console.log("not match...");
     }
   } else {
-    // console.log("out of letters");
+    console.log("out of letters");
   }
 }
 

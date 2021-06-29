@@ -68,6 +68,8 @@ function configureMetronome() {
   const vocab = document.getElementById('notebook-paper');
 
   hideButton.addEventListener('click', function() {
+    resetLesson();
+
     if (sequencer.hidden) {
       hideButton.innerHTML = '<i class="far fa-keyboard"></i>';
       sequencer.hidden = false;
@@ -129,10 +131,6 @@ function activateMetronomeButtons(metronome = getMetronome()) {
         el.setAttribute('aria-checked', 'false');
       }
     }, false);
-
-    el.addEventListener('dblclick', function doublePress() {
-      el.parentNode.removeChild(el);
-    }, false);
   })
 }
 
@@ -144,5 +142,5 @@ function removeMetronomeListeners() {
   allPadButtons.forEach(el => {
     el.removeEventListener('click', buttonPress, false)
   })
-  console.log("listeners removed");
+  // console.log("listeners removed");
 }

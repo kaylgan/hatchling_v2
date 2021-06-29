@@ -8,13 +8,7 @@
 @media screen and (max-width: 780px) and (min-width: 481px) {
   #nav-bar {
     height: 12vh;
-    background-color: blue;
-    font-size: 18px;
-  }
-  @media screen and (orientation: portrait) {
-    #nav-bar {
-      height: 8vh;
-    }
+    font-size: 16px;
   }
 
   #practice {
@@ -76,6 +70,41 @@
   #narration {
     font-size: 16px;
     padding: 1px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 780px) {
+  #nav-bar {
+    /* height: 10vh; */
+    background-color: blue;
+  }
+
+  #nav-practice, #nav-about, #nav-contact, #nav-downloads {
+    display: none;
+  }
+
+  #nav-practice-small, #nav-about-small, #nav-contact-small, #nav-downloads-small {
+    display: inline-block;
+  }
+
+  #dropdown-content span {
+    font-size: 12px;
+  }
+
+  #narration {
+    font-size: 12px;
+    margin-top: 8%;
+    padding: 1px;
+  }
+
+  #notebook-paper {
+    display: none;
+  }
+
+  #side-view {
+    margin: 0;
+    margin-left: -110px;
+    transform: scale(0.8);
   }
 }
 
