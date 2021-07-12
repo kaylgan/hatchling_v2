@@ -5,10 +5,71 @@
   }
 }
 
+/* -------------------- 781px-950px width -------------------- */
+@media screen and (min-width: 781px) and (max-width: 950px) {
+  #nav-bar {
+    /* background-color: green; */
+  }
+
+  .practice-letter {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    min-width: 15px;
+  }
+
+  #narration {
+    /* margin-top: 100px; */
+    /* background-color: orange; */
+  }
+
+  #notebook-paper {
+    font-size: 12px;
+    margin-left: -0.5%;
+  }
+
+  .lines {
+    margin-left: 15px;
+  }
+
+  .vocabSpan p {
+    margin-left: 20px;
+  }
+
+  .headingSpan {
+    font-size: 14px;
+    text-indent: 18px;
+  }
+
+  #metronome-and-lesson {
+    max-width: 70%;
+  }
+
+  .pads button {
+    font-size: 16px;
+    min-width: 70px;
+    min-height: 70px;
+  }
+
+  :not(#strokes) table {
+    font-size: 16px;
+  }
+}
+
+/* -------------------- 481-780px width -------------------- */
 @media screen and (max-width: 780px) and (min-width: 481px) {
   #nav-bar {
-    height: 12vh;
+    height: 10vh;
     font-size: 16px;
+    /* background-color: blue; */
+  }
+
+  #nav-practice, #nav-about, #nav-contact, #nav-downloads {
+    display: none;
+  }
+
+  #nav-practice-small, #nav-about-small, #nav-contact-small, #nav-downloads-small {
+    display: inline-block;
   }
 
   #practice {
@@ -35,12 +96,15 @@
   }
 
   #steno-and-keyboard {
-    transform: scale(0.7);
+    transform: scale(0.8);
+    /* margin-left: -10%; */
+    margin-top: 30px;
   }
 
   #notebook-paper {
-    font-size: 16px;
+    font-size: 14px;
     left: 80%;
+    margin-top: -5px;
   }
 
   #vocabBox {
@@ -70,13 +134,114 @@
   #narration {
     font-size: 16px;
     padding: 1px;
+    margin-top: 100px;
+    margin-left: auto;
+    /* background-color: purple; */
+  }
+
+  #downloads-narration {
+    width: 80%;
+  }
+
+  #side-view {
+    margin-left: -5%;
   }
 }
 
-@media screen and (orientation: landscape) and (max-width: 780px) {
+@media screen and (max-width: 781px) {
+  #metronome-and-lesson {
+    max-width: 65%;
+  }
+
+  #bpm-label-mini, #bpmval, #button-mini {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  #nav {
+    max-width: 20%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 605px) {
   #nav-bar {
-    /* height: 10vh; */
-    background-color: blue;
+    /* background-color: white; */
+  }
+
+  .practice-letter {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    min-width: 15px;
+  }
+
+  #nav-items-mobile {
+    display: inline-block;
+    /* margin-left: 5%; */
+  }
+
+  #nav-items, #desktop-logo {
+    display: none;
+  }
+
+  #mobile-logo {
+    position: absolute;
+    margin-left: 50%;
+    top: 0;
+  }
+
+  #hamburger-menu {
+    margin-left: 20px;
+  }
+
+  #dropdown-content {
+    width: 100vw;
+    height: 92vh; /* nav-bar is 8vh */
+  }
+
+  #line-divider {
+    text-align: center;
+  }
+
+  #bpm {
+    width: 90%;
+  }
+
+  .pads button {
+    font-size: 16px;
+    min-width: 60px;
+    min-height: 60px;
+  }
+
+  #side-view {
+    margin: 0;
+    position: absolute;
+    transform: scale(0.8);
+    top: 150%;
+    left: 38%;
+  }
+
+  .lines {
+    margin-left: 15px;
+  }
+
+  .vocabSpan p {
+    margin-left: 20px;
+    font-size: 10px;
+  }
+
+  .headingSpan {
+    font-size: 12px;
+    text-indent: 18px;
+  }
+}
+
+/* -------------------- PHONE LANDSCAPE -------------------- */
+@media screen and (orientation: landscape) and (max-width: 900px) {
+  #nav-bar {
+    /* background-color: purple; */
   }
 
   #nav-practice, #nav-about, #nav-contact, #nav-downloads {
@@ -93,8 +258,9 @@
 
   #narration {
     font-size: 12px;
-    margin-top: 8%;
+    margin-top: 6%;
     padding: 1px;
+    /* background-color: blue; */
   }
 
   #notebook-paper {
@@ -106,12 +272,88 @@
     margin-left: -110px;
     transform: scale(0.8);
   }
+
+  #downloads-narration {
+    width: 90%;
+    margin-top: 15px;
+    padding: 5px;
+    font-size: 20px;
+  }
+
+  #user-text {
+    margin-top: 0;
+  	margin-bottom: 5px;
+    width: 100%;
+  	height: 50px;
+  }
+
+  #word-lists {
+    margin: 0;
+  	padding: 0;
+    display: inline-flex;
+  }
+
+  #word-lists div {
+  	margin: 3px 5px;
+  }
+
+  #word-lists button {
+    margin: 1px;
+    font-size: 10px;
+  }
+
+  #shuffle, #hints, #start-drill {
+    display: inline;
+    margin: 0 4px;
+  }
+
+  #speed {
+    text-align: center;
+  }
+
+  #strokes {
+    transform: scale(0.95);
+    margin: 0;
+  }
+
+  #practice-options {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .phrasing-spacer {
+    display: none;
+  }
+
+  table:not(#strokes) {
+    font-size: 8px;
+  }
+
+  #first-table {
+    font-size: 12px;
+  }
+
+  :not(#strokes) and td, th {
+    padding: 1px;
+  }
+
+  .pads button {
+    font-size: 16px;
+    min-width: 70px;
+    min-height: 70px;
+    margin: 2px;
+  }
 }
 
-@media screen and (orientation: portrait) and (max-width: 480px) {
+/* -------------------- PHONE PORTRAIT -------------------- */
+@media screen and (max-width: 480px) {
+  #nav-bar {
+    /* background-color: gray; */
+  }
+
   #nav-items-mobile {
     display: inline-block;
-    /* margin-left: 5%; */
   }
 
   #nav-items, #desktop-logo {
@@ -121,7 +363,8 @@
   #mobile-logo {
     position: absolute;
     margin-left: 50%;
-    top: 7px;
+    /* top: 7px; */
+    top: 0;
   }
 
   #hamburger-menu {
@@ -170,8 +413,12 @@
   }
 
   #sequencer {
-    font-size: 40px;
+    font-size: 30px;
     transform: scale(0.7);
+  }
+
+  #bpmval {
+    font-size: 30px;
   }
 
   .pads button {
@@ -183,6 +430,7 @@
     margin-top: 20%;
     margin-left: 2%;
     padding: 1px;
+    /* background-color: green; */
   }
 
   #notebook-paper {
@@ -205,7 +453,7 @@
   }
 
   #word-lists {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   	padding-bottom: 5px;
   }
 
@@ -217,24 +465,53 @@
     margin: 1px;
   }
 
-  #nav {
-    display: none;
+  div.form-section {
+    margin: 0;
   }
 
-  #controls-mini {
-    padding-right: 5px;
+  form.drill-options {
+    margin-top: 3px;
   }
 
-  #bpm-label-mini {
+  #hints {
+    display: inline;
     margin-left: 5px;
   }
 
-  #bpm {
-    width: 100px;
+  #clock {
+    font-size: 24px;
   }
 
-  #bpmval {
-    padding: 0;
+  .center, .shortcutkey {
+    font-size: 10px;
+  }
+
+  #button-mini {
+    width: 50px;
+  }
+
+  #speed {
+    margin-bottom: 3px;
+  }
+
+  #shuffle {
+    margin-bottom: 3px;
+  }
+
+  #start-drill {
+    display: block;
+  }
+
+  #nav {
+    margin: 0;
+  }
+
+  #bpm {
+    width: 50px;
+  }
+
+  #clock {
+    margin: 25px 0;
   }
 
   #side-view {
@@ -245,7 +522,7 @@
     left: 25%;
   }
 
-  table {
+  table:not(#strokes) {
     font-size: 10px;
   }
 
@@ -253,13 +530,319 @@
     font-size: 14px;
   }
 
-  td, th {
+  :not(#strokes) and td, th {
     padding: 1px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #metronome-content, #logo-box {
+    display: none;
+  }
+}
+
+/* -------------------- ADDITIONAL MODIFICATIONS FOR SPECIFIC DEVICES -------------------- */
+@media screen and (max-height: 250px), (max-width: 250px) {
+  #hints, #strokes, #word-lists, #logo-box {
+    display: none;
+  }
+
+  #downloads-narration {
+    font-size: 12px;
+  }
+
+  #steno-and-keyboard {
+    transform: scale(0.4) translateY(-50%);
+  }
+
+  #practice {
+    margin-left: 20%;
+  }
+
+  #practice .practice-letter {
+    transform: scale(0.9);
+    font-size: 12px;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  .pads button {
+    font-size: 16px;
+    min-width: 70px;
+    min-height: 70px;
+  }
+}
+
+@media screen and (max-height: 340px) {
+  div.form-section {
+    margin: 0;
+    padding: 2px;
+  }
+
+  form.drill-options {
+    margin-top: 2px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #word-lists button {
+    margin: 1px;
+    font-size: 10px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
+
+  #user-text, #word-lists {
+    margin-bottom: 5px;
   }
 }
 
 @media screen and (max-width: 360px) {
   .steno-order-letter {
     font-size: 28px;
+  }
+
+  div.form-section {
+    padding-bottom: 1%;
+  }
+}
+
+@media screen and (min-height: 500px) and (max-height: 610px) {
+  #shuffle, #hints, #start-drill {
+    display: inline;
+    margin: 0 4px;
+  }
+
+  #narration {
+    font-size: 16px;
+    margin-top: -15px;
+  }
+
+  .practice-letter {
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    min-width: 15px;
+  }
+
+  .lines {
+    margin-left: 15px;
+  }
+
+  .vocabSpan p {
+    margin-left: 20px;
+  }
+
+  .headingSpan {
+    font-size: 14px;
+    text-indent: 18px;
+  }
+
+  :not(#strokes) table {
+    font-size: 10px;
+    margin-top: -15px;
+  }
+}
+
+@media screen and (min-height: 1075px) and (min-width: 1075px) {
+  #nav-bar {
+    /* background-color: red; */
+  }
+
+  #practice .practice-letter {
+    transform: scale(1.4);
+  }
+
+  #practice {
+    font-size: 50px;
+  }
+
+  #dropdown-content span {
+    font-size: 30px;
+  }
+
+  #steno-and-keyboard {
+    transform: scale(1.5) translateY(6vh);
+  }
+
+  #notebook-paper {
+    font-size: 30px;
+    margin-left: 2%;
+    margin-top: 3%;
+  }
+
+  .pads button {
+    border-width: 5px;
+  }
+
+  #narration {
+    margin-top: 12vh;
+    font-size: 2rem;
+    min-width: 10vw;
+  }
+
+  #side-view {
+    transform: scale(2) translateY(4vh) translateX(6vw);
+  }
+
+  .form-section {
+    transform: scale(1.5) translateY(10vh);
+  }
+
+  #logo-box {
+    transform: scale(2) translateX(3vw);
+  }
+
+  #nav {
+    transform: scale(2) translateX(2vw) translateY(2vh);
+  }
+
+  #downloads-narration {
+    font-size: 2rem;
+  }
+
+  #strokes, #metronome-content {
+    transform: scale(1.5);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  #metronome-and-lesson {
+    width: 40vw;
+    max-width: 40vw;
+  }
+
+  #lesson.wrapper, #drill-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #drill-content, .navItems {
+    font-size: 50px;
+  }
+
+  [data-playing], #hide-button {
+    border-width: 5px;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    height: 2vh;
+    width: 1vw;
+    border: 0.25vmin solid var(--black);
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 2vh;
+    width: 1vw;
+    border: 0.25vmin solid var(--black);
+  }
+
+  input[type=range]::-ms-thumb {
+    height: 2vh;
+    width: 1vw;
+    border: 0.25vmin solid var(--black);
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 1vh;
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 1vh;
+  }
+
+  input[type=range]::-ms-track {
+    height: 1vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #notebook-paper {
+    left: 76%;
+  }
+
+  :not(#strokes) table {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-height: 2000px) and (min-width: 3000px) {
+  #nav-bar {
+    /* background-color: orange; */
+  }
+
+  .navItems {
+    font-size: 4rem;
+    margin-right: 5vw;
+  }
+
+  #logo-box {
+    transform: scale(3) translateX(3vw);
+  }
+
+  #practice .practice-letter {
+    height: 85px;
+    line-height: 85px;
+    font-size: 70px;
+    min-width: 85px;
+  }
+
+  #practice {
+    font-size: 70px;
+  }
+
+  #steno-and-keyboard {
+    transform: scale(3) translateY(6vh);
+  }
+
+  #notebook-paper {
+    font-size: 50px;
+    margin-top: 5%;
+  }
+
+  .lines {
+    margin-left: 60px;
+  }
+
+  .vocabSpan p {
+    margin-left: 105px;
+  }
+
+  .headingSpan {
+    text-indent: 65px;
+  }
+
+  :not(#strokes) table {
+    font-size: 50px;
+  }
+
+  .pads button {
+    border-width: 5px;
+  }
+
+  .controls-main, #track-one {
+    padding: 20px;
+  }
+
+  #dropdown-content span {
+    font-size: 50px;
+  }
+
+  #narration {
+    margin-top: 30vh;
+    font-size: 4rem;
+    min-width: 50vw;
+  }
+
+  #side-view {
+    transform: scale(4) translateY(4vh) translateX(6vw);
   }
 }

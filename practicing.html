@@ -113,54 +113,64 @@
 
         </div>
 
-  			<div name="speed">
+  			<div name="speed" id="speed">
   				<label><input id="wpm" type="number" name="wpm" value="" step="5"> Speed (words per minute)
   					(or <input type="checkbox" id="cpm" value="1"> x5 chars per minute) </label>
   			</div>
+        <div id="practice-options">
+  			<input id="shuffle" type="checkbox" name="type" value="shuffled">Shuffle words
+        <!-- <br> -->
 
-  			<input type="checkbox" name="type" value="shuffled">Shuffle words<br>
-
-  			<div name="hints">
+  			<div name="hints" id="hints">
   				<label><input id="hints" type="checkbox" name="hints" value="1" checked>Show hints</label>
   			</div>
         <!-- <br id = "bottom-spacer"> -->
 
-  			<button id>Start Drill &rarr;</button>
+  			<button id="start-drill">Start Drill</button>
+      </div>
   		</form>
   	</div>
   </div>
 
-  <div id="metronome-content" hidden>
-  	<!-- modified from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques -->
-  	<div id="sequencer-mini">
-  		<section class="controls-main" id="controls-mini">
-  			<label for="bpm" id="bpm-label-mini">WPM/Beats Per Minute</label>
-  			<input name="bpm" id="bpm" type="range" min="5" max="250" value="120" step="1" />
-  			<span id="bpmval">120</span>
-  			<button id="button-mini" data-playing="false"></button>
-  		</section>
-  	</div><!-- sequencer -->
-  </div>
+  <div id="lesson-and-nav">
+  <div id="metronome-and-lesson">
+
+    <div id="metronome-content" hidden>
+    	<!-- modified from MDN: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques -->
+      <div id="sequencer-mini">
+    		<section class="controls-main" id="controls-mini">
+    			<label for="bpm" id="bpm-label-mini">WPM/Beats Per Minute</label>
+    			<input name="bpm" id="bpm" type="range" min="5" max="250" value="120" step="1" />
+    			<span id="bpmval">120</span>
+    			<button id="button-mini" data-playing="false"></button>
+    		</section>
+    	</div><!-- sequencer -->
+    </div>
+
+    <p id="strokes"></p>
 
   <div id="lesson" class="wrapper" style="display: none">
   	<h3 id="lesson-name" class="center" hidden></h3>
+
   	<div id="drill-content">
   		<div id="answer"></div>
   		<div id="exercise"></div>
   		<div id="results"></div>
   	</div>
 
-  	<div id="nav">
-  		<p id="strokes"></p>
-  		<p id="clock" class="clock"></p>
-
-  		<p class="center"><a id="back" title="UpArrow">&uarr; Back to Menu <span class="shortcutkey">(UpArrow)</span></a></p>
-  		<p class="center"><a id="review" title="DownArrow">&darr; Review Errors <span class="shortcutkey">(DownArrow)</span></a></p>
-  		<p class="center"><a id="again" title="Enter">&#8634; Restart <span class="shortcutkey">(Enter)</span></a></p>
-  	</div>
-
   	<textarea id="input"></textarea>
   </div>
+</div> <!-- metronome-and-lesson -->
+
+  <div id="nav">
+    <!-- <p id="strokes"></p> -->
+    <p id="clock" class="clock"></p>
+
+    <p class="center"><a id="back" title="UpArrow">&uarr; Back to Menu <span class="shortcutkey">(UpArrow)</span></a></p>
+    <p class="center"><a id="review" title="DownArrow">&darr; Review Errors <span class="shortcutkey">(DownArrow)</span></a></p>
+    <p class="center"><a id="again" title="Enter">&#8634; Restart <span class="shortcutkey">(Enter)</span></a></p>
+  </div>
+</div> <!-- lesson-and-nav -->
 
   <script src="js/wordLists.js"></script>
   <script src="js/practice.js"></script>

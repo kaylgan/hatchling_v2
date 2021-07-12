@@ -25,15 +25,16 @@ function menuListener() {
     {text: "These lessons have been designed to mimic typical qwerty keyboarding lessons in order to take advantage of this similarity."},
     {text: "This will hopefully help qwerty typists build muscle memory for steno key positions in a way that is familiar."},
     {text: "The lessons here teach " + '<a href="https://www.openstenoproject.org" target="_blank">' + "\
-    Plover Theory" + '</a>' +".",
-    left: 65, width: lessonTitleWidth, top: 5, highlight: true, highlightElement: document.getElementById("nav-lessons")},
+    Plover Theory" + '</a>' +"."},
     {text: "However, they are meant to be completed without " + '\
     <a href="https://github.com/openstenoproject/plover/wiki/Installation-Guide#installation"\ target="_blank">' + "\
     Plover" + '</a>' + " or other steno software turned on."},
     {text: "The lessons should work with most normal keyboards, meaning ones that do not have n-key rollover (NKRO)."},
     {text: "Keyboards with n-key rollover are able to press a large number of keys at once without conflict."},
-    {text: "You will likely want to get an NKRO keyboard eventually. But a regular keyboard is enough to get you through these lessons. \
-    So let's start looking at hand positions now.", extraCode: "showSideView"},
+    {text: "You will likely want to get an NKRO keyboard eventually. You can find a list of supported hardware \
+    " + '<a href="https://github.com/openstenoproject/plover/wiki/Supported-Hardware"\ target="_blank">' + "\
+    here" + '</a>' + ". But a regular keyboard is enough to get you through these lessons. \
+    So let's start looking at hand positions.", extraCode: "showSideView"},
     {text: "If you type some letter keys, you will notice the hand images moving."},
     {text: "These hands show a very simplified representation of steno movements. They are much more rigid than real movements."},
     {text: "Just concentrate on placing your fingertips or thumb sides on the proper key or gap (which you will learn soon)."},
@@ -115,8 +116,8 @@ function menuListener() {
     These things will be reinforced and explained in the upcoming lessons."},
     {text: "Press ENTER to go to the next lesson!"},
     {text: document.getElementById("lesson1").textContent, top: lessonTitleTop, width: lessonTitleWidth, extraCode: "enterToContinue"},
-    {text: "The left pinky is in charge of the S keys.", left: 10, top: 50, greenKeysOn: ["key-Q", "key-A"]},
-    {text: "On a steno machine, the S's are combined into one big key.", left: 5, top: 50, greenKeysOn: ["key-Q", "key-A"]},
+    {text: "The left pinky is in charge of the S keys.", greenKeysOn: ["key-Q", "key-A"]},
+    {text: "On a steno machine, the S's are combined into one big key.", greenKeysOn: ["key-Q", "key-A"]},
     {text: "You can use whichever S key you want. You might find that the top S is easier for some words, and the bottom S is easier for others.",
     greenKeysOn: ["key-Q", "key-A"]},
     {text: "We will practice this next. At the end of the typing exercise, you can type S-S to repeat the exercise.",
@@ -127,15 +128,15 @@ function menuListener() {
     {text: "You can also skip any exercise at any time by hitting ENTER.", greenKeysOn: ["key-enter"], greenKeysOff: ["key-Q", "key-A", "key-colon"]},
     {text: "Give it a try.", lesson: ["S", "S", "S", "S", "S", "S", "S", "S", "S", "S"],
     greenKeysOn: ["key-Q", "key-A"], greenKeysOff: ["key-enter"]},
-    {text: "The right pinky is in charge of four keys: -T, -S, -D, and -Z.", left: 70, top: 45, width: 350,
+    {text: "The right pinky is in charge of four keys: -T, -S, -D, and -Z.",
     greenKeysOn: ["key-P", "key-colon", "key-lbrace", "key-quote"], greenKeysOff: ["key-Q", "key-A"]},
-    {text: "Recall that right-hand consonants are designated with a dash before them (e.g. -S).", left: 70,
-    top: 45, width: 350, greenKeysOn: ["key-U", "key-J", "key-I", "key-K", "key-O", "key-L", "key-P", "key-colon", "key-lbrace", "key-quote"]},
+    {text: "Recall that right-hand consonants are designated with a dash before them (e.g. -S).",
+    greenKeysOn: ["key-U", "key-J", "key-I", "key-K", "key-O", "key-L", "key-P", "key-colon", "key-lbrace", "key-quote"]},
     {text: "This is the case unless they are in a word like STAR -- in that case, only one R (the right one) can come after \
     A in steno order, so the dash is not necessary.",
     greenKeysOn: ["key-U", "key-J", "key-I", "key-K", "key-O", "key-L", "key-P", "key-colon", "key-lbrace", "key-quote"]},
     {text: "Left-hand consonants are occasionally designated with a dash afterwards (S-), especially \
-    if they are followed by a right-hand letter but no vowel.", left: 70, top: 45, width: 350,
+    if they are followed by a right-hand letter but no vowel.",
     greenKeysOn: ["key-Q", "key-A", "key-W", "key-S", "key-E", "key-D", "key-R", "key-F"],
     greenKeysOff: ["key-U", "key-J", "key-I", "key-K", "key-O", "key-L", "key-P", "key-colon", "key-lbrace", "key-quote"]},
     {text: "Try reaching your right pinky to each key while keeping other fingers close to home position.",
@@ -147,7 +148,7 @@ function menuListener() {
     words. So, instead of typing out something like IS for \"is\", \
     you can just type S.", vocab: ["is: S"], lesson: ["is", "S", "is", "is", "S"],
     greenKeysOff: ["key-Q", "key-A", "key-P", "key-colon", "key-lbrace", "key-quote"]},
-    {text: "You can click on a word in the vocab box to move the hands above to the corresponding keys.", highlight: true,
+    {text: "You can click on a word in the vocab box (not visible on phones) to move the hands above to the corresponding keys.", highlight: true,
     highlightElement: document.getElementById("notebook-paper"), vocab: ["is: S"]},
     {text: "You can also click on a word in the practice drill to move the hands.", highlight: true,
     highlightElement: document.getElementById("practice"), lesson: ["is"]},
@@ -550,10 +551,10 @@ function menuListener() {
     is substitue a W- for the V-. So we would write TKWAOEUD. See if you can apply the same rule to \"severe\".",
     vocab: ["divide: TKWAOEUD", "~(or TKEU/SRAOEUD)", "severe: SWAOER", "~(or SE/SRAOER)"],
     lesson: ["divide", "divide", "divide", "divide", "severe", "severe", "severe", "severe"]},
-    {text: "Remember using -PBG to write the -nge in sponge? What if we have something like lung and lunge? We use -PBG for the hard G sound and \
-    add a * for the soft G, e.g. PWEUPBG for bing and PW*EUPBG for binge. Binge can also be written by adding -J, \
-    PWEUPB/-PBLG. Similarly, we can write HRUPBG for lung and HRUPBLG or HRUPB/-PBLG for lunge. HRU*PBG is not actually mapped to anything in this case (though it \
-    could be mapped to \"lunge\" based on this rule).",
+    {text: "Remember using -PBG to write the -nge in sponge? What if we have something like lung and lunge?"},
+    {text: "We use -PBG for the hard G sound and add a * for the soft G, e.g. PWEUPBG for bing and PW*EUPBG for binge."},
+    {text: "Binge can also be written by adding -J, PWEUPB/-PBLG. Similarly, we can write HRUPBG for lung and HRUPBLG or HRUPB/-PBLG for lunge. \
+    HRU*PBG is not actually mapped to anything in this case (though it could be mapped to \"lunge\" based on this rule).",
     affix: ["-ng: -PBG", "-nge: -PBG", "(or *PBG)"], vocab: ["bing: PWEUPBG", "binge: PW*EUPBG", "~(or PWEUPB/-PBLG)", "lung: HRUPBG",
     "lunge: HRUPBLG", "~(or HRUPB/-PBLG)", "~(or HRUPB/*PBLG)"], extraCode: "ngeConflict"},
     {text: "Now we will do little more inversion, which we introduced in the ring finger lesson. For \"concept\", we invert con- (K-) and S. We invert d and s to get TKS, the \
@@ -571,21 +572,23 @@ function menuListener() {
     lesson: ["mother", "water", "rather", "bother", "water", "water", "rather", "mother", "bother"]},
     {text: document.getElementById("lesson8").textContent, top: lessonTitleTop, width: lessonTitleWidth},
     {text: "Sometimes you will have a word or name that you do not know a chord for, and you will need to spell it out letter by letter. This \
-    is called fingerspelling. To do this, use the left hand letters plus an asterisk. Since Z is S*, you will need to use a long form of Z for \
-    fingerspelling, STKPW. So use S* to fingerspell S and STKPW* to fingerspell Z. Add -P to make the letter capital. Use S-P for spaces and TK-LS to remove space, \
-    if needed."},
+    is called fingerspelling."},
+    {text: "To fingerspell, use the left hand letters plus an asterisk. Since Z is S*, you will need to use a long form of Z for \
+    fingerspelling, STKPW. So use S* to fingerspell S and STKPW* to fingerspell Z."},
+    {text: "Add -P to make the letter capital. Use S-P for spaces and TK-LS to remove space, if needed."},
     {text: '<a href="https://thepracticetest.com/typing/practice/alphabet" target="_blank">' + "This typing site" + '</a>' + " is a great resource for \
-    practicing fingerspelling. The site generates pangrams, sentences which contain all the letters of \
-    the alphabet. After each exercise, it tells you which letters you should work on more, with links to letter-specific drills. It is made for qwerty keyboards, \
-    so be sure to turn on Plover."},
+    practicing fingerspelling."},
+    {text: "The site generates pangrams, sentences which contain all the letters of the alphabet. After each exercise, it tells you which letters \
+    you should work on more, with links to letter-specific drills. You will need to turn on Plover to practice fingerspelling."},
     {text: "Now we will move on to numbers. In these lessons, we will only learn how to type single digits. You can use these single digits to form any number. However, there are more advanced techniques \
     that you can use to type large numbers more quickly."},
     {text: "A steno machine has a number bar above the keys. For a keyboard, the number keys, minus key, and plus key are part of the number bar. \
     So to type a number, press any key in the number bar plus the steno key for a particular number."},
     {text: "The hands here have not been animated to show the motions for the numbers since there are so many possible movements."},
     {text: "One way to handle the number bar is to use one finger to press a steno number as well as the number bar. So, for instance, the steno key for 1 is S-. \
-    To press the number bar with this key, you could press qwerty 1 and qwerty Q both with the left pinky finger. Or you could do a more centered press \
-    on qwerty Q, and instead press qwerty 1, qwerty2, and qwerty Q all at once. Or qwerty 2 and qwerty Q. Or you could use a separate finger to press the number bar while pressing \
+    To press the number bar with this key, you could press qwerty 1 and qwerty Q both with the left pinky finger.",
+    width: 650, vocab: ["1: #S", "(# means number bar)"], lesson: "1".repeat(5).split("")},
+    {text: "Alternatively, you could use a separate finger to press the number bar while pressing \
     qwerty Q with your left pinky.", width: 650, vocab: ["1: #S", "(# means number bar)"], lesson: "1".repeat(5).split("")},
     {text: "For the thumb number 0 (0 is the O key), the same hand middle finger is one way of pressing the number bar. \
     For 0, the left middle finger would press qwerty 3, qwerty 4, or both.",
@@ -619,22 +622,17 @@ function menuListener() {
     case you need a refresher.",
     vocab: ["after-: AFR", "be-: PWE", "bi-: PW*EU", "ch: KH", "-ch, -tch: -FP", "com-, con-: K-",
     "com-: KOPL", "con-: KOPB", "(or KAUPB)", "-ction (-kshun): -BGS", "-ed: -D", "ent-, int-: SPW",
-    "for-: TPAUR", "im-: EUPL", "in-: EUPB", "-ing: -G", "-lch, -lge: -LG", "-lk: *LG", "-le: *L",
-    "-le, -ly: -L", "-ly: HREU", "-ment: -PLT", "-mp: FRP", "(or *PL)", "-nch, -rch: -FRPB", "-nch: -FRPBLG",
-    "-ng, -nge: -PBG", "-nge, -nk: *PBG", "out-: AOUT", "-rve: -FRB", "-sh: -RB", "-tion, -sion (-shun): -GS",
-    "-tious, -cious (-shus): -RBS", "-st: -FT", "(or *S)", "-th: *T", "-y: KWREU"],
+    "for-: TPAUR", "im-: EUPL", "in-: EUPB", "-ing: -G", "-lch, -lge: -LG", "-lk: *LG"],
     lesson: ["after-", "be-", "bi-", "ch", "-ch", "com-", "con-", "-ction (-kshun)", "-ed", "ent-, int-",
-    "for-", "im-", "in-", "-ing", "-lch, -lge", "-lk", "-le", "-le, -ly", "-ly", "-ment", "-mp", "-nch, -rch", "-nch",
-    "-ng, -nge", "-nge, -nk", "out-", "-rve", "-sh", "-tion, -sion (-shun)", "-tious, -cious (-shus)", "-st", "-th", "-y"]},
+    "for-", "im-", "in-", "-ing", "-lch, -lge", "-lk"]},
     {text: "Last, let's practice all the prefixes and suffixes we have learned. The list is provided in the vocab box in \
     case you need a refresher.",
-    vocab: ["after-: AFR", "be-: PWE", "bi-: PW*EU", "ch: KH", "-ch, -tch: -FP", "com-, con-: K-",
-    "com-: KOPL", "con-: KOPB", "(or KAUPB)", "-ction (-kshun): -BGS", "-ed: -D", "ent-, int-: SPW",
-    "for-: TPAUR", "im-: EUPL", "in-: EUPB", "-ing: -G", "-lch, -lge: -LG", "-lk: *LG", "-le: *L",
-    "-le, -ly: -L", "-ly: HREU", "-ment: -PLT", "-mp: FRP", "(or *PL)", "-nch, -rch: -FRPB", "-nch: -FRPBLG",
+    vocab: ["-le: *L", "-le, -ly: -L", "-ly: HREU", "-ment: -PLT", "-mp: FRP", "(or *PL)", "-nch, -rch: -FRPB", "-nch: -FRPBLG",
     "-ng, -nge: -PBG", "-nge, -nk: *PBG", "out-: AOUT", "-rve: -FRB", "-sh: -RB", "-tion, -sion (-shun): -GS",
     "-tious, -cious (-shus): -RBS", "-st: -FT", "(or *S)", "-th: *T", "-y: KWREU"],
-    extraCode: "affixReview"},
+    lesson: ["-le", "-le, -ly", "-ly", "-ment", "-mp", "-nch, -rch", "-nch", "-ng, -nge", "-nge, -nk", "out-", "-rve", "-sh",
+    "-tion, -sion (-shun)", "-tious, -cious (-shus)", "-st", "-th", "-y"]},
+    {text: "Here is one last affix exercise.", extraCode: "affixReview"},
     {text: document.getElementById("lesson9").textContent, top: lessonTitleTop, width: lessonTitleWidth},
     {text: "If you completed all of the earlier lessons, you have actually already done some phrasing. Let's review one \
     " + "of these sentences now. See if you can identify anything that might be considered \"phrasing\"."},
@@ -644,14 +642,14 @@ function menuListener() {
     {text: "You may have spotted \"in the: TPH-T\" and \"into the: TPHAOT\". Each of these has a phrase expressed as a single stroke."},
     {text: "Plover includes some subject-verb phrases as well. There are eleven commonly-appearing subjects in Plover's dictionary. \
     " + "Notice that most of these use the same strokes that you have already learned for these words (exception: \"which: KH-\"). \
-    " + '<br><br>' + '<table id="first-table"><tr><th>I</th><th>you</th><th>it</th><th>she</th><th>he</th><th>we</th>\
+    " + '<br class="phrasing-spacer"><br class="phrasing-spacer">' + '<table id="first-table"><tr><th>I</th><th>you</th><th>it</th><th>she</th><th>he</th><th>we</th>\
     ' + '<th>they</th><th>who</th><th>what</th><th>which</th><th>that</th>\
     ' + '<tr><td>EU</td><td>U</td><td>T-</td><td>SHE</td><td>HE</td><td>WE</td>\
     ' + '<td>THE</td><td>WHO</td><td>WHA</td><td>KH-</td><td>THA</td>\
     ' + '</tr></table>'},
     {text: "In phrasing, you will often see the verb stroked using the right-hand only. For the (helper) verb \"could\", we will use \"-BGD\" (-KD) rather \
     " + "than \"KO\" as we learned previously. We can then combine this with each of the subjects. \
-    " + '<br><br>' + '<table><tr><th>I could</th><th>you could</th><th>it could</th><th>she could</th><th>he could</th><th>we could</th></tr>\
+    " + '<br class="phrasing-spacer"><br class="phrasing-spacer">' + '<table><tr><th>I could</th><th>you could</th><th>it could</th><th>she could</th><th>he could</th><th>we could</th></tr>\
     ' + '<tr><td>EUBGD</td><td>UBGD</td><td>T-BGD</td><td>SHEBGD</td><td>HEBGD</td><td>WEBGD</td></tr>\
     ' + '<tr><th>they could</th><th>who could</th><th>what could</th><th>which could</th><th>that could</th></tr>\
     ' + '<tr><td>THEBGD</td><td>WHOBGD</td><td>WHABGD</td><td>KH-BGD</td><td>THABGD</td>\
@@ -742,11 +740,8 @@ function menuListener() {
     vocab: ["former: TPRORPL", "workers: WRORBGS"], lesson: ["former", "former", "former", "workers", "workers", "workers"]},
     {text: "Words with Unstressed Vowels" + '<br><br>' + "Remember that you can look a word up in a normal dictionary to determine stress."},
     {text: "Words with Unstressed Vowels" + '<br><br>' + "Here, I will show stress with all caps. For instance, \"above\" is a-BOV. \
-    This shows stress on the second syllable. Plover Theory allows us to drop unstressed vowels (shown in lowercase here), so we get a-BOV = BOV. We use O (PWOF) instead of U (PWUF) since \
-    short-sounding single vowels " + '<a href="https://sites.google.com/site/learnplover/lessons-1-fingers-and-keys#TOC-Rules-For-Short-Vowel-Sounds" target="_blank">' + "\
-    use spelling" + '</a>' + ", as we learned in the Vowels lesson.",
-    vocab: ["above: PWOF"],
-    lesson: ["above", "above", "above"]},
+    This shows stress on the second syllable. Plover Theory allows us to drop unstressed vowels (shown in lowercase here), so we get a-BOV = BOV.",
+    vocab: ["above: PWOF"], lesson: ["above", "above", "above"]},
     {text: "Let's practice a few more examples so we can get used to dropping unstressed vowels. Notice that dropping unstressed vowels amounts to \
     dropping lowercase vowels here." + '<br><br>' + " \
     associated = a-SOE-shee-ate-ed = SOE-sh-t-d", vocab: ["associated: SOERBTD"], lesson: ["associated", "associated", "associated"]},
@@ -808,14 +803,14 @@ function menuListener() {
     {text: "Inversion" + '<br><br>' + "We first covered inversion in the Rings lesson. Let's see if we can write \"benefit\" using inversion. \
     Note that these words also drop unstressed vowels, since that is a principle of Plover Theory. We will show inverted letters in parentheses."},
     {text: "benefit = BEN-e-fit = BEN-ft"},
-    {text: "***unclear For BEN-ft, we use a left-hand B-, vowel E. Then we have nft as right-hand keys, so we need -PB, -F, -T. To write these in steno order, \
-    we would need -F, -PB, -T. We can make this swap since -F and -PB are adjacent on the keyboard."},
+    {text: "For BEN-ft, we use a left-hand B- (PW-), vowel E. Then we have nft as right-hand keys (-PB, -F, -T). To write these in steno order, \
+    we swap -PB and -F to get PWEFPBT."},
     {text: "So we can write PWEFPBT => befnt = be(nf)t."},
     {text: "Inversion" + '<br><br>' + "Let's practice this, as well as some other words that use inversion.",
     vocab: ["benefit: PWEFPBT", "credit: KRETD", "(cre(dt))", "decision: STKEUGS", "((ds)ision)", "design: STKAOEUPB", "((ds)in)"],
     lesson: ["benefit", "benefits", "credit", "decision", "design", "designed"]},
-    {text: "***rephrase Inversion" + '<br><br>' + "See if you can figure out ways to write these words using inversion. Remember, if you don't know, you \
-    can always click the word in the exercise above, and you will see its brief on the keyboard. Some hints are provided in the vocab box.",
+    {text: "Inversion" + '<br><br>' + "See if you can figure out ways to write these words using inversion. Remember, you \
+    can always click the word in the exercise above if you don't remember it. Some hints are provided in the vocab box.",
     vocab: ["either: e(thr)", "(e(thr) = erth)", "enjoy: n(joi)", "(n(joi) = noij)", "history: his(tr)", "(^ try -F as s)"],
     lesson: ["either", "either", "enjoy", "enjoy", "history", "history"]},
     {text: "Inversion" + '<br><br>' + "See if you can figure out ways to write these words using inversion. Remember, if you don't know, you \
@@ -863,9 +858,11 @@ function menuListener() {
     lesson: ["region", "regions", "poison", "season", "treason", "essential", "essential", "confidential", "confidential"]},
     {text: "Other Patterns: cans-, canc- as SK", vocab: ["cancer: SKER", "cancel: SKEL"],
     lesson: ["cancer", "cancer", "cancel", "cancel", "cancer", "cancel", "cancer", "cancel"]},
-    {text: "Disambiguators: OEU", vocab: ["policy: POEULS", "poles: POELS", "theist: THAOEFT", "atheist: THOEUFT"],
+    {text: "Disambiguators: OEU" + '<br><br>' + "OEU is less common than other vowel combinations, so it can often be used to disambiguate words.",
+    vocab: ["policy: POEULS", "poles: POELS", "theist: THAOEFT", "atheist: THOEUFT"],
     lesson: ["policy", "policy", "poles", "poles", "theist", "theist", "atheist", "atheist"]},
-    {text: "Disambiguators: SK",
+    {text: "Disambiguators: SK" + '<br><br>' + "This combination is sometimes used to disambiguate words with sc-, like seen vs. scene. However, it is \
+    used in some less-expected pairs as well.",
     vocab: ["can't:  K-PBT", "cannot: SK-PBT", "corral: KRAL", "central: SKRAL", "(or STRAL)", "center: STR", "craft: KRAFT",
     "contrast: SKRAFT", "(or KRAEFT)", "seen: SAOEPB", "scene: SKAOEPB", "(or SAEPB)", "signs: SAOEUPBS", "science: SKAOEUPBS"],
     lesson: ["can't", "cannot", "can't", "cannot", "corral", "central", "central", "center", "craft", "contrast", "contrast", "seen",
@@ -917,13 +914,13 @@ function menuListener() {
 
     // set narration box x position
     let widthPercentage = 100 * (narration.getBoundingClientRect().width / window.innerWidth);
-    if (window.innerWidth <= 750 && (window.innerWidth < window.innerHeight)) { narration.style.left = 2.5 + "\%"; } // not landscape
-    else if (narrationText[index].left != null && (window.innerWidth < window.innerHeight)) { narration.style.left = narrationText[index].left + "\%"; } // not landscape
+    if (window.innerWidth <= 590 && (window.innerWidth < window.innerHeight)) { narration.style.left = 2.5 + "\%"; } // not landscape
+    else if (narrationText[index].left != null && (window.innerWidth < window.innerHeight) && window.innerWidth >= 780 && window.innerWidth < 1200) { narration.style.left = narrationText[index].left + "\%"; } // not landscape
     else { narration.style.left = ((100 - widthPercentage) / 2) + "\%"; }
 
     // set narration box y position
-    if (window.innerWidth <= 750) { narration.style.top = 85 + "\%"; } // include landscape
-    else if (narrationText[index].top != null) { narration.style.top = narrationText[index].top + "\%"; }
+    if (window.innerWidth <= 780 || (window.innerWidth > window.innerHeight && window.innerWidth < 1100 && window.innerHeight > 780)) { narration.style.top = 85 + "\%"; } // include landscape
+    else if (narrationText[index].top != null && window.innerWidth < 1200) { narration.style.top = narrationText[index].top + "\%"; }
     else { narration.style.top = 115 + "\%"; }
 
     // add and remove highlights

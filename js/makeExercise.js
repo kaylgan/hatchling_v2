@@ -33,7 +33,7 @@ function generateDefaultExercise() {
 
 function generateUserExercise() {
     const textArea = document.getElementById('user-text');
-    const button = document.getElementById('text-area-button');
+    // const button = document.getElementById('text-area-button');
     let words = textArea.value.split(' ');
     return new TypeJig.Exercise(words, 0, false, 'ordered');
 }
@@ -107,15 +107,15 @@ window.onload = function () {
     let jig = setExercise(name, exercise, hints, speed);
 
     // GENERATE EXERCISE FROM USER TEXT
-    const textArea = document.getElementById('user-text');
-    let button = document.getElementById('text-area-button');
-    textArea.value = '';
-    button.addEventListener('click', function (evt) {
-      setNewTempo();
-      evt.preventDefault();
-      let exercise = generateUserExercise();
-      jig.exercise = exercise;
-      jig.reset();
+    // const textArea = document.getElementById('user-text');
+    // let button = document.getElementById('text-area-button');
+    // textArea.value = '';
+    // button.addEventListener('click', function (evt) {
+    //   setNewTempo();
+    //   evt.preventDefault();
+    //   let exercise = generateUserExercise();
+    //   jig.exercise = exercise;
+    //   jig.reset();
     });
 
     // GENERATE ERROR-PRACTICE EXERCISES

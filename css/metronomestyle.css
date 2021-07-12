@@ -48,7 +48,7 @@ h2 {
 
 .controls-main label {
   justify-self: end;
-  padding-right: 10px;
+  padding-right: 10%;
 }
 
 .controls-main span {
@@ -81,6 +81,8 @@ h2 {
   border-radius: var(--borderRad);
   background-color: var(--boxSecond);
   cursor: pointer;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 #hide-button {
@@ -96,7 +98,7 @@ h2 {
 }
 
 #bpmval {
-  margin-right: 10px;
+  margin-right: 2%;
 }
 
 [data-playing="false"] {
@@ -133,7 +135,7 @@ h2 {
 
 .controls label {
   justify-self: end;
-  padding-right: 10px;
+  padding-right: 2%;
 }
 
 .controls input {

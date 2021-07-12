@@ -1,4 +1,13 @@
 function runExercise(fields) {
+
+	// added for Hatchling. show/hide #nav arrow key instructions
+	let displays = document.getElementsByClassName("center");
+	console.log("displays: " + displays);
+	for (i = 1; i < displays.length; i++) {
+		console.log(i + " " + displays[i].innerText);
+		displays[i].style.display = "block";
+	}
+
 	if(fields.drill === 'NumberSentences') exercise = numberSentences(fields);
 	else exercise = wordDrill(fields);
 	if(exercise) {
