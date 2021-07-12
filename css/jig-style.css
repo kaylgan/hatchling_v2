@@ -55,11 +55,11 @@ body {
 	text-align: center;
 }
 
-#nav {
+/* #nav {
 	position: fixed;
 	top: 3em; right: 0;
 	width: 15em;
-}
+} */
 
 .form-section {
 	padding: 0.8em 1em;
@@ -101,7 +101,7 @@ a, a:visited {
 
 #lesson {
 	font-size: 1.3em;
-	height: 75%; /* was 80% */
+	height: 75vh; /* was 80% */
 	overflow-y: scroll;
 }
 #lesson-name { margin-bottom: 3em; }
@@ -113,7 +113,7 @@ a, a:visited {
 
 #drill-content {
 	width: 64ex;
-	max-width: 80%;
+	/* max-width: 80%; */
 	margin: 0 auto;
 	position: relative;
 }

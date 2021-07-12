@@ -1,3 +1,5 @@
+/* adjusted styles for practicing.html */
+
 #review {
 	cursor: pointer;
 }
@@ -76,8 +78,9 @@
 
 #sequencer-mini {
   border: none;
-  width: 100%;
-  margin: 0 auto;
+  /* width: 100%; */
+  /* margin: 0 auto; */
+	/* margin-bottom: 2%; */
 }
 
 #controls-mini {
@@ -95,5 +98,29 @@
 }
 
 #bpm-label-mini {
-  margin-left: 35px;
+  margin-left: 10%;
+}
+
+#exercise {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.center {
+	display: none;
+}
+
+#lesson-and-nav {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+#drill-content {
+	max-width: 90%;
+}
+
+#nav {
+	margin-left: 2%;
 }

@@ -509,9 +509,13 @@ function generatePracticeLetters(letters = [], start = 0, end = 10) {
       // make first letter fully visible, on top
       currentLetter.style.zIndex = 5;
       let marginSize = currentLetter.getBoundingClientRect().width/5;
-      if (window.innerWidth < 700) { currentLetter.style.marginLeft = marginSize + "%"; }
+      if (window.innerWidth < 850) { currentLetter.style.marginLeft = marginSize + "%"; }
       currentLetter.style.overflow = "visible";
+
       currentLetter.style.minWidth = "auto";
+      // if (currentLetter.style.width > currentLetter.style.height) {
+      //   currentLetter.style.minWidth = "auto";
+      // }
     }
 
     let metronomeLetter = document.createElement("button");
@@ -653,10 +657,9 @@ function compareToPractice(userKeystroke, dictionaryWord) {
           practiceLetter.style.minWidth = "1px";
           nextPracticeLetter.style.zIndex = 5;
           nextPracticeLetter.style.overflow = "visible";
-          // if (nextPracticeLetter.getBoundingClientRect().width > 100) {
-          //   nextPracticeLetter.style.minWidth = "auto";
-          // }
-          nextPracticeLetter.style.minWidth = "auto";
+          if (nextPracticeLetter.style.width > nextPracticeLetter.style.height) {
+            nextPracticeLetter.style.minWidth = "auto";
+          }
         }
       } else if (getPracticeIndex() < getNextLesson().length) {
         // ON LAST LETTER DISPLAYED, DISPLAY REST OF EXERCISE

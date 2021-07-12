@@ -167,7 +167,7 @@ StenoDisplay.Stroke = function(container) {
 	numCell.appendChild(numBar);
 	num.appendChild(numCell);
 	this.keys.appendChild(num);
-	
+
 	var upper = document.createElement('tr');
 	var lower = document.createElement('tr');
 	var vowel = document.createElement('tr');
