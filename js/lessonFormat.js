@@ -110,18 +110,12 @@ function extraCode(whichCode) {
         ["ab2", ["E", "U"]],
         ["ab3", ["E", "I"]],
         ["ab", ["U", "I"]],
-        ["ab4", ["A", "E"]], ["ab3", ["A", "I"]],
+        ["ab4", ["A", "E"]],
         ["ab4", ["I", "A"]],
-        ["ab3", ["I", "E"]],
-        ["ab4", ["O", "U"]], ["ab3", ["O", "I"]],
+        ["ab4", ["O", "U"]],
         ["ab4", ["I", "O"]],
-        ["ab3", ["I", "U"]],
-        ["ab4", ["A", "U"]], ["ab3", ["I", "U"]],
-        ["ab4", ["I", "U"]],
-        ["ab3", ["I", "A"]],
-        ["ab4", ["O", "E"]], ["ab3", ["I", "E"]],
-        ["ab4", ["I", "E"]],
-        ["ab3", ["I", "O"]]
+        ["ab4", ["A", "U"]],
+        ["ab4", ["O", "E"]]
       ];
       break;
     case ("preShortVowels"):
@@ -135,35 +129,32 @@ function extraCode(whichCode) {
     case ("shortVowels"):
       lesson = [
         ["five", ["sat", "set", "sit", "sod", "suds"]],
-        ["five2", ["sat", "set", "sit", "sod", "suds"]],
-        ["five3", ["sat", "set", "sit", "sod", "suds"]],
-        ["abc", ["sat", "set", "sit"]],
         ["ab", ["set", "sat"]], ["ab2", ["set", "sit"]], ["ab4", ["sat", "sit"]],
         ["ab2", ["sod", "suds"]], ["ab3", ["suds", "sod"]]
       ];
       break;
     case ("longVowelKeys"):
       lesson = [
-        ["ab", ["ā", "ē"]],
-        ["ab2", ["ū", "ī"]],
-        ["ab", ["ā", "ū"]],
-        ["ab2", ["ē", "ī"]],
-        ["ab3", ["ā", "ī"]]
+        ["ab", ["Ā", "Ē"]],
+        ["ab2", ["Ū", "Ī"]],
+        ["ab", ["Ā", "Ū"]],
+        ["ab2", ["Ē", "Ī"]],
+        ["ab3", ["Ā", "Ī"]]
       ];
       break;
     case ("longVowelKeys2"):
       lesson = [
-        ["ab", ["ō", "ā"]],
-        ["ab", ["ō", "ē"]],
-        ["ab2", ["ū", "ō"]],
-        ["ab2", ["ī", "ō"]]
+        ["ab", ["Ō", "Ā"]],
+        ["ab", ["Ō", "Ē"]],
+        ["ab2", ["Ū", "Ō"]],
+        ["ab2", ["Ī", "Ō"]]
       ];
       break;
     case ("preLongVowels"):
       lesson = [
-        ["asIs", ["S", "ā", "S", "ā", "S", "ē", "-D", "S", "ē", "-D"], true],
-        ["asIs", ["S", "ī", "-T", "S", "ō", "S", "ī", "-T", "S", "ō"], true],
-        ["asIs", ["S", "ō", "S", "ū", "-T", "S", "ō", "S", "ū", "-T"], true]
+        ["asIs", ["S", "Ā", "S", "Ā", "S", "Ē", "-D", "S", "Ē", "-D"], true],
+        ["asIs", ["S", "Ī", "-T", "S", "Ō", "S", "Ī", "-T", "S", "Ō"], true],
+        ["asIs", ["S", "Ō", "S", "Ū", "-T", "S", "Ō", "S", "Ū", "-T"], true]
       ];
       break;
     case ("longVowels"):
@@ -408,7 +399,8 @@ function extraCode(whichCode) {
         ["abc", ["love", "save", "love"]],
         ["ab", ["safe", "save"]],
         ["ab", ["save", "savvy"]],
-        ["ab", ["savvy", "satisfy"]]
+        ["ab", ["savvy", "satisfy"]],
+        ["ab2", ["safe", "-safe"]]
       ];
       break;
     case ("pointerLetters3"):
@@ -454,9 +446,9 @@ function extraCode(whichCode) {
       break;
     case ("ngeConflict"):
       lesson = [
+        ["ab", ["lung", "lunge"]],
         ["ab3", ["bing", "binge"]],
         ["ab", ["lung", "bing"]],
-        ["ab2", ["lung", "lunge"]],
         ["ab3", ["lunge", "binge"]]
       ];
       break;
