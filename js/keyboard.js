@@ -203,13 +203,15 @@ function determineKeystroke(keyArray) {
     "ik": "\-n",
     "io": "\-m", "kl": "\-k", "uy": "\-v",
     "tu": "\-v", "gu": "\-v", "hu": "-v",
-    "\;\[": "\-sd"
+    "\;\[": "\-sd",
+    "nv": "ō"
   };
   let threeKeyMap = {
     "erw": "n", "dfs": "y",
     "\;kl": "\-x",
     "aqt": "z", "agq": "z",
-    "aqy": "z", "ahq": "z"
+    "aqy": "z", "ahq": "z",
+    "cmn": "ā", "cnv": "ē", "cmv": "ū"
   }
   let fourPlusKeyMap = {
     "adeqsw": "z", "deqsw": "z", "adesw": "z",
@@ -221,8 +223,7 @@ function determineKeystroke(keyArray) {
   // make sure longest chord is processed and not its substrings
   let length = arrayToString.length;
   if (length >= 4 && fourPlusKeyMap[arrayToString]) {
-    if (fourPlusKeyMap[arrayToString] == "ī") { return fourPlusKeyMap[arrayToString]; }
-    else { return fourPlusKeyMap[arrayToString].toUpperCase(); }
+    return fourPlusKeyMap[arrayToString].toUpperCase();
   } else if (length === 3 && threeKeyMap[arrayToString]) {
     return threeKeyMap[arrayToString].toUpperCase();
   } else if (length === 2 && twoKeyMap[arrayToString]) {
@@ -512,10 +513,11 @@ function generatePracticeLetters(letters = [], start = 0, end = 10) {
       if (window.innerWidth < 850) { currentLetter.style.marginLeft = marginSize + "%"; }
       currentLetter.style.overflow = "visible";
 
+      let oldMinCurrent = currentLetter.style.minWidth;
       currentLetter.style.minWidth = "auto";
-      // if (currentLetter.style.width > currentLetter.style.height) {
-      //   currentLetter.style.minWidth = "auto";
-      // }
+      if (oldMinCurrent && currentLetter.style.width <= currentLetter.style.height) {
+        currentLetter.style.minWidth = "auto";
+      }
     }
 
     let metronomeLetter = document.createElement("button");
@@ -620,8 +622,9 @@ function compareToPractice(userKeystroke, dictionaryWord) {
     //   getPracticeIndex(true, getPracticeIndex()+1);
     // }
 
-
-    if (dictionaryWord === "SS") {
+    if (practiceDiv.textContent == "(Type S-S to repeat exercise, or press ENTER to continue)") {
+      console.log("end of exercise");
+    } else if (dictionaryWord === "SS") {
       // repeat or restart lesson if user types S-S
       resetLesson();
     } else if (!practiceLetter) {
@@ -657,8 +660,10 @@ function compareToPractice(userKeystroke, dictionaryWord) {
           practiceLetter.style.minWidth = "1px";
           nextPracticeLetter.style.zIndex = 5;
           nextPracticeLetter.style.overflow = "visible";
-          if (nextPracticeLetter.style.width > nextPracticeLetter.style.height) {
-            nextPracticeLetter.style.minWidth = "auto";
+          let oldMin = nextPracticeLetter.style.minWidth;
+          nextPracticeLetter.style.minWidth = "auto";
+          if (oldMin && nextPracticeLetter.style.width <= nextPracticeLetter.style.height) {
+            nextPracticeLetter.style.minWidth = oldMin;
           }
         }
       } else if (getPracticeIndex() < getNextLesson().length) {
