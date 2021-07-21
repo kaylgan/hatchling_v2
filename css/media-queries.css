@@ -277,6 +277,7 @@ Overflow check function for #practice in keyboard.js
   	margin-bottom: 5px;
     width: 100%;
   	height: 50px;
+    /* adjust for heights */
   }
 
   #word-lists {
