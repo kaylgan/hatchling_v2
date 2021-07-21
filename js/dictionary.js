@@ -26,10 +26,10 @@ function checkDictionary(keyArray, reverse = false, reverseEntry = "") {
     "pu": "-st", "\;g": "-st",
      "gp": "-th", "as": "ask",
     "cl": "ago", "fw": "interest", "jw": "interest", "\[c": "add",
-    "aw": "is it"
+    "aw": "is it", "aw": "st"
   };
   let threeKeys = {
-    "acp": "sat", "anp": "set", "\[av": "sod",
+    "acw": "sta", "acp": "sat", "anp": "set", "\[av": "sod",
     "anv": "sow", "acn": "sea",
     "acm": "saw", "fpv": "rot", "\[fv": "rod", "ikr": "\-",
     "cmn": "a", "lmw": "tug", "mpv": "out", "mno": "ill", "cmo": "all", "\[ac": "sad",

@@ -14,7 +14,8 @@
 <body>
 
   <nav id="nav-bar">
-    <div id="desktop-logo">
+
+    <!-- LOGO -->
       <a href="index.html">
         <div id="logo-box">
           <div id="logo">
@@ -26,54 +27,10 @@
           </div>
         </div>
       </a>
-    </div>
+    <!-- end LOGO -->
 
-    <!-- MOBILE NAV BAR -->
-    <div id="nav-items-mobile" hidden>
-      <div id="dropdown">
-        <span id="nav-lessons" class="navItems">
-          <i class="fas fa-bars" id="hamburger-menu"></i>
-          <div id="mobile-logo">
-            <div id="logo-box">
-              <a href="index.html">
-                <div id="logo">
-                  <div id="egg-spots"></div>
-                  <div id="bird">
-                    <div id="eye"></div>
-                    <div id="beak"></div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </span>
-        <div id="dropdown-content">
-          <span id="tutorial">Tutorial</span>
-          <span id="lesson1">Pinkies</span>
-          <span id="lesson2">Thumbs</span>
-          <span id="sentences1">Sentences</span>
-          <span id="lesson3">Rings</span>
-          <span id="lesson4">Middles</span>
-          <span id="lesson5">Pointers</span>
-          <span id="lesson6">More Sentences</span>
-          <span id="lesson7">Affixes</span>
-          <span id="lesson8">ABC & 123</span>
-          <span id="lesson9">Phrasing</span>
-          <span id="lesson10">Phonetic Words</span>
-          <span id="lesson11">Word Stress</span>
-          <span id="lesson12">Inversion</span>
-          <span id="lesson13">More Brief Patterns</span>
-          <span id="lesson14">What Next?</span>
-          <span id="line-divider">----------</span>
-          <a href="practicing.html"><span id="nav-practice" class="navItems">Practice</span></a>
-          <a href="about.html"><span id="nav-about" class="navItems">About</span></a>
-          <a href="contact.html"><span id="nav-contact" class="navItems">Contact</span></a>
-        </div>
-      </div>
-    </div><!-- nav-items-mobile -->
-
-    <!-- DESKTOP NAV BAR -->
-    <div id="nav-items">
+    <!-- NAV BAR -->
+    <div id="nav-contents">
       <div id="dropdown">
         <span id="nav-lessons" class="navItems">Lessons</span>
         <div id="dropdown-content">
@@ -93,27 +50,46 @@
           <span id="lesson12">Inversion</span>
           <span id="lesson13">More Brief Patterns</span>
           <span id="lesson14">What Next?</span>
+          <a href="index.html"><span id="small-divider" class="small-nav-items">---------------</span></a>
+          <a href="index.html"><span class="small-nav-items">Lessons</span></a>
+          <a href="practicing.html"><span class="small-nav-items">Practice</span></a>
+          <a href="about.html"><span class="small-nav-items">About</span></a>
+          <a href="contact.html"><span class="small-nav-items">Contact</span></a>
         </div>
+        <i class="fas fa-bars" id="hamburger-menu" hidden></i>
+      </div><!-- end dropdown -->
 
-      </div>
       <span id="nav-practice" class="navItems"><a href="practicing.html">Practice</a></span>
       <span id="nav-practice-small" class="navItems"><a href="practicing.html"><i class="fas fa-user-check"></i></a></span>
       <span id="nav-about" class="navItems"><a href="about.html">About</a></span>
       <span id="nav-about-small" class="navItems"><a href="about.html"><i class="far fa-question-circle"></i></a></span>
       <span id="nav-contact" class="navItems"><a href="contact.html">Contact</a></span>
       <span id="nav-contact-small" class="navItems"><a href="contact.html"><i class="far fa-envelope"></i></a></span>
-    </div><!-- nav-items -->
+    </div><!-- end nav-contents -->
   </nav>
 
   <div id="relative-container">
-    <div id="narration" hidden></div>
     <div id="practice"></div>
     <div id="notebook-paper">
       <div class="lines"></div>
       <div id="vocabBox" hidden></div>
     </div>
 
-    <div class="container">
+    <div id="side-view-box">
+    <div id="side-view" hidden>
+      <div id="finger-side-top"></div>
+      <div id="finger-side-middle"></div>
+      <div id="finger-side-tip"></div>
+      <div id="thumb-side"></div>
+      <div id="hand-side"></div>
+      <div id="front-key" class="side-key"></div>
+      <div id="middle-key" class="side-key"></div>
+      <div id="back-key" class="side-key"></div>
+    </div>
+  </div>
+
+    <!-- <div class="container"> -->
+      <div id="keyboard-and-narration">
       <div id="steno-and-keyboard">
         <div id="steno-order"><button id="hide-button" type="button"><i class="fas fa-drum"></i></button></div>
           <div id="hands">
@@ -159,31 +135,20 @@
               <input name="bpm" id="bpm" type="range" min="5" max="250" value="120" step="1" />
               <span id="bpmval">120</span>
               <button data-playing="false"></button>
-              <!-- <button id="hide-button" type="button">Show/Hide</button> -->
             </section>
 
             <div id="tracks">
               <section class="track-one">
-                <section class="pads" id="metronome-practice">
-                  <!-- <button role="switch" aria-checked="false"><span>Voice 1, Note 1</span></button> -->
-                </section>
+                <section class="pads" id="metronome-practice"></section>
               </section>
             </div>
-          </div><!-- sequencer -->
-      </div>
+          </div><!-- end sequencer -->
+      </div><!-- end steno-and-keyboard -->
 
-      <div id="side-view" hidden>
-        <div id="finger-side-top"></div>
-        <div id="finger-side-middle"></div>
-        <div id="finger-side-tip"></div>
-        <div id="thumb-side"></div>
-        <div id="hand-side"></div>
-        <div id="front-key" class="side-key"></div>
-        <div id="middle-key" class="side-key"></div>
-        <div id="back-key" class="side-key"></div>
-      </div>
-    </div>
-  </div><!-- relative-container -->
+      <div id="narration" hidden></div>
+    </div><!-- end keyboard-and-narration -->
+
+  </div><!-- end relative-container -->
 
 </body>
 

@@ -57,6 +57,7 @@ function extraCode(whichCode) {
       document.getElementById("lp-ftip").classList.add("top-dot");
       break;
     case ("pointerBackward"):
+      document.getElementById("side-view").hidden = false;
       document.getElementById("finger-side-middle").classList.add("pointer-backward");
       document.getElementById("finger-side-tip").classList.add("pointer-tip-backward");
       document.getElementById("lp-fend").classList.remove("top-key");

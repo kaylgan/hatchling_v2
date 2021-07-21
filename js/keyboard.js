@@ -109,6 +109,38 @@ function generateRightHand() {
   document.getElementById("right-thumb").classList.add("adjustment");
 }
 
+// -------------------- generate steno order display --------------------
+function generateStenoOrder() {
+  let stenoOrder = "STKPWHRAO*EUFRPBLGTSDZ";
+  let stenoOrderElement = document.getElementById("steno-order");
+
+  for (let i = 0; i < stenoOrder.length; i++) {
+    let currentElement = document.createElement("span");
+    currentElement.textContent = stenoOrder[i];
+    if (i < 12) { currentElement.id = "steno" + stenoOrder[i]; } // left-hand and vowel steno keys
+    else { currentElement.id = "steno\-" + stenoOrder[i]; } // right-hand steno keys
+    currentElement.classList.add("steno-order-letter");
+    stenoOrderElement.appendChild(currentElement);
+  }
+
+  document.body.addEventListener("keydown", function() {
+    if (event.key === " ") { clearStenoOrder(); }
+  }, false);
+}
+
+// -------------------- transform keyboard based on screen width --------------------
+function resizeKeyboard() {
+  let keys = document.getElementById("steno-and-keyboard");
+  let windowWidth = window.innerWidth;
+  let scalar = 1000;
+  if (windowWidth < 1000) { scalar = 900; }
+  else { scalar = 1300; }
+
+  let scalingFactor = parseFloat(windowWidth / scalar);
+  if (scalingFactor < 0.6) { scalingFactor = 0.6; }
+  keys.style.transform = "scale(" + scalingFactor + ")";
+}
+
 // -------------------- get the last key pressed --------------------
 let getLastKey = (function(set = false, setValue = "") {
   let lastKey = "";
@@ -449,25 +481,6 @@ function pressKeys(keysPressed) {
   }, 200);
 }
 
-// -------------------- generate steno order display --------------------
-function generateStenoOrder() {
-  let stenoOrder = "STKPWHRAO*EUFRPBLGTSDZ";
-  let stenoOrderElement = document.getElementById("steno-order");
-
-  for (let i = 0; i < stenoOrder.length; i++) {
-    let currentElement = document.createElement("span");
-    currentElement.textContent = stenoOrder[i];
-    if (i < 12) { currentElement.id = "steno" + stenoOrder[i]; } // left-hand and vowel steno keys
-    else { currentElement.id = "steno\-" + stenoOrder[i]; } // right-hand steno keys
-    currentElement.classList.add("steno-order-letter");
-    stenoOrderElement.appendChild(currentElement);
-  }
-
-  document.body.addEventListener("keydown", function() {
-    if (event.key === " ") { clearStenoOrder(); }
-  }, false);
-}
-
 // -------------------- remove highlights from all letters in steno order --------------------
 function clearStenoOrder() {
   let letters = document.getElementsByClassName("steno-order-letter");
@@ -491,6 +504,62 @@ function setStenoOrder(keys) {
   }
 }
 
+function checkOverflow() {
+  let practiceDivCheck = document.getElementById("practice");
+
+  let fontAdjust = 10;
+  let compareValue = window.innerWidth;
+
+  if (window.innerWidth < 820) {
+    fontAdjust = 25;
+  }
+  else if (window.innerWidth < 1050) {
+    console.log("less than 1050");
+    fontAdjust = 10;
+  } else if (window.innerWidth < 1500) {
+    console.log("less than 1300")
+    fontAdjust = 15;
+  } else {
+    fontAdjust = 20;
+  }
+
+  if (practiceDivCheck.clientWidth < practiceDivCheck.scrollWidth) {
+    console.log("width exceeded");
+    console.log("window width " + window.innerWidth);
+    console.log("adjust by " + fontAdjust);
+    let resizePractice = document.getElementsByClassName("practice-letter");
+    let oldFontCompute = window.getComputedStyle(resizePractice[0], null).getPropertyValue('font-size');
+    let oldFontSize = parseFloat(oldFontCompute);
+    console.log("old size: " + oldFontSize);
+
+    let minFontSize = 10;
+    let newFontSize = oldFontSize;
+    if (oldFontSize - fontAdjust >= minFontSize) {
+      newFontSize = oldFontSize - fontAdjust + 'px';
+    } else {
+      newFontSize = minFontSize + 'px';
+    }
+
+    for (let i = 0; i < resizePractice.length; i++) {
+      resizePractice[i].style.fontSize = newFontSize;
+      resizePractice[i].style.padding = "2px";
+      resizePractice[i].style.boxShadow = "none";
+    }
+  }
+}
+
+function vocabWordListener() {
+  console.log("pressed a span, text is " + event.target.textContent);
+  let word = event.target.textContent.toLowerCase();
+  let reversed = checkDictionary([], true, word).split("");
+  if (reversed) {
+    positionHand(reversed);
+    pressKeys(reversed);
+    clearStenoOrder();
+    setStenoOrder(reversed);
+  }
+}
+
 // -------------------- generate letters for user to type --------------------
 function generatePracticeLetters(letters = [], start = 0, end = 10) {
   let practiceDiv = document.getElementById("practice");
@@ -506,19 +575,12 @@ function generatePracticeLetters(letters = [], start = 0, end = 10) {
     currentLetter.addEventListener("click", vocabWordListener, false);
     practiceDiv.appendChild(currentLetter);
 
-    if (i === start) {
-      // make first letter fully visible, on top
-      currentLetter.style.zIndex = 5;
-      let marginSize = currentLetter.getBoundingClientRect().width/5;
-      if (window.innerWidth < 850) { currentLetter.style.marginLeft = marginSize + "%"; }
-      currentLetter.style.overflow = "visible";
-
-      let oldMinCurrent = currentLetter.style.minWidth;
-      currentLetter.style.minWidth = "auto";
-      if (oldMinCurrent && currentLetter.style.width <= currentLetter.style.height) {
-        currentLetter.style.minWidth = "auto";
-      }
-    }
+    // if (currentLetter.getBoundingClientRect().width > currentLetter.getBoundingClientRect().height) {
+    //   currentLetter.style.minWidth = "auto";
+    //   // console.log("width > 50");
+    // } else {
+    //   currentLetter.style.minWidth = currentLetter.getBoundingClientRect().height - 13.2 + "px";
+    // }
 
     let metronomeLetter = document.createElement("button");
     metronomeLetter.setAttribute("role", "switch");
@@ -528,34 +590,10 @@ function generatePracticeLetters(letters = [], start = 0, end = 10) {
     metronomeDiv.appendChild(metronomeLetter);
     metronomeLetter.addEventListener("dblclick", function doublePress() {
       metronomeLetter.parentNode.removeChild(metronomeLetter);
-      // currentLetter.parentNode.removeChild(currentLetter);
     }, false);
-
-
-    // el.addEventListener('dblclick', function doublePress() {
-    //   el.parentNode.removeChild(el);
-    // }, false);
   }
 
-  // show hand positions when a practice word is clicked
-  // let practiceWords = document.querySelectorAll("practice-letter");
-  // console.log("adding practiceWords?");
-  // for (let i = 0; i < practiceWords.length; i++) { practiceWords[i].addEventListener("click", vocabWordListener, false); }
-  function vocabWordListener() {
-    console.log("pressed a span, text is " + event.target.textContent);
-    // let wordIndex = event.target.textContent.indexOf(":");
-    // let word = event.target.textContent.substring(0, wordIndex);
-    let word = event.target.textContent.toLowerCase();
-    // console.log(word);
-    let reversed = checkDictionary([], true, word).split("");
-    // console.log("reversed: " + reversed);
-    if (reversed) {
-      positionHand(reversed);
-      pressKeys(reversed);
-      clearStenoOrder();
-      setStenoOrder(reversed);
-    }
-  }
+  checkOverflow();
 }
 
 // -------------------- remove all practice letters --------------------
@@ -623,7 +661,11 @@ function compareToPractice(userKeystroke, dictionaryWord) {
     // }
 
     if (practiceDiv.textContent == "(Type S-S to repeat exercise, or press ENTER to continue)") {
+      // prevent new practice letters from being generated
       console.log("end of exercise");
+      if (dictionaryWord === "SS") {
+        resetLesson();
+      }
     } else if (dictionaryWord === "SS") {
       // repeat or restart lesson if user types S-S
       resetLesson();
@@ -656,15 +698,17 @@ function compareToPractice(userKeystroke, dictionaryWord) {
         if (document.getElementById("sequencer").hidden == true) {
           console.log("sequencer hidden");
           practiceLetter.textContent = "";
-          practiceLetter.style.zIndex = -10;
-          practiceLetter.style.minWidth = "1px";
-          nextPracticeLetter.style.zIndex = 5;
-          nextPracticeLetter.style.overflow = "visible";
-          let oldMin = nextPracticeLetter.style.minWidth;
-          nextPracticeLetter.style.minWidth = "auto";
-          if (oldMin && nextPracticeLetter.style.width <= nextPracticeLetter.style.height) {
-            nextPracticeLetter.style.minWidth = oldMin;
-          }
+          // practiceLetter.style.zIndex = -10;
+          practiceLetter.style.minWidth = "4px";
+          practiceLetter.style.minHeight = "4px";
+          practiceLetter.style.boxShadow = "none";
+          // nextPracticeLetter.style.zIndex = 5;
+          // nextPracticeLetter.style.overflow = "visible";
+          // let oldMin = nextPracticeLetter.style.minWidth;
+          // nextPracticeLetter.style.minWidth = "auto";
+          // if (oldMin && nextPracticeLetter.style.width <= nextPracticeLetter.style.height) {
+          //   nextPracticeLetter.style.minWidth = oldMin;
+          // }
         }
       } else if (getPracticeIndex() < getNextLesson().length) {
         // ON LAST LETTER DISPLAYED, DISPLAY REST OF EXERCISE

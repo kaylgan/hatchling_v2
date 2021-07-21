@@ -17,7 +17,8 @@
   --boxMain: teal;
   --boxSecond: teal;
   --boxHigh: yellow;
-  --border: 1vmin solid darkgray;
+  /* --border: 1vmin solid darkgray; */
+  --border: 5px solid darkgray;
   --borderRad: 2px;
 }
 
@@ -169,6 +170,7 @@ h2 {
   border: var(--border);
   box-shadow: none;
   font-size: 16px;
+  overflow: hidden;
 }
 
 .pads button[aria-checked="false"] {
