@@ -9,11 +9,17 @@ function generateElements() {
   generateKeyboard();
   generateRightHand();
   generateStenoOrder();
+  resizeKeyboard();
   getNextLesson(true, ["Click", "on", "Tutorial", "in", "the", "Lessons", "Menu", "to", "get", "started"]);
   generatePracticeLetters(getNextLesson());
   menuListener();
 }
 generateElements();
+
+// -------------------- resize certain elements on window resize --------------------
+window.addEventListener('resize', function(event) {
+  resizeKeyboard();
+}, true);
 
 // -------------------- get the metronome instance --------------------
 let getMetronome = (function(set = false, setValue = null) {
